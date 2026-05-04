@@ -1,0 +1,7 @@
+# Local repository ignore rules
+.DS_Store
+node_modules/
+*.env
+*.pyc
+__pycache__/
+.vscode/

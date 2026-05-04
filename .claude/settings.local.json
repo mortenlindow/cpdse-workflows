@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:cpdse.dk)",
+      "Bash(curl -sL https://cpdse.dk)",
+      "Bash(git clone *)",
+      "Read(//private/tmp/ui-ux-pro-max-skill/.claude/skills/**)",
+      "Bash(cp -R /tmp/ui-ux-pro-max-skill/.claude/skills/* ~/.claude/skills/)",
+      "Read(//Users/mortenlindow/.claude/skills/**)"
+    ]
+  }
+}

@@ -1,0 +1,139 @@
+CPDSE Research & DS Strategy Service
+Intake Questionnaire — BLANK TEMPLATE v0.1.0
+Engagement ID: [ENG###-GroupName]
+============================================================
+
+Instructions for consultant:
+- Send this file to the client group 1 week before Meeting 1
+- Ask the PI to complete it with the group, not alone
+- You will review and amend it during Meeting 1
+- Add your notes in [square brackets like this]
+
+Instructions for client:
+- Complete with your whole group present if possible
+- Honest answers are more useful than impressive ones
+- If a question doesn't apply, write "not applicable" and say why
+- Expected time: 30-45 minutes
+
+============================================================
+SECTION 1 — RESEARCH IDENTITY
+============================================================
+
+Q1: What are your 2-3 most important research questions right now?
+(Be specific — "we study protein folding" is less useful than
+"we want to predict aggregation propensity from sequence features alone")
+
+A1:
+
+1.
+
+2.
+
+3.
+
+------------------------------------------------------------
+
+Q2: Where does your work sit in the drug discovery pipeline?
+(Target ID / Hit ID / Lead ID / Lead Opt / Preclinical / Clinical /
+Regulatory / Multiple / Other — explain briefly)
+
+A2:
+
+------------------------------------------------------------
+
+Q3: What disease areas or therapeutic modalities does your group focus on?
+(If disease-agnostic or platform-focused, say so)
+
+A3:
+
+============================================================
+SECTION 2 — DATA
+============================================================
+
+Q4: What types of data does your group work with?
+(e.g. sequence data, assay readouts, imaging, EHR, omics, PK/PD, literature)
+
+A4:
+
+------------------------------------------------------------
+
+Q5: Where does your data come from?
+(public databases, collaborators, internal wet lab, purchased, scraped —
+note what is available now vs. pending vs. planned)
+
+A5:
+
+============================================================
+SECTION 3 — CURRENT CAPABILITIES
+============================================================
+
+Q6: What does your current analysis workflow look like, honestly?
+Walk us through a typical project from raw data to result.
+(Include tools, formats, manual steps, and known weaknesses)
+
+A6:
+
+------------------------------------------------------------
+
+Q7: Who in your group does the data analysis?
+(Name, role, rough skill level in DS — be honest about gaps)
+
+A7:
+
+------------------------------------------------------------
+
+Q8: DS capability self-rating
+Rate each area for your group as a whole:
+0 = not relevant to our work
+1 = aware only — we know it exists
+2 = ad hoc — we do it sometimes, inconsistently
+3 = reliable — we do it consistently and it works
+4 = could teach — we could train others in this
+
+Data management & organisation:       [  ]
+Statistical analysis:                  [  ]
+ML / predictive models:               [  ]
+Bioinformatics / cheminformatics:     [  ]
+Data visualisation:                    [  ]
+Reproducible research:                 [  ]
+Scientific programming:                [  ]
+
+Comments (optional — explain any rating, flag mixed levels within team):
+
+============================================================
+SECTION 4 — AMBITIONS AND PAIN POINTS
+============================================================
+
+Q9: What would "significantly better" look like in 2 years?
+(Be specific — what would you be doing that you cannot do now?)
+
+A9:
+
+------------------------------------------------------------
+
+Q10: Where do you feel the biggest friction or limitation right now?
+(Technical, data, team, time, infrastructure — be honest)
+
+A10:
+
+------------------------------------------------------------
+
+Q11: Have you tried to address these limitations before?
+(What did you try? What worked? What didn't? Why did you stop?)
+
+A11:
+
+============================================================
+SECTION 5 — CONTEXT AND CONSTRAINTS
+============================================================
+
+Q12: Any constraints we should know about?
+(Funding situation, key people leaving, data access blockers,
+IP restrictions, ethical approvals, compute limits, etc.)
+
+A12:
+
+============================================================
+END OF QUESTIONNAIRE
+Please return to [consultant email] by [date]
+============================================================
