@@ -96,7 +96,7 @@ is long, silent, text-heavy, and static, it is fighting the brain.
 
 These practices are the design basis for every CPDSE workshop and training.
 
-**4Cs → Workshop 1 block mapping** (Service ① — Research & DS Strategy; the six
+**4Cs → Workshop 1 block mapping** (Research & DS Strategy workflow; the six
 blocks should map cleanly onto the 4Cs):
 
 | Workshop 1 block | 4C |

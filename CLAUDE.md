@@ -21,28 +21,42 @@ built by Morten Lindow (Professor, ILF/UCPH, Center Leader of CPDSE). The servic
 helps individual research groups identify and close DS capability gaps relative to
 what comparable groups do at their pharma value chain stage.
 
-This is Service ① — "Research & DS Strategy" — a fixed-scope engagement with an
-AI-assisted analysis pipeline. It is Phase 1 of a broader CPDSE consulting service
-portfolio that will eventually include time-based DS Research Consulting (②) and
-Course Upgrade engagements (③).
+This is the **Research & DS Strategy** workflow — a fixed-scope engagement with an
+AI-assisted analysis pipeline, and the first built workflow of CPDSE's broader
+portfolio. That portfolio spans three customer-facing workflow types — **Research**
+(this workflow + specific research consulting), **Educational** (course upgrade,
+staff upskilling, new course creation), and **Internal self-improvement** (CPDSE's
+own onboarding + infrastructure; a stub). See the "Customer-facing workflow types"
+section below and `services/README.md`.
 
-### Customer journeys (from the value-stream board)
+### Customer-facing workflow types
 
-CPDSE serves five distinct customer triggers across the same 7-stage value
-stream (customer problem → input → our work → output → impact → value for us →
-overall purpose). Today only Service ① is fully designed and written up on the
-website.
+CPDSE's customer-facing work is organised into **three workflow types**, all
+running on the same 7-stage value stream (customer problem → input → our work →
+output → impact → value for us → overall purpose) and the same three reference
+models. See `services/README.md` for the hub.
 
-| # | Trigger | Service |
+| Type | Customers | Workflows (status) |
 |---|---|---|
-| 1 | "My research group wants to make better use of PDS." | ① — fully designed |
-| 2 | "I have a specific research question and need help." | ② — in design |
-| 3 | "My course doesn't have enough modern PDS." | ③ — in design |
-| 4 | "Our staff needs new skills." | ③ — in design |
-| 5 | "We need a new course with lots of PDS." | ③ — in design |
+| **Research** | researchers, research groups, departments | Research & DS Strategy (**built**); Specific Research Consulting (in design) |
+| **Educational** | teachers, course owners, curriculum leaders, staff | Course Upgrade; Staff Upskilling; New Course Creation (in design) |
+| **Internal self-improvement** | CPDSE itself | onboarding; infrastructure building (**stub**) |
 
-Source artefact: `reference/value streams - DRAFT.pdf` (still draft; promote to
-versioned reference doc once stable).
+These types group the **five customer triggers** captured on the value-stream
+board (still the granular source of truth in
+`reference/cpdse-value-stream-v0.1.0.md`):
+
+| # | Trigger | Type / workflow |
+|---|---|---|
+| 1 | "My research group wants to make better use of PDS." | Research — Research & DS Strategy (**built**) |
+| 2 | "I have a specific research question and need help." | Research — Specific Research Consulting |
+| 3 | "My course doesn't have enough modern PDS." | Educational — Course Upgrade |
+| 4 | "Our staff needs new skills." | Educational — Staff Upskilling |
+| 5 | "We need a new course with lots of PDS." | Educational — New Course Creation |
+
+Internal self-improvement (CPDSE's own onboarding + infrastructure, like this
+project) is the third type, deliberately a stub for now. Source artefact:
+`reference/value streams - DRAFT.pdf`.
 
 ---
 

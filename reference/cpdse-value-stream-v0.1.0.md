@@ -41,11 +41,19 @@ CPDSE. Stage 7 is the mission.
 
 ## The five customer journeys
 
-Three serve **course / education** customers (Service ③). Two serve
-**research** customers (Service ① and ②). The same seven stages, populated
-differently per row.
+These five journeys group into **three customer-facing workflow types** (the
+organising layer used across the repo — see `services/README.md`):
 
-### Journey 1 — "Course doesn't have enough modern PDS" *(Service ③)*
+- **Research** (researchers, groups, departments) — Journeys 4 & 5.
+- **Educational** (teachers, course owners, curriculum leaders, and staff
+  upskilling) — Journeys 1, 2 & 3.
+- **Internal self-improvement** (CPDSE itself — onboarding + infrastructure) — a
+  new third type, not among these five journeys; a stub for now.
+
+Below: three journeys serve **educational** customers, two serve **research**
+customers. The same seven stages, populated differently per row.
+
+### Journey 1 — "Course doesn't have enough modern PDS" *(Educational — Course Upgrade)*
 
 | Stage | Content |
 |---|---|
@@ -57,7 +65,7 @@ differently per row.
 | Value for us | Portfolio of happy customers; learning about practical challenges. *[shared across journeys; not row-specific on board]* |
 | Value for overall purpose | The pharma education is one step closer to the future. |
 
-### Journey 2 — "Staff needs new skills" *(Service ③)*
+### Journey 2 — "Staff needs new skills" *(Educational — Staff Upskilling)*
 
 | Stage | Content |
 |---|---|
@@ -69,7 +77,7 @@ differently per row.
 | Value for us | Portfolio of happy customers. |
 | Value for overall purpose | Students come out with state-of-the-art skills from the course. |
 
-### Journey 3 — "We need a new course with lots of PDS" *(Service ③)*
+### Journey 3 — "We need a new course with lots of PDS" *(Educational — New Course Creation)*
 
 | Stage | Content |
 |---|---|
@@ -81,7 +89,7 @@ differently per row.
 | Value for us | Portfolio of happy customers; learning about practical challenges. |
 | Value for overall purpose | [—] |
 
-### Journey 4 — "Research group wants to make better use of PDS" *(Service ①)*
+### Journey 4 — "Research group wants to make better use of PDS" *(Research — Research & DS Strategy)*
 
 This is the journey fully designed and written up on the website.
 
@@ -95,7 +103,7 @@ This is the journey fully designed and written up on the website.
 | Value for us | **Portfolio of happy customers** (referrals between PIs in adjacent groups) + **learning about practical challenges** (every `[BEYOND REFERENCE]` / `[OUTSIDE MODEL]` flag improves our reference docs). |
 | Value for overall purpose | More PDS in research helps on the longer term. |
 
-### Journey 5 — "Specific research question, need help" *(Service ②)*
+### Journey 5 — "Specific research question, need help" *(Research — Specific Research Consulting)*
 
 | Stage | Content |
 |---|---|
@@ -140,7 +148,7 @@ Items the board left ambiguous or sparse — to confirm in the next pass:
   treated above as a shared cross-journey return. Confirm this is the right
   abstraction, or attribute specifically per row.
 - The three orange (course) rows likely share more than the board currently
-  shows. A consolidation pass before a real Service ③ design would be useful.
+  shows. A consolidation pass before a real Educational workflow design would be useful.
 
 ## Versioning
 

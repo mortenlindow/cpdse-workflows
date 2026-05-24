@@ -52,13 +52,15 @@ emphasis, not in ingredients.
 
 ## The service portfolio
 
-| Service | Customer trigger | Status | Model emphasis |
-|---|---|---|---|
-| **① Research & DS Strategy** | "My research group wants to make better use of PDS." | Designed | Anchor + Assess heavy; one diagnostic workshop (delivery light) |
-| **② Specific Research Consulting** | "I have a specific research question and need help." | In design | Anchor (one substep, deep) + targeted capability build |
-| **③ Course Upgrade** | "My course / new course needs modern PDS." | In design | Competence targets + Pedagogic Practices heavy (course (re)design) |
-| **Staff Focus Areas** | "Our staff needs new skills." | In design | Assess (team-level) + Deliver (training programme) |
+Customer-facing work is organised into **three workflow types** (see
+[`../services/README.md`](../services/README.md)). All reuse the three models above
+— that reuse is what keeps CPDSE consistent across consultants and customer types.
 
-Only Service ① is fully written up (see [`../services/01-research-strategy/`](../services/01-research-strategy/)).
-New services reuse the three models above rather than inventing their own frame —
-that reuse is what keeps CPDSE consistent across consultants and customer types.
+| Type | Customers | Workflows (status) | Model emphasis |
+|---|---|---|---|
+| **Research** | researchers, groups, departments | Research & DS Strategy (**built**); Specific Research Consulting (in design) | Anchor + Assess heavy; workshop delivery |
+| **Educational** | teachers, course owners, curriculum leaders, staff | Course Upgrade; Staff Upskilling; New Course Creation (in design) | Competence targets + Pedagogic Practices heavy |
+| **Internal self-improvement** | CPDSE itself | onboarding; infrastructure building (**stub**) | n/a — not customer-facing |
+
+Only the Research **Research & DS Strategy** workflow is fully written up (see
+[`../services/01-research-strategy/`](../services/01-research-strategy/)).

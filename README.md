@@ -10,7 +10,8 @@ cpdse-service-workflows/
   TODO.md                              ← near-term open items
   engagement-log.md                    ← all engagements, model + prompt versions
   services/
-    01-research-strategy/
+    README.md                          ← the 3 customer-facing workflow types
+    01-research-strategy/              ← Research type — built workflow
       intake-questionnaire-blank-v0.2.0.txt
       prompts/
         01-group-profile-synthesis.md  ← Step 1 prompt
@@ -20,6 +21,8 @@ cpdse-service-workflows/
       output-templates/
         workshop1-miro-frames.pdf      ← 4-frame PDF for Miro import
         workshop1-facilitation-guide.docx ← consultant session script
+    educational/                       ← Educational type (stub)
+    internal/                          ← Internal self-improvement (stub)
   reference/
     README.md                          ← how the 3 models relate + build services
     competency-model/                  ← PDS Competence Model
@@ -57,7 +60,7 @@ Every engagement, whatever the customer trigger, is grounded in three
 - **Independent versioning.** Each model versions on its own `Version:` header +
   changelog; the engagement-log records which version each engagement ran under.
 
-## Pipeline (Service ①)
+## Pipeline (Research & DS Strategy)
 
 ```
 Passive material collection (~1h)
@@ -75,9 +78,10 @@ Passive material collection (~1h)
 Total consultant time: ~7-8h per engagement
 ```
 
-Service ① (Research & DS Strategy) is the only fully designed service. Services
-②/③ (specific research consulting, course upgrade, staff focus areas) reuse the
-same three reference models — see [`reference/README.md`](reference/README.md).
+Customer-facing work spans three workflow types — **Research**, **Educational**,
+and **Internal self-improvement** (a stub). The Research & DS Strategy workflow
+above is the only one fully designed; the rest reuse the same three reference
+models. See [`services/README.md`](services/README.md) for the portfolio.
 
 ## Prompt versioning
 

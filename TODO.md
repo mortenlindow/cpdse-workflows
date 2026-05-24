@@ -12,15 +12,20 @@ Live, actionable items. The full backlog lives in CLAUDE.md ("What is NOT done y
 - [ ] Pedagogic Practices: expand with concrete activity patterns; write the
       4Cs → Workshop 1 block mapping into the facilitation-guide `.docx`.
 
-## Service ① — Research & DS Strategy
+## Research — Research & DS Strategy (built workflow)
 - [ ] Expert (MO) review of all v0.1.0 prompt docs before the first real engagement.
 - [ ] Save Step 1 + Step 2 outputs for ENG001-SIM (only partial versions exist).
 - [ ] Blank strategy-brief template in `output-templates/` (ENG001-SIM one is populated).
 - [ ] Workshop 2 design (facilitation guide + artefacts).
 
-## Other services (later)
-- [ ] Design Service ② (specific research consulting), ③ (course upgrade), and
-      the staff focus-areas service — reusing the three reference models.
+## Other workflow types (later)
+- [ ] **Research:** design the Specific Research Consulting workflow (time-based).
+- [ ] **Educational:** flesh out Course Upgrade, Staff Upskilling, New Course
+      Creation (currently stubs in `services/educational/`).
+- [ ] **Internal self-improvement:** define the onboarding + infrastructure
+      workflow when ready (currently a stub in `services/internal/`).
+- [ ] Consider the full `services/research/` nest (move `01-research-strategy/`
+      under it) once more than one workflow exists per type.
 
 ## Housekeeping
 - [ ] Resolve the `[?]` cells in `reference/cpdse-value-stream-v0.1.0.md`; bump to v0.2.0.
