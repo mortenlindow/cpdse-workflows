@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CPDSE — Operating the services (internal)</title>
+<link rel="icon" href="assets/logo-square-forest.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="wrap-wide header-row">
+    <a class="brand-mark" href="index.html" aria-label="CPDSE — Center for Pharmaceutical Data Science Education">
+      <img src="assets/logo-wide-forest.svg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" />
+      <span class="brand-fallback" style="display:none">CPDSE</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Services</a>
+      <a href="models.html">The models</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="breadcrumb">Internal · For consultants · <a href="index.html">back to the public site</a></p>
+
+  <h1>Operating the services</h1>
+  <p class="lede">The internal manual for running CPDSE engagements. A human-in-the-loop pipeline: four prompt steps, two workshops, ~7–8 hours of consultant time per group.</p>
+  <p class="stub-note">Today only the <strong>Research &amp; DS Strategy</strong> workflow is fully built. The Educational workflows (Course Upgrade, Staff Upskilling, New Course Creation) and Internal self-improvement are stubs — see <a href="../services/README.md">services/README.md</a>.</p>
+
+  <!-- BASECAMP TRACKING -->
+  <h2>Tracking engagements in Basecamp</h2>
+  <p>Intake and delivery are tracked on a <strong>Basecamp CardTable, Kanban-style</strong>. One card = one engagement; it moves left → right through the lifecycle. A lean five-column board keeps the whole portfolio visible at a glance.</p>
+  <div class="kanban">
+    <div class="kcol">
+      <div class="khead">Intake</div>
+      <div class="kbody">
+        <div class="kcard"><div class="keng">Lindgren Lab</div><div class="kmeta">Intake call requested</div></div>
+        <div class="kcard"><div class="keng">Course: Pharmacometrics</div><div class="kmeta">Enquiry — course upgrade</div></div>
+      </div>
+    </div>
+    <div class="kcol">
+      <div class="khead">Scoped</div>
+      <div class="kbody">
+        <div class="kcard"><div class="keng">ENG044-Holm</div><div class="kmeta">Agreement signed; folder created</div></div>
+      </div>
+    </div>
+    <div class="kcol">
+      <div class="khead">In progress</div>
+      <div class="kbody">
+        <div class="kcard"><div class="keng">ENG042-Hansen</div><div class="kmeta">Steps 1–4 + QA</div></div>
+        <div class="kcard"><div class="keng">ENG043-Berg</div><div class="kmeta">Passive collection</div></div>
+      </div>
+    </div>
+    <div class="kcol">
+      <div class="khead">Review</div>
+      <div class="kbody">
+        <div class="kcard"><div class="keng">ENG041-Sato</div><div class="kmeta">Workshop 1 done; brief in QA</div></div>
+      </div>
+    </div>
+    <div class="kcol">
+      <div class="khead">Done</div>
+      <div class="kbody">
+        <div class="kcard"><div class="keng">ENG040-Vega</div><div class="kmeta">Closed; value-for-us logged</div></div>
+      </div>
+    </div>
+  </div>
+  <p class="kcaption">Columns: Intake → Scoped → In progress → Review → Done. The <code>basecamp</code> skill can create and move cards programmatically once the board is set up.</p>
+
+  <h2>The pipeline at a glance</h2>
+  <div class="pipeline">
+    Passive collection (lab site, grants, pubs, READMEs) (1h)<br/>
+    &nbsp;&nbsp;<span class="arrow">→</span> Active intake: questionnaire async + Meeting 1 interview (1h)<br/>
+    &nbsp;&nbsp;<span class="arrow">→</span> Step 1 <span class="arrow">→</span> Step 2 <span class="arrow">→</span> Step 3 <span class="arrow">→</span> Step 4<br/>
+    &nbsp;&nbsp;<span class="arrow">→</span> QA (1h) <span class="arrow">→</span> Workshop 1 (2h) <span class="arrow">→</span> Workshop 2 (1.5h)
+    <span class="total">Total consultant time: ~7–8h</span>
+  </div>
+
+  <h2>How to run each step</h2>
+  <p class="lede" style="font-size:15px">
+    Recommended setup: clone the repo locally and run Claude Code from the project root. Steps 1 &amp; 2 can also be run in claude.ai with file attachments — useful when you need a long context window for messy passive material. Save every output as a file in <code>engagements/ENG###-{LastName}/</code> before moving to the next step.
+  </p>
+
+  <h3 style="margin-top:24px">Inputs: passive vs active</h3>
+  <p style="font-size:14px; color:var(--muted)">The engagement starts with both. Pull the passive material before Meeting 1 so you can ask sharper questions; treat the active inputs as the source of truth where they conflict with the passive ones.</p>
+  <div class="inputs-grid">
+    <div class="inputs-card">
+      <span class="lab">Passive</span>
+      <ul>
+        <li>Lab website / group page</li>
+        <li>Recent grant abstracts</li>
+        <li>Last ~3 years of publications</li>
+        <li>GitHub READMEs &amp; pinned repos</li>
+        <li>Group's own internal docs if shared</li>
+      </ul>
+    </div>
+    <div class="inputs-card">
+      <span class="lab">Active</span>
+      <ul>
+        <li>Intake questionnaire (PI fills async)</li>
+        <li>Meeting 1: walkthrough + corrections</li>
+        <li>Self-rating L1–L5 across the 7 PDS domains</li>
+        <li>Team roster with named bandwidth</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="background: var(--ivory); border-left: 3px solid var(--gold); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 20px; font-size: 14px; margin: 16px 0 28px;">
+    <strong style="color: var(--forest);">Before you start:</strong> create the engagement folder and drop all source material in.
+    <div class="run" style="margin-top:10px;">
+<span class="comment"># in your terminal</span>
+mkdir -p engagements/ENG###-LastName/{inputs,outputs}
+<span class="comment"># place into inputs/: completed intake .txt, CV PDFs, lab website scrape,</span>
+<span class="comment"># publication list, prior grant abstracts, group's GitHub README(s)</span>
+claude          <span class="comment"># launch Claude Code here, with the repo as cwd</span>
+    </div>
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="step-block">
+    <div class="step-head">
+      <span class="num">STEP 01</span>
+      <h3>Group Profile Synthesis</h3>
+      <span class="tag">Mirror · factual only</span>
+    </div>
+    <div class="row"><div class="k">Prompt</div><div class="v"><code>services/01-research-strategy/prompts/01-group-profile-synthesis.md</code></div></div>
+    <div class="row"><div class="k">Inputs</div><div class="v">Completed intake questionnaire + everything in <code>inputs/</code> (CVs, website, pubs, READMEs).</div></div>
+    <div class="row"><div class="k">Output</div><div class="v"><code>outputs/step1-group-profile.md</code></div></div>
+    <div class="row"><div class="k">Constraint</div><div class="v">Zero evaluative language. No gap judgements. Flag missing data with <code>[DATA GAP]</code>.</div></div>
+
+    <p style="margin-top:14px; font-size:14px; color:var(--muted);"><strong style="color:var(--ink);">In Claude Code:</strong></p>
+    <div class="run">
+<span class="prompt">&gt; </span>Read the prompt at services/01-research-strategy/prompts/01-group-profile-synthesis.md
+and apply it to all material in engagements/ENG042-Hansen/inputs/.
+Write the result to engagements/ENG042-Hansen/outputs/step1-group-profile.md.
+Follow the prompt's factual-only constraint strictly — if you find yourself
+characterising quality, capability, or potential, stop and rewrite as fact.
+Mark every gap in source material as [DATA GAP].
+    </div>
+
+    <p style="margin-top:14px; font-size:14px; color:var(--muted);"><strong style="color:var(--ink);">Alternative — claude.ai:</strong> create a new chat, attach the prompt .md and all input files, paste "Apply this prompt to the attached material. Output as markdown." Save the response manually to <code>step1-group-profile.md</code>.</p>
+
+    <div class="checkpoint">
+      <strong>Human checkpoint (Meeting 1).</strong> Read Step 1 line by line with the client. Mark corrections inline. Do <em>not</em> proceed to Step 2 until corrections are folded back in — Step 1 is the factual base every later step rests on.
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step-block">
+    <div class="step-head">
+      <span class="num">STEP 02</span>
+      <h3>DS Landscape Analysis</h3>
+      <span class="tag">Map · value chain</span>
+    </div>
+    <div class="row"><div class="k">Prompt</div><div class="v"><code>services/01-research-strategy/prompts/02-ds-landscape-analysis.md</code></div></div>
+    <div class="row"><div class="k">Inputs</div><div class="v">Corrected <code>step1-group-profile.md</code> + <code>reference/pharma-value-chain-model/</code> + <code>reference/competency-model/</code></div></div>
+    <div class="row"><div class="k">Output</div><div class="v"><code>outputs/step2-ds-landscape.md</code> (value chain map, comparable-group landscape, competency snapshot L1–L5 across the 7 PDS domains / 30 sub-areas)</div></div>
+    <div class="row"><div class="k">Flags</div><div class="v"><code>[BEYOND REFERENCE]</code> if methods aren't in the reference doc. <code>[OUTSIDE MODEL]</code> if work doesn't map to any PDS sub-area.</div></div>
+
+    <p style="margin-top:14px; font-size:14px; color:var(--muted);"><strong style="color:var(--ink);">In Claude Code:</strong></p>
+    <div class="run">
+<span class="prompt">&gt; </span>Run step 2 for ENG042-Hansen.
+Use prompt: services/01-research-strategy/prompts/02-ds-landscape-analysis.md
+Inputs:
+  - engagements/ENG042-Hansen/outputs/step1-group-profile.md (corrected)
+  - reference/pharma-value-chain-model/Pharma_Value_Chain_Model.md
+Write the output to engagements/ENG042-Hansen/outputs/step2-ds-landscape.md.
+
+Be aggressive about flagging [BEYOND REFERENCE] and [OUTSIDE MODEL] —
+those flags are the meta-output. Do not stretch a method to fit the reference;
+flag it instead.
+    </div>
+
+    <div class="checkpoint">
+      <strong>Consultant review.</strong> Skim for over-confident claims about "what comparable groups do." If a comparable-group claim isn't grounded in something concrete, ask Claude to either ground it or remove it before Step 3.
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step-block">
+    <div class="step-head">
+      <span class="num">STEP 03</span>
+      <h3>Gap Assessment</h3>
+      <span class="tag">Diagnose · structural vs technical</span>
+    </div>
+    <div class="row"><div class="k">Prompt</div><div class="v"><code>services/01-research-strategy/prompts/03-gap-assessment.md</code></div></div>
+    <div class="row"><div class="k">Inputs</div><div class="v">Steps 1 + 2 outputs.</div></div>
+    <div class="row"><div class="k">Output</div><div class="v"><code>outputs/step3-gap-assessment.md</code> — every gap classified Structural / Technical, scored on Impact / Effort / Urgency, with a one-line rationale per axis.</div></div>
+    <div class="row"><div class="k">Constraint</div><div class="v">First gap judgements in the pipeline. Every gap must cite the source paragraph in Step 1 or 2.</div></div>
+
+    <p style="margin-top:14px; font-size:14px; color:var(--muted);"><strong style="color:var(--ink);">In Claude Code:</strong></p>
+    <div class="run">
+<span class="prompt">&gt; </span>Run step 3 for ENG042-Hansen.
+Prompt: services/01-research-strategy/prompts/03-gap-assessment.md
+Inputs: outputs/step1-group-profile.md, outputs/step2-ds-landscape.md
+Output: outputs/step3-gap-assessment.md
+
+Format gaps as a table with columns:
+  Type (Structural/Technical) | Gap | Competency | Impact (H/M/L) | Effort (H/M/L) | Urgency (Active/Latent) | Source
+
+Aim for ~60% structural / ~40% technical unless the data clearly says otherwise.
+Every gap must cite a specific paragraph from step 1 or step 2.
+If you can't cite a source, drop the gap.
+    </div>
+
+    <div class="checkpoint">
+      <strong>Sanity check.</strong> Read each gap aloud. If it could apply to any pharma research group, it's too generic — ask Claude to either make it specific to this group or remove it.
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step-block">
+    <div class="step-head">
+      <span class="num">STEP 04</span>
+      <h3>Recommendation Synthesis</h3>
+      <span class="tag">Recommend · capacity-calibrated</span>
+    </div>
+    <div class="row"><div class="k">Prompt</div><div class="v"><code>services/01-research-strategy/prompts/04-recommendation-synthesis.md</code></div></div>
+    <div class="row"><div class="k">Inputs</div><div class="v">Steps 1 + 2 + 3 outputs.</div></div>
+    <div class="row"><div class="k">Output</div><div class="v"><code>outputs/step4-recommendations.md</code> — quick wins (4 wks) / strategic (3–6 mo) / horizon (18–24 mo) + Competency Model Note.</div></div>
+    <div class="row"><div class="k">Constraint</div><div class="v">Each recommendation names a specific owner from the team and an effort estimate in person-days/weeks. Total quick-win effort ≤ team's spare capacity over 4 weeks.</div></div>
+
+    <p style="margin-top:14px; font-size:14px; color:var(--muted);"><strong style="color:var(--ink);">In Claude Code:</strong></p>
+    <div class="run">
+<span class="prompt">&gt; </span>Run step 4 for ENG042-Hansen.
+Prompt: services/01-research-strategy/prompts/04-recommendation-synthesis.md
+Inputs: outputs/step1, step2, step3
+Output: outputs/step4-recommendations.md
+
+Hard rule: every recommendation gets a named owner from the actual team
+(see Step 1 team roster) and a person-days/weeks estimate.
+Sum the quick-win effort. If it exceeds the team's plausible 4-week
+spare capacity, cut the lowest-impact items until it fits.
+
+"A recommendation that exceeds capacity is a wish, not a recommendation."
+
+End with a Competency Model Note summarising every [BEYOND REFERENCE] and
+[OUTSIDE MODEL] flag from steps 2–3 — this is the meta-output for CPDSE,
+not for the client.
+    </div>
+
+    <div class="checkpoint">
+      <strong>QA pass (~1h).</strong> Read all four outputs end-to-end as if you were the PI. Watch for: (1) Step 1 leaking judgements, (2) Step 4 quick wins requiring something from Step 4 strategic to be true first, (3) the PI being assigned more than one quick win.
+    </div>
+  </div>
+
+  <h2>Generating the workshop artefacts</h2>
+  <p>Once Steps 1–4 are signed off, generate the strategy brief and Miro frames from the same outputs:</p>
+  <div class="run">
+<span class="prompt">&gt; </span>Generate the strategy brief .docx for ENG042-Hansen using
+output-templates/strategy-brief-template.docx and the four step outputs.
+Use the docx.js script at scripts/brief.js. Save to outputs/strategy-brief.docx.
+
+<span class="prompt">&gt; </span>Generate the Miro board PDF for Workshop 1 using
+scripts/workshop1_board.py with ENG042-Hansen as input.
+Save to outputs/workshop1_miro_frames.pdf.
+  </div>
+  <p style="font-size:14px; color:var(--muted); margin-top:10px;">
+    Heads-up: the docx.js compact <code>})]}]},</code> pattern breaks Node — expand into separate <code>new TableRow</code> blocks. <code>PageNumberElement</code>, not <code>PageNumber</code>, in <code>docx@9.6.1</code>.
+  </p>
+
+  <h2>Design principles</h2>
+  <ul class="principles">
+    <li><strong>Step 1 is factual-only.</strong> Gap judgements live in Step 3, never earlier.</li>
+    <li><strong>Structural vs technical</strong> is the analytical frame, not a label. It shifts the conversation off "tools to learn."</li>
+    <li><strong>[BEYOND REFERENCE]</strong> and <strong>[OUTSIDE MODEL]</strong> flags are first-class outputs — they improve the model, not error states.</li>
+    <li><em>"A recommendation that exceeds capacity is a wish, not a recommendation."</em></li>
+    <li><strong>The brief is handed over at the end of Workshop 1</strong>, not before. Workshop 1 produces shared ownership of the diagnosis; the brief is a record, not a script.</li>
+  </ul>
+
+  <h2>Workshop 1 facilitation</h2>
+  <p style="color:var(--muted); font-size:15px; max-width:680px;">
+    Two hours, six blocks. Designed around <strong>Know / Feel / Do</strong> and grounded in the <strong>4Cs of Training from the Back of the Room</strong> (Bowman): Connections, Concepts, Concrete Practice, Conclusions. See <a href="models.html">the pedagogic model</a>.
+  </p>
+  <div class="timing-strip">
+    <div><span class="label">Open</span><span class="time-range">00:00–10</span></div>
+    <div><span class="label">Mirror</span><span class="time-range">00:10–35</span></div>
+    <div><span class="label">Landscape</span><span class="time-range">00:35–01:00</span></div>
+    <div><span class="label">Gaps</span><span class="time-range">01:00–30</span></div>
+    <div><span class="label">Roadmap</span><span class="time-range">01:30–50</span></div>
+    <div><span class="label">Close</span><span class="time-range">01:50–02:00</span></div>
+  </div>
+  <p style="color:var(--muted); font-size:14px; margin-top:8px;">Materials: 4-frame Miro board PDF + facilitation guide .docx. Both live in <code>output-templates/</code>.</p>
+
+  <h3 style="margin-top:28px">Three scripted moments to rehearse</h3>
+  <div class="scripted">"Which rating is most wrong, and in which direction?"</div>
+  <div class="scripted">"Emma, this card is specifically about you. Is the 12-month timeline accurate?"</div>
+  <div class="scripted">"Who will <em>actually do</em> this — not who is responsible for it?"</div>
+
+  <p style="margin-top:32px;"><a href="index.html">← Back to the public site</a></p>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="footer-mark">
+      <img src="assets/logo-square-forest.svg" alt="" onerror="this.style.display='none'" />
+      CPDSE · UCPH / SDU
+    </span>
+    <span class="footer-links">
+      <a href="index.html">Services</a>
+      <a href="models.html">The models</a>
+      <a href="mailto:morten.lindow@sund.ku.dk">contact</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

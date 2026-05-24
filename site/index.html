@@ -3,774 +3,157 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>CPDSE</title>
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<title>CPDSE — Pharmaceutical Data Science services</title>
+<link rel="icon" href="assets/logo-square-forest.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" />
-<style>
-  /*
-   * CPDSE corporate identity note:
-   * Verdana is the canonical brand font for print/PDF deliverables. On screen
-   * we use Source Sans 3 (body) and Source Serif 4 (display) — the closest
-   * readable web equivalents. Do not "fix" this back to Verdana on screen.
-   */
-  :root {
-    /* CPDSE identity palette */
-    --forest: #3C5E3E;     /* Primary Dark   — headlines, links, hero accent */
-    --sage:   #5F7D61;     /* Primary Soft   — secondary, kicker text         */
-    --mint:   #A9BBAA;     /* Primary Light  — subtle borders                 */
-    --gold:   #D6C17C;     /* Accent Deep    — rules, pull-quote bars         */
-    --sand:   #E4D7A1;     /* Accent Soft    — highlight chips, active pill   */
-    --ivory:  #F6F1DC;     /* Accent Light   — section bands, callouts        */
-    --ink:    #333333;     /* Charcoal       — body text                      */
-    --paper:  #F9F9F9;     /* Soft White     — page background                */
-    --card:   #FFFFFF;     /* white card surface                              */
-    --line:   #E6E2D2;     /* warm line tuned to ivory                        */
-    --muted:  #5b5b52;     /* warm muted (was cool grey)                      */
-
-    /* Aliases — kept so the rest of the stylesheet keeps compiling. */
-    --sage-dark: var(--forest);
-    --sage-soft: var(--mint);
-    --sage-tint: var(--ivory);
-    --bg: var(--paper);
-
-    --radius: 12px;
-    --shadow: none;
-  }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
-  body {
-    font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-    color: var(--ink);
-    background: var(--paper);
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-  }
-  .display, h1, h2, .hero-quote {
-    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
-    font-feature-settings: "ss01";
-  }
-  a { color: var(--sage-dark); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-
-  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
-  .wrap-wide { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-
-  header {
-    border-bottom: 1px solid var(--gold);
-    background: var(--paper);
-    position: sticky; top: 0; z-index: 10;
-    backdrop-filter: saturate(140%) blur(8px);
-  }
-  .header-row {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 16px 0;
-    gap: 16px; flex-wrap: wrap;
-  }
-  .brand-mark {
-    font-family: "Source Serif 4", Georgia, serif;
-    font-weight: 600; letter-spacing: .04em; font-size: 19px; color: var(--forest);
-    display: inline-flex; align-items: center; gap: 10px;
-  }
-  .brand-mark img { height: 32px; width: auto; display: block; }
-  .brand-mark .brand-fallback { /* shows when logo asset is missing */
-    border: 1px solid var(--mint); border-radius: 4px;
-    padding: 2px 8px; font-size: 13px; color: var(--forest);
-  }
-
-  .tabs { display: inline-flex; background: var(--ivory); border-radius: 999px; padding: 4px; border: 1px solid var(--line); }
-  .tab {
-    border: 0; background: transparent; cursor: pointer;
-    padding: 8px 16px; border-radius: 999px;
-    font: inherit; color: var(--ink); font-weight: 500;
-    transition: all .18s ease;
-  }
-  .tab[aria-selected="true"] {
-    background: var(--sand); color: var(--forest);
-    font-weight: 600;
-  }
-
-  .subtabs {
-    display: inline-flex; gap: 4px; margin: 8px 0 32px;
-    border-bottom: 1px solid var(--line);
-    width: 100%;
-  }
-  .subtab {
-    border: 0; background: transparent; cursor: pointer;
-    padding: 10px 4px; margin-right: 24px;
-    font: inherit; color: var(--muted); font-weight: 500;
-    border-bottom: 2px solid transparent;
-    transition: all .15s;
-  }
-  .subtab[aria-selected="true"] {
-    color: var(--forest);
-    border-bottom-color: var(--gold);
-  }
-
-  main { padding: 56px 0 80px; }
-  section.panel, section.subpanel { display: none; }
-  section.panel.active, section.subpanel.active { display: block; }
-
-  .breadcrumb {
-    font-size: 13px; color: var(--muted); margin-bottom: 14px;
-    letter-spacing: .01em;
-  }
-
-  h1 {
-    font-size: clamp(34px, 4.6vw, 50px);
-    line-height: 1.1; letter-spacing: -.012em;
-    margin: 0 0 18px; font-weight: 600; color: var(--forest);
-  }
-  h2 {
-    font-size: 26px; font-weight: 600;
-    margin: 64px 0 18px; letter-spacing: -.005em;
-    color: var(--forest);
-    position: relative; padding-top: 14px;
-  }
-  h2::before {
-    content: ""; position: absolute; top: 0; left: 0;
-    width: 40px; height: 2px; background: var(--gold);
-  }
-  h3 {
-    font-size: 16px; font-weight: 600; margin: 0 0 6px; color: var(--ink);
-  }
-  p { margin: 0 0 12px; color: var(--ink); }
-  .lede { font-size: 18px; color: var(--muted); max-width: 640px; }
-
-  .hero-quote {
-    font-size: clamp(32px, 4.6vw, 48px);
-    line-height: 1.15; letter-spacing: -.012em;
-    font-weight: 500; color: var(--ink);
-    max-width: 780px; margin: 12px 0 20px;
-  }
-  .hero-quote .accent { color: var(--forest); font-style: italic; }
-
-  .method-line {
-    font-size: 16px; color: var(--ink); max-width: 720px;
-    border-left: 3px solid var(--gold); padding: 6px 0 6px 18px;
-    margin: 28px 0 8px;
-    background: linear-gradient(to right, rgba(246,241,220,.55), transparent 60%);
-  }
-  .method-line .ref { color: var(--forest); font-weight: 600; font-style: normal; }
-
-  .cta {
-    display: inline-block; margin-top: 22px;
-    background: var(--forest); color: var(--ivory);
-    padding: 12px 24px; border-radius: 999px;
-    font-weight: 600; letter-spacing: .01em;
-    border: 1px solid var(--forest);
-    transition: all .18s;
-  }
-  .cta:hover { background: var(--sand); color: var(--forest); text-decoration: none; }
-
-  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  @media (max-width: 720px) {
-    .grid-3, .grid-2 { grid-template-columns: 1fr; }
-  }
-
-  .card {
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: var(--radius); padding: 22px 22px 20px;
-    position: relative;
-    transition: background .18s;
-  }
-  .card::before {
-    content: ""; position: absolute; top: 0; left: 22px; right: 22px;
-    height: 2px; background: var(--gold);
-  }
-  .card:hover { background: var(--ivory); }
-  .card .kicker {
-    font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
-    color: var(--forest); margin: 4px 0 8px;
-  }
-  .card p { color: var(--muted); font-size: 14.5px; margin: 0; }
-  .card .pending { display: inline-block; font-size: 11px; color: var(--ink); margin-top: 8px; padding: 2px 10px; background: var(--sand); border-radius: 999px; font-weight: 500; }
-
-  /* Value stream strip */
-  .stream {
-    display: grid; grid-template-columns: repeat(7, 1fr);
-    gap: 8px; margin-top: 14px;
-  }
-  .stream .col {
-    background: var(--card); border: 1px solid var(--mint);
-    border-radius: 10px; padding: 14px 12px;
-    font-size: 13px; line-height: 1.4;
-    position: relative;
-  }
-  .stream .col .label {
-    font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-    color: var(--forest); margin-bottom: 8px; display: block;
-  }
-  .stream .col .body { color: var(--ink); }
-  .stream .col::after {
-    content: "→"; position: absolute; right: -12px; top: 50%; transform: translateY(-50%);
-    color: var(--gold); font-size: 20px; font-family: "Source Serif 4", Georgia, serif; pointer-events: none;
-  }
-  .stream .col:last-child::after { display: none; }
-  @media (max-width: 900px) {
-    .stream { grid-template-columns: 1fr; }
-    .stream .col::after { content: "↓"; right: 50%; top: auto; bottom: -14px; transform: translateX(50%); }
-  }
-
-  /* Customer journeys table */
-  .journeys {
-    width: 100%; border-collapse: collapse; margin-top: 12px;
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: var(--radius); overflow: hidden;
-  }
-  .journeys th, .journeys td {
-    text-align: left; padding: 13px 16px; font-size: 14px;
-    border-bottom: 1px solid var(--line);
-  }
-  .journeys th { background: var(--forest); color: var(--ivory); font-weight: 600; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
-  .journeys tr:last-child td { border-bottom: 0; }
-  .journeys tr:nth-child(even) td { background: rgba(246,241,220,.35); }
-  .journeys .svc { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--forest); font-weight: 700; white-space: nowrap; }
-  .journeys .stub { color: var(--ink); font-size: 11px; padding: 2px 10px; background: var(--sand); border-radius: 999px; margin-left: 6px; font-weight: 500; }
-  .journeys .ready { color: var(--forest); font-weight: 500; }
-  @media (max-width: 720px) {
-    .journeys, .journeys thead, .journeys tbody, .journeys tr, .journeys th, .journeys td { display: block; }
-    .journeys thead { display: none; }
-    .journeys tr { padding: 12px 0; border-bottom: 1px solid var(--line); }
-    .journeys td { border-bottom: 0; padding: 4px 16px; }
-  }
-
-  /* Existing service-① component styles */
-  .cost-list { list-style: none; padding: 0; margin: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--card); }
-  .cost-list li {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 14px 18px; border-bottom: 1px solid var(--line);
-    font-size: 15px;
-  }
-  .cost-list li:last-child { border-bottom: 0; background: var(--ivory); font-weight: 600; color: var(--forest); }
-  .cost-list .time { font-variant-numeric: tabular-nums; color: var(--forest); font-weight: 600; }
-
-  details {
-    border-bottom: 1px solid var(--line); padding: 14px 0;
-  }
-  details summary {
-    cursor: pointer; font-weight: 500; list-style: none;
-    display: flex; justify-content: space-between; align-items: center;
-    color: var(--forest);
-  }
-  details summary::-webkit-details-marker { display: none; }
-  details summary::after { content: "+"; color: var(--gold); font-size: 22px; line-height: 1; }
-  details[open] summary::after { content: "–"; }
-  details p { margin-top: 8px; color: var(--muted); }
-
-  .pipeline {
-    background: var(--ivory); border: 1px solid var(--line); border-left: 3px solid var(--gold);
-    border-radius: 0 var(--radius) var(--radius) 0;
-    padding: 22px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 13.5px; color: var(--ink); overflow-x: auto;
-  }
-  .pipeline .arrow { color: var(--gold); font-weight: 700; }
-  .pipeline .total { color: var(--forest); font-weight: 600; margin-top: 10px; display: block; }
-
-  .step-card { position: relative; }
-  .step-card .step-num {
-    position: absolute; top: 18px; right: 20px;
-    color: var(--gold); font-weight: 700; font-size: 13px;
-  }
-  .step-card .meta { color: var(--muted); font-size: 13px; margin-top: 8px; }
-  .step-card .meta strong { color: var(--ink); font-weight: 600; }
-
-  .principles { padding-left: 20px; margin: 0; }
-  .principles li { margin-bottom: 10px; color: var(--muted); }
-  .principles li strong { color: var(--ink); font-weight: 600; }
-  .principles em { color: var(--forest); font-style: italic; }
-
-  .timing-strip {
-    display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px;
-    margin: 16px 0 8px; border-radius: 8px; overflow: hidden;
-    border: 1px solid var(--line);
-  }
-  .timing-strip div {
-    background: var(--ivory); padding: 12px 8px;
-    font-size: 12px; text-align: center; color: var(--forest);
-  }
-  .timing-strip div:nth-child(odd) { background: var(--paper); }
-  .timing-strip .label { font-weight: 700; display: block; letter-spacing: .04em; }
-  .timing-strip .time-range { color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
-
-  .scripted {
-    background: var(--ivory); border-left: 3px solid var(--gold);
-    padding: 14px 20px; border-radius: 0 8px 8px 0; margin: 10px 0;
-    font-style: italic; color: var(--ink);
-    font-family: "Source Serif 4", Georgia, serif; font-size: 16px;
-  }
-
-  .step-block {
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: var(--radius); padding: 24px 26px; margin-bottom: 16px;
-    position: relative;
-  }
-  .step-block::before {
-    content: ""; position: absolute; top: 0; left: 0; width: 60px; height: 2px;
-    background: var(--gold);
-  }
-  .step-block .step-head {
-    display: flex; align-items: baseline; gap: 14px;
-    border-bottom: 1px solid var(--line); padding-bottom: 14px; margin-bottom: 16px;
-  }
-  .step-block .step-head .num {
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    color: var(--forest); font-weight: 700; font-size: 13px; letter-spacing: .06em;
-  }
-  .step-block .step-head h3 { margin: 0; font-size: 19px; color: var(--forest); }
-  .step-block .step-head .tag {
-    margin-left: auto;
-    font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
-    color: var(--forest); background: var(--ivory);
-    padding: 4px 12px; border-radius: 999px;
-    border: 1px solid var(--sand);
-  }
-  .step-block .row { display: grid; grid-template-columns: 110px 1fr; gap: 12px 18px; margin: 10px 0; font-size: 14.5px; }
-  .step-block .row > .k { color: var(--muted); font-weight: 500; }
-  .step-block .row > .v { color: var(--ink); }
-  .step-block code, .pipeline code, .inputs-list code {
-    background: var(--ivory); color: var(--forest);
-    padding: 1px 6px; border-radius: 4px; font-size: .92em;
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    border: 1px solid var(--line);
-  }
-  .run {
-    background: #1a2a1a; color: #e6e2d2;
-    border-radius: 8px; padding: 14px 16px; margin-top: 12px;
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 13px; line-height: 1.6; overflow-x: auto;
-    border: 1px solid #0f1a0f;
-  }
-  .run .prompt { color: var(--gold); user-select: none; }
-  .run .comment { color: var(--mint); }
-  .step-block .checkpoint {
-    margin-top: 14px; padding: 12px 16px;
-    background: var(--sand); border-left: 3px solid var(--forest);
-    border-radius: 0 8px 8px 0; font-size: 13.5px; color: var(--ink);
-  }
-  .step-block .checkpoint strong { color: var(--forest); }
-
-  /* Passive/Active inputs */
-  .inputs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
-  @media (max-width: 720px) { .inputs-grid { grid-template-columns: 1fr; } }
-  .inputs-grid .inputs-card {
-    border: 1px solid var(--line); border-top: 2px solid var(--gold);
-    border-radius: 0 0 10px 10px; padding: 14px 16px;
-    background: var(--card);
-  }
-  .inputs-grid .inputs-card .lab {
-    font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
-    color: var(--forest); display: block; margin-bottom: 6px;
-  }
-  .inputs-grid .inputs-card ul { margin: 0; padding-left: 18px; font-size: 13.5px; color: var(--muted); }
-
-  footer {
-    border-top: 1px solid var(--gold);
-    background: var(--ivory);
-    color: var(--ink); font-size: 13px;
-    padding: 28px 0; margin-top: 56px;
-  }
-  footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-  footer .footer-mark { display: inline-flex; align-items: center; gap: 10px; color: var(--forest); font-weight: 600; }
-  footer .footer-mark img { height: 28px; width: auto; }
-  footer a { color: var(--forest); }
-
-  .stub-note {
-    font-size: 13px; color: var(--muted); font-style: italic;
-  }
-</style>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <header>
   <div class="wrap-wide header-row">
-    <a class="brand-mark" href="#" data-jump="how" aria-label="CPDSE — Center for Pharmaceutical Data Science Education">
+    <a class="brand-mark" href="index.html" aria-label="CPDSE — Center for Pharmaceutical Data Science Education">
       <img src="assets/logo-wide-forest.svg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" />
       <span class="brand-fallback" style="display:none">CPDSE</span>
     </a>
-    <div class="tabs" role="tablist">
-      <button class="tab" role="tab" aria-selected="true" data-target="how">How we work</button>
-      <button class="tab" role="tab" aria-selected="false" data-target="service1">Research strategy consulting</button>
-    </div>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html" aria-current="page">Services</a>
+      <a href="models.html">The models</a>
+    </nav>
   </div>
 </header>
 
-<main>
+<main class="wrap-wide">
 
-  <!-- TAB 1: HOW WE WORK -->
-  <section id="how" class="panel active wrap-wide" role="tabpanel">
+  <h1 class="hero-quote">
+    Pharma is full of data. <span class="accent">But not of data science.</span><br/>
+    We are here to change that.
+  </h1>
 
-    <p class="hero-quote">
-      Pharma is full of data. <span class="accent">But not of data science.</span><br/>
-      We are here to change that.
-    </p>
+  <p class="method-line">
+    To improve capabilities in <span class="ref">PharmaValueChain</span> we train and catalyse <span class="ref">Data Science Competencies</span> using <span class="ref">Training From the Back of the Room</span> practices.
+  </p>
 
-    <p class="method-line">
-      To improve capabilities in <span class="ref">PharmaValueChain</span> we train and catalyse <span class="ref">Data Science Competencies</span> using <span class="ref">Training From the Back of the Room</span> practices.
-    </p>
+  <h2>What we offer</h2>
+  <p class="lede" style="font-size:15px">
+    Two families of engagement, grounded in the same three reference models. One is fully designed and running today; the rest are in design.
+  </p>
 
-    <h2>Three reference models</h2>
-    <p class="lede" style="font-size:15px">
-      The CPDSE advantage is consistency. Every engagement, regardless of customer type, is grounded in three reference models.
-    </p>
-    <div class="grid-3">
-      <div class="card">
-        <div class="kicker">Pharma</div>
-        <h3>Pharma Value Chain Model</h3>
-        <p>The 15 stages from target identification to market access. We map each customer to the stage(s) they operate in. <em>v0.1.0 covers 6 of 15.</em></p>
-      </div>
-      <div class="card">
-        <div class="kicker">Data Science</div>
-        <h3>PDS Competence Model</h3>
-        <p>Seven domains — Computing &amp; Programming, Data Acquisition &amp; Management, Ethics, Legislation &amp; Privacy, Exploration, Mining &amp; Analysis, ML &amp; AI, Mathematics &amp; Statistics, Visualization &amp; Presentation — over 30 sub-areas. Self-rated L1–L5.</p>
-      </div>
-      <div class="card">
-        <div class="kicker">Education</div>
-        <h3>Training from the Back of the Room</h3>
-        <p>Sharon L. Bowman's pedagogical framework — the <strong>4Cs</strong> (Connections, Concepts, Concrete Practice, Conclusions) and the <strong>Six Trumps</strong> brain-based principles. The reference behind our workshop design.</p>
-      </div>
+  <h3 style="margin:28px 0 4px; color:var(--sage); font-size:13px; letter-spacing:.1em; text-transform:uppercase;">Research</h3>
+  <p style="font-size:14px; color:var(--muted); margin:0 0 12px;">For researchers, research groups, and departments.</p>
+  <div class="grid-2">
+    <div class="card">
+      <div class="kicker">Research</div>
+      <h3>Research &amp; DS Strategy <span class="chip ready">available</span></h3>
+      <p>Find the data science gaps that matter — and three things to do about them. A fixed-scope diagnosis with a strategy brief and roadmap. <a href="#research-strategy">See details ↓</a></p>
     </div>
-
-    <h2>Three workflow types</h2>
-    <p class="lede" style="font-size:15px">
-      Customer-facing work is organised into three workflow types — <strong>Research</strong>, <strong>Educational</strong>, and <strong>Internal self-improvement</strong> — all running on the same value stream and the same three reference models. They group five distinct customer triggers. Today only the Research &amp; DS Strategy workflow is fully written up.
-    </p>
-    <table class="journeys">
-      <thead>
-        <tr><th>Type</th><th>Customer trigger</th><th>Workflow &amp; output</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td rowspan="2"><span class="svc">Research</span></td>
-          <td>"My research group wants to make better use of PDS."</td>
-          <td>Research &amp; DS Strategy — <span class="ready">recommendation document with commitments</span></td>
-        </tr>
-        <tr>
-          <td>"I have a specific research question and need help."</td>
-          <td>Specific Research Consulting <span class="stub">in design</span> — PDS resource on an agreed workplan</td>
-        </tr>
-        <tr>
-          <td rowspan="3"><span class="svc">Educational</span></td>
-          <td>"My course doesn't have enough modern PDS."</td>
-          <td>Course Upgrade <span class="stub">in design</span> — upgrade plan + AI inspiration material</td>
-        </tr>
-        <tr>
-          <td>"Our staff needs new skills."</td>
-          <td>Staff Upskilling <span class="stub">in design</span> — clarity on what to learn and how</td>
-        </tr>
-        <tr>
-          <td>"We need a new course with lots of PDS."</td>
-          <td>New Course Creation <span class="stub">in design</span> — PDS resource onboarded to course structure and flow</td>
-        </tr>
-        <tr>
-          <td><span class="svc">Internal</span></td>
-          <td>CPDSE itself</td>
-          <td>Onboarding &amp; infrastructure building <span class="stub">stub</span></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p style="margin-top:32px; color: var(--muted);">
-      The deepest write-up today is the <strong>Research &amp; DS Strategy</strong> workflow. <a href="#" data-jump="service1">See the next tab →</a>
-    </p>
-  </section>
-
-  <!-- TAB 2: RESEARCH STRATEGY CONSULTING -->
-  <section id="service1" class="panel wrap" role="tabpanel">
-
-    <p class="breadcrumb">Research · Research &amp; DS Strategy · A CPDSE engagement · <a href="#" data-jump="how">See How we work for the full picture</a></p>
-
-    <div class="subtabs" role="tablist">
-      <button class="subtab" role="tab" aria-selected="true" data-subtarget="groups">For research groups</button>
-      <button class="subtab" role="tab" aria-selected="false" data-subtarget="consultants">For consultants</button>
+    <div class="card">
+      <div class="kicker">Research</div>
+      <h3>Specific Research Consulting <span class="chip design">in design</span></h3>
+      <p>Time-based help on a concrete research question, working to an agreed workplan.</p>
     </div>
+  </div>
 
-    <!-- SUBTAB: For Research Groups -->
-    <section id="groups" class="subpanel active" role="tabpanel">
-      <h1>Find the data science gaps that matter — and three things to do about them.</h1>
-      <p class="lede">A fixed-scope engagement, ~4 weeks end-to-end. You finish with a strategy brief, a roadmap, and three concrete commitments your group has agreed to.</p>
-      <a href="mailto:morten.lindow@sund.ku.dk?subject=CPDSE%20intake%20call" class="cta">Request an intake call</a>
+  <h3 style="margin:28px 0 4px; color:var(--sage); font-size:13px; letter-spacing:.1em; text-transform:uppercase;">Educational</h3>
+  <p style="font-size:14px; color:var(--muted); margin:0 0 12px;">For teachers, course owners, curriculum leaders, and their staff.</p>
+  <div class="grid-3">
+    <div class="card">
+      <div class="kicker">Educational</div>
+      <h3>Course Upgrade <span class="chip design">in design</span></h3>
+      <p>Add modern PDS to an existing course — an upgrade plan plus AI-generated inspiration material, with good didactics.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">Educational</div>
+      <h3>Staff Upskilling <span class="chip design">in design</span></h3>
+      <p>Build new PDS skills in teaching staff — clarity on what to learn and how.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">Educational</div>
+      <h3>New Course Creation <span class="chip design">in design</span></h3>
+      <p>Design a new, PDS-rich course from the ground up.</p>
+    </div>
+  </div>
 
-      <h2>What you get</h2>
-      <div class="grid-3">
-        <div class="card">
-          <div class="kicker">Diagnosis</div>
-          <h3>A gap map</h3>
-          <p>Structural vs technical gaps across the 7 CPDSE competency areas — calibrated to your stage in the pharma value chain.</p>
-        </div>
-        <div class="card">
-          <div class="kicker">Roadmap</div>
-          <h3>Three horizons</h3>
-          <p>Quick wins (next 4 weeks), strategic moves (3–6 months), and a horizon view (18–24 months).</p>
-        </div>
-        <div class="card">
-          <div class="kicker">Artefact</div>
-          <h3>Strategy brief</h3>
-          <p>A short, group-specific Word document. Handed to you at Workshop 1. Yours to keep, share, or ignore.</p>
-        </div>
-      </div>
+  <!-- FEATURED OFFERING -->
+  <h2 id="research-strategy">Featured: Research &amp; DS Strategy</h2>
+  <p class="lede">A fixed-scope engagement, ~4 weeks end-to-end. You finish with a strategy brief, a roadmap, and three concrete commitments your group has agreed to.</p>
+  <a href="mailto:morten.lindow@sund.ku.dk?subject=CPDSE%20intake%20call" class="cta">Request an intake call</a>
 
-      <h2>Structural before technical</h2>
-      <p>Most groups expect a list of tools to learn. The higher-leverage moves are usually structural: reproducibility, data management, how knowledge is distributed across the team. Fix one structural gap and every research thread benefits — fix one technical gap and one method gets faster. We name both, and we tell you which is which.</p>
+  <h3 style="margin-top:40px; font-size:20px; color:var(--forest);">What you get</h3>
+  <div class="grid-3">
+    <div class="card">
+      <div class="kicker">Diagnosis</div>
+      <h3>A gap map</h3>
+      <p>Structural vs technical gaps across the CPDSE competency domains — calibrated to your stage in the pharma value chain.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">Roadmap</div>
+      <h3>Three horizons</h3>
+      <p>Quick wins (next 4 weeks), strategic moves (3–6 months), and a horizon view (18–24 months).</p>
+    </div>
+    <div class="card">
+      <div class="kicker">Artefact</div>
+      <h3>Strategy brief</h3>
+      <p>A short, group-specific Word document. Handed to you at Workshop 1. Yours to keep, share, or ignore.</p>
+    </div>
+  </div>
 
-      <h2>What it costs you</h2>
-      <ul class="cost-list">
-        <li><span>Intake questionnaire (async)</span><span class="time">~30 min</span></li>
-        <li><span>Meeting 1 — walkthrough &amp; corrections</span><span class="time">1 h</span></li>
-        <li><span>Workshop 1 — diagnosis &amp; roadmap</span><span class="time">2 h</span></li>
-        <li><span>Workshop 2 — final brief</span><span class="time">1.5 h</span></li>
-        <li><span>Total group time over ~4 weeks</span><span class="time">~5 h</span></li>
-      </ul>
+  <h3 style="margin-top:36px; font-size:20px; color:var(--forest);">Structural before technical</h3>
+  <p style="max-width:720px;">Most groups expect a list of tools to learn. The higher-leverage moves are usually structural: reproducibility, data management, how knowledge is distributed across the team. Fix one structural gap and every research thread benefits — fix one technical gap and one method gets faster. We name both, and we tell you which is which.</p>
 
-      <h2>Who it's for</h2>
-      <p>Pharma-adjacent academic research groups at any value-chain stage — from target identification to pharmacoepidemiology. Especially useful if you're a new PI, your group is expanding, you're planning a grant, or you've thought "we know we should be doing more with our data, but we don't know where to start."</p>
+  <h3 style="margin-top:36px; font-size:20px; color:var(--forest);">What it costs you</h3>
+  <ul class="cost-list">
+    <li><span>Intake questionnaire (async)</span><span class="time">~30 min</span></li>
+    <li><span>Meeting 1 — walkthrough &amp; corrections</span><span class="time">1 h</span></li>
+    <li><span>Workshop 1 — diagnosis &amp; roadmap</span><span class="time">2 h</span></li>
+    <li><span>Workshop 2 — final brief</span><span class="time">1.5 h</span></li>
+    <li><span>Total group time over ~4 weeks</span><span class="time">~5 h</span></li>
+  </ul>
 
-      <h2>FAQ</h2>
-      <details>
-        <summary>Is this an assessment or coaching?</summary>
-        <p>Diagnosis and roadmap. Implementation is on you — or, if useful, on a follow-on engagement (Specific Research Consulting).</p>
-      </details>
-      <details>
-        <summary>Who sees the brief?</summary>
-        <p>Only your group, unless you choose to share it. CPDSE keeps a meta-record of what we learned about our own reference model, never your specifics.</p>
-      </details>
-      <details>
-        <summary>What if our work doesn't fit your reference model?</summary>
-        <p>That's a flag we actively want. We mark it <em>[OUTSIDE MODEL]</em> or <em>[BEYOND REFERENCE]</em> — both feed back into the model and improve the next engagement.</p>
-      </details>
+  <h3 style="margin-top:36px; font-size:20px; color:var(--forest);">Who it's for</h3>
+  <p style="max-width:720px;">Pharma-adjacent academic research groups at any value-chain stage — from target identification to pharmacoepidemiology. Especially useful if you're a new PI, your group is expanding, you're planning a grant, or you've thought "we know we should be doing more with our data, but we don't know where to start."</p>
 
-      <a href="mailto:morten.lindow@sund.ku.dk?subject=CPDSE%20intake%20call" class="cta">Request an intake call</a>
-    </section>
+  <h3 style="margin-top:36px; font-size:20px; color:var(--forest);">FAQ</h3>
+  <details>
+    <summary>Is this an assessment or coaching?</summary>
+    <p>Diagnosis and roadmap. Implementation is on you — or, if useful, on a follow-on engagement (Specific Research Consulting).</p>
+  </details>
+  <details>
+    <summary>Who sees the brief?</summary>
+    <p>Only your group, unless you choose to share it. CPDSE keeps a meta-record of what we learned about our own reference model, never your specifics.</p>
+  </details>
+  <details>
+    <summary>What if our work doesn't fit your reference model?</summary>
+    <p>That's a flag we actively want. We mark it <em>[OUTSIDE MODEL]</em> or <em>[BEYOND REFERENCE]</em> — both feed back into the model and improve the next engagement.</p>
+  </details>
 
-    <!-- SUBTAB: For Consultants -->
-    <section id="consultants" class="subpanel" role="tabpanel">
-      <h1>Running an engagement</h1>
-      <p class="lede">A human-in-the-loop pipeline. Four prompt steps, two workshops, ~7–8 hours of consultant time per group.</p>
+  <!-- MODELS TEASER -->
+  <h2>Grounded in three reference models</h2>
+  <p class="lede" style="font-size:15px">
+    The CPDSE advantage is consistency. Every engagement, whatever the type, is grounded in three reference models — <em>Where × What × How</em>.
+  </p>
+  <div class="grid-3">
+    <div class="card">
+      <div class="kicker">Where</div>
+      <h3>Pharma Value Chain</h3>
+      <p>Which stage of the drug pipeline you operate in.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">What</div>
+      <h3>PDS Competence Model</h3>
+      <p>Which data-science capabilities matter, and at what level.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">How</div>
+      <h3>Pedagogic Practices</h3>
+      <p>How we build those capabilities, drawing on Bowman's 4Cs.</p>
+    </div>
+  </div>
+  <p style="margin-top:18px;"><a href="models.html">Explore the three models →</a></p>
 
-      <h2>The pipeline at a glance</h2>
-      <div class="pipeline">
-        Passive collection (lab site, grants, pubs, READMEs) (1h)<br/>
-        &nbsp;&nbsp;<span class="arrow">→</span> Active intake: questionnaire async + Meeting 1 interview (1h)<br/>
-        &nbsp;&nbsp;<span class="arrow">→</span> Step 1 <span class="arrow">→</span> Step 2 <span class="arrow">→</span> Step 3 <span class="arrow">→</span> Step 4<br/>
-        &nbsp;&nbsp;<span class="arrow">→</span> QA (1h) <span class="arrow">→</span> Workshop 1 (2h) <span class="arrow">→</span> Workshop 2 (1.5h)
-        <span class="total">Total consultant time: ~7–8h</span>
-      </div>
-
-      <h2>How to run each step</h2>
-      <p class="lede" style="font-size:15px">
-        Recommended setup: clone the repo locally and run Claude Code from the project root. Steps 1 &amp; 2 can also be run in claude.ai with file attachments — useful when you need a long context window for messy passive material. Save every output as a file in <code>engagements/ENG###-{LastName}/</code> before moving to the next step.
-      </p>
-
-      <h3 style="margin-top:24px">Inputs: passive vs active</h3>
-      <p style="font-size:14px; color:var(--muted)">The engagement starts with both. Pull the passive material before Meeting 1 so you can ask sharper questions; treat the active inputs as the source of truth where they conflict with the passive ones.</p>
-      <div class="inputs-grid">
-        <div class="inputs-card">
-          <span class="lab">Passive</span>
-          <ul>
-            <li>Lab website / group page</li>
-            <li>Recent grant abstracts</li>
-            <li>Last ~3 years of publications</li>
-            <li>GitHub READMEs &amp; pinned repos</li>
-            <li>Group's own internal docs if shared</li>
-          </ul>
-        </div>
-        <div class="inputs-card">
-          <span class="lab">Active</span>
-          <ul>
-            <li>Intake questionnaire (PI fills async)</li>
-            <li>Meeting 1: walkthrough + corrections</li>
-            <li>Self-rating L1–L5 across the 7 PDS domains</li>
-            <li>Team roster with named bandwidth</li>
-          </ul>
-        </div>
-      </div>
-
-      <div style="background: var(--ivory); border-left: 3px solid var(--gold); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 20px; font-size: 14px; margin: 16px 0 28px;">
-        <strong style="color: var(--forest);">Before you start:</strong> create the engagement folder and drop all source material in.
-        <div class="run" style="margin-top:10px;">
-<span class="comment"># in your terminal</span>
-mkdir -p engagements/ENG###-LastName/{inputs,outputs}
-<span class="comment"># place into inputs/: completed intake .txt, CV PDFs, lab website scrape,</span>
-<span class="comment"># publication list, prior grant abstracts, group's GitHub README(s)</span>
-claude          <span class="comment"># launch Claude Code here, with the repo as cwd</span>
-        </div>
-      </div>
-
-      <!-- STEP 1 -->
-      <div class="step-block">
-        <div class="step-head">
-          <span class="num">STEP 01</span>
-          <h3>Group Profile Synthesis</h3>
-          <span class="tag">Mirror · factual only</span>
-        </div>
-        <div class="row"><div class="k">Prompt</div><div class="v"><code>services/01-research-strategy/prompts/01-group-profile-synthesis.md</code></div></div>
-        <div class="row"><div class="k">Inputs</div><div class="v">Completed intake questionnaire + everything in <code>inputs/</code> (CVs, website, pubs, READMEs).</div></div>
-        <div class="row"><div class="k">Output</div><div class="v"><code>outputs/step1-group-profile.md</code></div></div>
-        <div class="row"><div class="k">Constraint</div><div class="v">Zero evaluative language. No gap judgements. Flag missing data with <code>[DATA GAP]</code>.</div></div>
-
-        <p style="margin-top:14px; font-size:14px; color:var(--muted);"><strong style="color:var(--ink);">In Claude Code:</strong></p>
-        <div class="run">
-<span class="prompt">&gt; </span>Read the prompt at services/01-research-strategy/prompts/01-group-profile-synthesis.md
-and apply it to all material in engagements/ENG042-Hansen/inputs/.
-Write the result to engagements/ENG042-Hansen/outputs/step1-group-profile.md.
-Follow the prompt's factual-only constraint strictly — if you find yourself
-characterising quality, capability, or potential, stop and rewrite as fact.
-Mark every gap in source material as [DATA GAP].
-        </div>
-
-        <p style="margin-top:14px; font-size:14px; color:var(--muted);"><strong style="color:var(--ink);">Alternative — claude.ai:</strong> create a new chat, attach the prompt .md and all input files, paste "Apply this prompt to the attached material. Output as markdown." Save the response manually to <code>step1-group-profile.md</code>.</p>
-
-        <div class="checkpoint">
-          <strong>Human checkpoint (Meeting 1).</strong> Read Step 1 line by line with the client. Mark corrections inline. Do <em>not</em> proceed to Step 2 until corrections are folded back in — Step 1 is the factual base every later step rests on.
-        </div>
-      </div>
-
-      <!-- STEP 2 -->
-      <div class="step-block">
-        <div class="step-head">
-          <span class="num">STEP 02</span>
-          <h3>DS Landscape Analysis</h3>
-          <span class="tag">Map · value chain</span>
-        </div>
-        <div class="row"><div class="k">Prompt</div><div class="v"><code>services/01-research-strategy/prompts/02-ds-landscape-analysis.md</code></div></div>
-        <div class="row"><div class="k">Inputs</div><div class="v">Corrected <code>step1-group-profile.md</code> + <code>reference/pharma-value-chain-model/</code> + <code>reference/competency-model/</code></div></div>
-        <div class="row"><div class="k">Output</div><div class="v"><code>outputs/step2-ds-landscape.md</code> (value chain map, comparable-group landscape, competency snapshot L1–L5 across the 7 PDS domains / 30 sub-areas)</div></div>
-        <div class="row"><div class="k">Flags</div><div class="v"><code>[BEYOND REFERENCE]</code> if methods aren't in the reference doc. <code>[OUTSIDE MODEL]</code> if work doesn't map to any PDS sub-area.</div></div>
-
-        <p style="margin-top:14px; font-size:14px; color:var(--muted);"><strong style="color:var(--ink);">In Claude Code:</strong></p>
-        <div class="run">
-<span class="prompt">&gt; </span>Run step 2 for ENG042-Hansen.
-Use prompt: services/01-research-strategy/prompts/02-ds-landscape-analysis.md
-Inputs:
-  - engagements/ENG042-Hansen/outputs/step1-group-profile.md (corrected)
-  - reference/pharma-value-chain-model/Pharma_Value_Chain_Model.md
-Write the output to engagements/ENG042-Hansen/outputs/step2-ds-landscape.md.
-
-Be aggressive about flagging [BEYOND REFERENCE] and [OUTSIDE MODEL] —
-those flags are the meta-output. Do not stretch a method to fit the reference;
-flag it instead.
-        </div>
-
-        <div class="checkpoint">
-          <strong>Consultant review.</strong> Skim for over-confident claims about "what comparable groups do." If a comparable-group claim isn't grounded in something concrete, ask Claude to either ground it or remove it before Step 3.
-        </div>
-      </div>
-
-      <!-- STEP 3 -->
-      <div class="step-block">
-        <div class="step-head">
-          <span class="num">STEP 03</span>
-          <h3>Gap Assessment</h3>
-          <span class="tag">Diagnose · structural vs technical</span>
-        </div>
-        <div class="row"><div class="k">Prompt</div><div class="v"><code>services/01-research-strategy/prompts/03-gap-assessment.md</code></div></div>
-        <div class="row"><div class="k">Inputs</div><div class="v">Steps 1 + 2 outputs.</div></div>
-        <div class="row"><div class="k">Output</div><div class="v"><code>outputs/step3-gap-assessment.md</code> — every gap classified Structural / Technical, scored on Impact / Effort / Urgency, with a one-line rationale per axis.</div></div>
-        <div class="row"><div class="k">Constraint</div><div class="v">First gap judgements in the pipeline. Every gap must cite the source paragraph in Step 1 or 2.</div></div>
-
-        <p style="margin-top:14px; font-size:14px; color:var(--muted);"><strong style="color:var(--ink);">In Claude Code:</strong></p>
-        <div class="run">
-<span class="prompt">&gt; </span>Run step 3 for ENG042-Hansen.
-Prompt: services/01-research-strategy/prompts/03-gap-assessment.md
-Inputs: outputs/step1-group-profile.md, outputs/step2-ds-landscape.md
-Output: outputs/step3-gap-assessment.md
-
-Format gaps as a table with columns:
-  Type (Structural/Technical) | Gap | Competency | Impact (H/M/L) | Effort (H/M/L) | Urgency (Active/Latent) | Source
-
-Aim for ~60% structural / ~40% technical unless the data clearly says otherwise.
-Every gap must cite a specific paragraph from step 1 or step 2.
-If you can't cite a source, drop the gap.
-        </div>
-
-        <div class="checkpoint">
-          <strong>Sanity check.</strong> Read each gap aloud. If it could apply to any pharma research group, it's too generic — ask Claude to either make it specific to this group or remove it.
-        </div>
-      </div>
-
-      <!-- STEP 4 -->
-      <div class="step-block">
-        <div class="step-head">
-          <span class="num">STEP 04</span>
-          <h3>Recommendation Synthesis</h3>
-          <span class="tag">Recommend · capacity-calibrated</span>
-        </div>
-        <div class="row"><div class="k">Prompt</div><div class="v"><code>services/01-research-strategy/prompts/04-recommendation-synthesis.md</code></div></div>
-        <div class="row"><div class="k">Inputs</div><div class="v">Steps 1 + 2 + 3 outputs.</div></div>
-        <div class="row"><div class="k">Output</div><div class="v"><code>outputs/step4-recommendations.md</code> — quick wins (4 wks) / strategic (3–6 mo) / horizon (18–24 mo) + Competency Model Note.</div></div>
-        <div class="row"><div class="k">Constraint</div><div class="v">Each recommendation names a specific owner from the team and an effort estimate in person-days/weeks. Total quick-win effort ≤ team's spare capacity over 4 weeks.</div></div>
-
-        <p style="margin-top:14px; font-size:14px; color:var(--muted);"><strong style="color:var(--ink);">In Claude Code:</strong></p>
-        <div class="run">
-<span class="prompt">&gt; </span>Run step 4 for ENG042-Hansen.
-Prompt: services/01-research-strategy/prompts/04-recommendation-synthesis.md
-Inputs: outputs/step1, step2, step3
-Output: outputs/step4-recommendations.md
-
-Hard rule: every recommendation gets a named owner from the actual team
-(see Step 1 team roster) and a person-days/weeks estimate.
-Sum the quick-win effort. If it exceeds the team's plausible 4-week
-spare capacity, cut the lowest-impact items until it fits.
-
-"A recommendation that exceeds capacity is a wish, not a recommendation."
-
-End with a Competency Model Note summarising every [BEYOND REFERENCE] and
-[OUTSIDE MODEL] flag from steps 2–3 — this is the meta-output for CPDSE,
-not for the client.
-        </div>
-
-        <div class="checkpoint">
-          <strong>QA pass (~1h).</strong> Read all four outputs end-to-end as if you were the PI. Watch for: (1) Step 1 leaking judgements, (2) Step 4 quick wins requiring something from Step 4 strategic to be true first, (3) the PI being assigned more than one quick win.
-        </div>
-      </div>
-
-      <h2>Generating the workshop artefacts</h2>
-      <p>Once Steps 1–4 are signed off, generate the strategy brief and Miro frames from the same outputs:</p>
-      <div class="run">
-<span class="prompt">&gt; </span>Generate the strategy brief .docx for ENG042-Hansen using
-output-templates/strategy-brief-template.docx and the four step outputs.
-Use the docx.js script at scripts/brief.js. Save to outputs/strategy-brief.docx.
-
-<span class="prompt">&gt; </span>Generate the Miro board PDF for Workshop 1 using
-scripts/workshop1_board.py with ENG042-Hansen as input.
-Save to outputs/workshop1_miro_frames.pdf.
-      </div>
-      <p style="font-size:14px; color:var(--muted); margin-top:10px;">
-        Heads-up: the docx.js compact <code>})]}]},</code> pattern breaks Node — expand into separate <code>new TableRow</code> blocks. <code>PageNumberElement</code>, not <code>PageNumber</code>, in <code>docx@9.6.1</code>.
-      </p>
-
-      <h2>Design principles</h2>
-      <ul class="principles">
-        <li><strong>Step 1 is factual-only.</strong> Gap judgements live in Step 3, never earlier.</li>
-        <li><strong>Structural vs technical</strong> is the analytical frame, not a label. It shifts the conversation off "tools to learn."</li>
-        <li><strong>[BEYOND REFERENCE]</strong> and <strong>[OUTSIDE MODEL]</strong> flags are first-class outputs — they improve the model, not error states.</li>
-        <li><em>"A recommendation that exceeds capacity is a wish, not a recommendation."</em></li>
-        <li><strong>The brief is handed over at the end of Workshop 1</strong>, not before. Workshop 1 produces shared ownership of the diagnosis; the brief is a record, not a script.</li>
-      </ul>
-
-      <h2>Workshop 1 facilitation</h2>
-      <p style="color:var(--muted); font-size:15px; max-width:680px;">
-        Two hours, six blocks. Designed around <strong>Know / Feel / Do</strong> and grounded in the <strong>4Cs of Training from the Back of the Room</strong> (Bowman): Connections, Concepts, Concrete Practice, Conclusions.
-      </p>
-      <div class="timing-strip">
-        <div><span class="label">Open</span><span class="time-range">00:00–10</span></div>
-        <div><span class="label">Mirror</span><span class="time-range">00:10–35</span></div>
-        <div><span class="label">Landscape</span><span class="time-range">00:35–01:00</span></div>
-        <div><span class="label">Gaps</span><span class="time-range">01:00–30</span></div>
-        <div><span class="label">Roadmap</span><span class="time-range">01:30–50</span></div>
-        <div><span class="label">Close</span><span class="time-range">01:50–02:00</span></div>
-      </div>
-      <p style="color:var(--muted); font-size:14px; margin-top:8px;">Materials: 4-frame Miro board PDF + facilitation guide .docx. Both live in <code>output-templates/</code>.</p>
-
-      <h3 style="margin-top:28px">Three scripted moments to rehearse</h3>
-      <div class="scripted">"Which rating is most wrong, and in which direction?"</div>
-      <div class="scripted">"Emma, this card is specifically about you. Is the 12-month timeline accurate?"</div>
-      <div class="scripted">"Who will <em>actually do</em> this — not who is responsible for it?"</div>
-    </section>
-
-  </section>
+  <p style="margin-top:32px;"><a href="mailto:morten.lindow@sund.ku.dk?subject=CPDSE%20intake%20call" class="cta">Request an intake call</a></p>
 
 </main>
 
@@ -780,34 +163,13 @@ Save to outputs/workshop1_miro_frames.pdf.
       <img src="assets/logo-square-forest.svg" alt="" onerror="this.style.display='none'" />
       CPDSE · UCPH / SDU
     </span>
-    <span>Pipeline v0.1.0 · <a href="mailto:morten.lindow@sund.ku.dk">contact</a></span>
+    <span class="footer-links">
+      <a href="models.html">The models</a>
+      <a class="quiet" href="operate.html">For consultants →</a>
+      <a href="mailto:morten.lindow@sund.ku.dk">contact</a>
+    </span>
   </div>
 </footer>
 
-<script>
-  // Top-level tabs
-  const tabs = document.querySelectorAll('.tab');
-  const panels = document.querySelectorAll('main > .panel');
-  function activateTab(target) {
-    tabs.forEach(x => x.setAttribute('aria-selected', x.dataset.target === target ? 'true' : 'false'));
-    panels.forEach(p => p.classList.toggle('active', p.id === target));
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }
-  tabs.forEach(t => t.addEventListener('click', () => activateTab(t.dataset.target)));
-
-  // Inner sub-tabs (only inside service1)
-  const subtabs = document.querySelectorAll('.subtab');
-  const subpanels = document.querySelectorAll('.subpanel');
-  subtabs.forEach(t => t.addEventListener('click', () => {
-    subtabs.forEach(x => x.setAttribute('aria-selected', x === t ? 'true' : 'false'));
-    subpanels.forEach(p => p.classList.toggle('active', p.id === t.dataset.subtarget));
-  }));
-
-  // Cross-tab jump links
-  document.querySelectorAll('a[data-jump]').forEach(a => a.addEventListener('click', (e) => {
-    e.preventDefault();
-    activateTab(a.dataset.jump);
-  }));
-</script>
 </body>
 </html>
