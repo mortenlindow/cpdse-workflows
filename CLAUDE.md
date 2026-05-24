@@ -257,7 +257,7 @@ and customer triggers.
    model version changes):
    - `CLAUDE.md` — "The CPDSE PDS Competence Model" section above
    - `reference/cpdse-value-stream-v0.1.0.md` — three-models table
-   - `reference/pharma-value-chain-model/` — per-substep competency mappings (separate submodule)
+   - `reference/pharma-value-chain-model/` — per-substep competency mappings (separate model)
    - `reference/competency-model-migration-crosswalk.md` — old→new crosswalk + scale
    - `services/01-research-strategy/prompts/02-ds-landscape-analysis.md` — competency snapshot construction
    - `services/01-research-strategy/prompts/03-gap-assessment.md` — gap-to-competency mapping
@@ -267,17 +267,21 @@ and customer triggers.
    - Any populated engagement (`engagements/ENG###-*/`) — new engagements use the current model; finished engagements stay frozen at the version they were run under (note version in their engagement-log entry).
 
 3. **Training from the Back of the Room** — Sharon L. Bowman's pedagogical
-   framework. The reference behind our workshop design. The core construct is
-   the **4Cs** of training: **Connections** (anchor learners to prior
-   knowledge and to each other), **Concepts** (deliver new content in short
-   bursts), **Concrete Practice** (learners apply, not the trainer), and
-   **Conclusions** (learners summarise and commit to action). Workshop 1's
-   six-block timing should map cleanly onto these — currently implicit, not
-   yet explicit in the facilitation guide.
-   - **TODO:** flesh out the 4Cs → Workshop 1 block mapping in the
-     facilitation guide. Note that "Mirror" maps to Connections, "Landscape"
-     and "Gaps" carry Concepts + Concrete Practice (gap card exercise is the
-     Concrete Practice anchor), "Roadmap" + "Close" handle Conclusions.
+   framework. The reference behind our workshop design. Lives at
+   `reference/pedagogic-practices.md` (v0.1.0). Two constructs:
+   - the **4Cs** of instructional design: **Connections** (anchor learners to
+     prior knowledge and to each other), **Concepts** (deliver new content in
+     short bursts), **Concrete Practice** (learners apply, not the trainer), and
+     **Conclusions** (learners summarise and commit to action);
+   - the **Six Trumps** brain-based principles (movement / talking / images /
+     writing / shorter / different trumps their opposite) — the design check
+     applied within each block.
+
+   The doc includes the **4Cs → Workshop 1 block mapping** (Mirror = Connections,
+   Landscape = Concepts, Gaps = Concepts + Concrete Practice with the gap-card
+   exercise as the Concrete Practice anchor, Roadmap + Close = Conclusions).
+   - **TODO:** propagate that mapping into the facilitation guide itself
+     (currently lives in the reference doc, not yet in the .docx).
 
 The unifying methodology line — *"To improve capabilities in PharmaValueChain
 we train and catalyse Data Science Competencies using Training From the Back
@@ -501,8 +505,8 @@ without a human verification layer.
   prompts 02–04 bumped to v0.2.0 for the PDS model swap)
 - [x] Intake questionnaire blank template (v0.1.0; v0.2.0 for PDS model swap)
 - [x] Pharma value chain reference doc (v0.1.1, 6 stages)
-- [x] **Swap in the PDS Competence Model** (2026-05-24) — vendored as a git
-  submodule at `reference/competency-model/`; all sync points re-synced;
+- [x] **Swap in the PDS Competence Model** (2026-05-24) — kept at
+  `reference/competency-model/` (briefly a submodule, then inlined); all sync points re-synced;
   `reference/competency-model-migration-crosswalk.md` records the old→new map
 - [x] ENG001-SIM — simulated test engagement, full pipeline run
 - [x] Step 3 output for ENG001-SIM
@@ -516,8 +520,9 @@ without a human verification layer.
 
 ## What is NOT done yet
 
-- [ ] Flesh out the Training from the Back of the Room reference: explicit
-  4Cs → Workshop 1 block mapping, written into the facilitation guide
+- [~] Flesh out the Training from the Back of the Room reference — DONE as
+  `reference/pedagogic-practices.md` (v0.1.0: 4Cs, Six Trumps, 4Cs → Workshop 1
+  block mapping). Remaining: write the mapping into the facilitation guide .docx.
 - [ ] Promote `reference/value streams - DRAFT.pdf` to a versioned reference
   document — **DONE** as `reference/cpdse-value-stream-v0.1.0.md`. Remaining
   work: resolve `[?]` cells and bump to v0.2.0.

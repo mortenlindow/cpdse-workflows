@@ -5,7 +5,7 @@
 # Author: AI draft / MO review
 # Notes: Initial draft — not yet tested on a real engagement.
 #        v0.2.0 swaps the 7 placeholder sub-areas for the PDS Competence Model
-#        (7 domains / 30 sub-areas, vendored at reference/competency-model/).
+#        (7 domains / 30 sub-areas, kept at reference/competency-model/).
 ---
 
 ## PURPOSE

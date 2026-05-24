@@ -1,7 +1,7 @@
 # Competency model migration crosswalk — v0.1.0 → PDS Competence Model
 
 This maps the old placeholder competency model (7 flat sub-areas, 0–4 self-rating)
-onto the **PDS Competence Model** now vendored at `reference/competency-model/`
+onto the **PDS Competence Model** now kept at `reference/competency-model/`
 (7 domains → 30 sub-areas → ~123 competencies, rated L1–L5).
 
 Use this when:
