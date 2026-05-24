@@ -32,9 +32,9 @@ section below and `services/README.md`.
 ### Customer-facing workflow types
 
 CPDSE's customer-facing work is organised into **three workflow types**, all
-running on the same 7-stage value stream (customer problem → input → our work →
-output → impact → value for us → overall purpose) and the same three reference
-models. See `services/README.md` for the hub.
+running on the same value stream and the same three reference models. See
+`services/README.md` for the hub, and the root `README.md` ("Workflow types &
+customer journeys") for the full value stream.
 
 | Type | Customers | Workflows (status) |
 |---|---|---|
@@ -42,9 +42,8 @@ models. See `services/README.md` for the hub.
 | **Educational** | teachers, course owners, curriculum leaders, staff | Course Upgrade; Staff Upskilling; New Course Creation (in design) |
 | **Internal self-improvement** | CPDSE itself | onboarding; infrastructure building (**stub**) |
 
-These types group the **five customer triggers** captured on the value-stream
-board (still the granular source of truth in
-`reference/cpdse-value-stream-v0.1.0.md`):
+These types group the **five customer triggers** (the full per-journey value
+stream lives in the root `README.md`):
 
 | # | Trigger | Type / workflow |
 |---|---|---|
@@ -264,8 +263,7 @@ in `reference/README.md` or the service workflow.
    **Sync points** (everywhere the value chain model is referenced — keep in step
    when the model version changes):
    - `CLAUDE.md` — this entry + "Pharma value chain model" section below
-   - `README.md` — repository structure block
-   - `reference/cpdse-value-stream-v0.1.0.md` — three-models table
+   - `README.md` — repository structure block + "Reference models" table
    - `services/01-research-strategy/prompts/02-ds-landscape-analysis.md` — reference model input + [BEYOND REFERENCE] definition + paste block
    - `site/index.html` — reference-model card / tab copy
    - Any populated engagement (`engagements/ENG###-*/`) — new engagements use the current model version; finished engagements stay frozen (note version in their engagement-log entry).
@@ -278,7 +276,7 @@ in `reference/README.md` or the service workflow.
    **Sync points** (everywhere the model is referenced — keep in step when the
    model version changes):
    - `CLAUDE.md` — "The CPDSE PDS Competence Model" section above
-   - `reference/cpdse-value-stream-v0.1.0.md` — three-models table
+   - `README.md` — "Reference models" table
    - `reference/competency-model-migration-crosswalk.md` — old→new crosswalk + scale
    - `services/01-research-strategy/prompts/02-ds-landscape-analysis.md` — competency snapshot construction
    - `services/01-research-strategy/prompts/03-gap-assessment.md` — gap-to-competency mapping
@@ -545,9 +543,10 @@ without a human verification layer.
 - [~] Flesh out the Training from the Back of the Room reference — DONE as
   `reference/pedagogic-practices/` (v0.1.0: 4Cs, Six Trumps, 4Cs → Workshop 1
   block mapping). Remaining: write the mapping into the facilitation guide .docx.
-- [ ] Promote `reference/value streams - DRAFT.pdf` to a versioned reference
-  document — **DONE** as `reference/cpdse-value-stream-v0.1.0.md`. Remaining
-  work: resolve `[?]` cells and bump to v0.2.0.
+- [ ] Value stream — **DONE**: promoted from `reference/value streams - DRAFT.pdf`
+  and merged into the root `README.md` ("Workflow types & customer journeys"). The
+  seven-stages framing was dropped as confusing. Remaining: resolve the open
+  questions listed there (sparse Staff Upskilling intake, etc.).
 - [ ] Step 1 output for ENG001-SIM (group profile synthesis — only passive
   material versions exist; needs full combined version with questionnaire)
 - [ ] Step 2 output for ENG001-SIM (DS landscape — was synthesised in conversation

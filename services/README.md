@@ -40,5 +40,6 @@ a **stub** for now. See [`internal/`](internal/).
 > **Note (transitional):** under the current "light-touch" layout, the built
 > Research workflow stays at top level (`01-research-strategy/`) rather than under
 > a `research/` folder. If the portfolio grows, fold it into `research/` alongside
-> the others. The five customer journeys behind these types are detailed in
-> [`../reference/cpdse-value-stream-v0.1.0.md`](../reference/cpdse-value-stream-v0.1.0.md).
+> the others. The five customer journeys behind these types (the full value stream)
+> are detailed in the root [`../README.md`](../README.md) — "Workflow types &
+> customer journeys".

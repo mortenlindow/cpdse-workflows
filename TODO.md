@@ -28,4 +28,5 @@ Live, actionable items. The full backlog lives in CLAUDE.md ("What is NOT done y
       under it) once more than one workflow exists per type.
 
 ## Housekeeping
-- [ ] Resolve the `[?]` cells in `reference/cpdse-value-stream-v0.1.0.md`; bump to v0.2.0.
+- [ ] Resolve the value-stream open questions (now in the root `README.md` —
+      "Workflow types & customer journeys").

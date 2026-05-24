@@ -24,5 +24,5 @@ good didactics (the Pedagogic Practices reference model carries real weight here
 - **Pedagogic Practices** — design the course/teaching with the 4Cs + Six Trumps.
 
 See the portfolio overview in [`../README.md`](../README.md) and the underlying
-journeys in [`../../reference/cpdse-value-stream-v0.1.0.md`](../../reference/cpdse-value-stream-v0.1.0.md)
-(Journeys 1–3).
+journeys (Course Upgrade, Staff Upskilling, New Course Creation) in the root
+[`../../README.md`](../../README.md) — "Workflow types & customer journeys".
