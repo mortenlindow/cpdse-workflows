@@ -19,8 +19,8 @@ cpdse-service-workflows/
         workshop1-miro-frames.pdf      ← 4-frame PDF for Miro import
         workshop1-facilitation-guide.docx ← consultant session script
   reference/
-    competency-model/                  ← PDS Competence Model (git submodule)
-    pharma-value-chain-model/          ← Pharma Value Chain Model (git submodule)
+    competency-model/                  ← PDS Competence Model (reference model)
+    pharma-value-chain-model/          ← Pharma Value Chain Model (reference model)
   engagements/
     ENG001-MortenLindow/
       intake-questionnaire-ENG001-SIM.txt

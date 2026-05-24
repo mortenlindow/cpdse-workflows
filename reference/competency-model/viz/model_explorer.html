@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PDS Competency Model — Explorer</title>
+<style>
+  :root {
+    --bg: #fafafa;
+    --fg: #222;
+    --muted: #777;
+    --accent: #2c7fb8;
+    --accent-soft: #2c7fb822;
+    --border: #e2e2e2;
+    --card: #ffffff;
+    --target: #d97706;        /* L3 target highlight */
+    --target-soft: #d976060f;
+    --rung-bg: #f3f4f6;
+  }
+  * { box-sizing: border-box; }
+  body { font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; color: var(--fg); background: var(--bg); }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 24px 20px 80px; }
+
+  header.top h1 { font-size: 24px; margin: 0 0 4px; }
+  header.top .sub { color: var(--muted); font-size: 14px; }
+
+  /* --- concept band --- */
+  .concept { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px; margin: 20px 0; }
+  .concept .lede { margin: 0 0 14px; color: var(--fg); }
+  .concept .lede b { color: var(--accent); }
+  .ladder { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .rung { border: 1px solid var(--border); border-radius: 8px; padding: 10px; background: var(--bg); position: relative; }
+  .rung.target { border-color: var(--target); background: var(--target-soft); }
+  .rung .lvl { font-weight: 700; font-size: 13px; color: var(--accent); }
+  .rung.target .lvl { color: var(--target); }
+  .rung .nm { font-weight: 600; font-size: 13px; margin: 2px 0 4px; }
+  .rung .sh { font-size: 12px; color: var(--muted); }
+  .rung .tag-target { position: absolute; top: 8px; right: 8px; font-size: 10px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; color: var(--target); }
+  @media (max-width: 760px) { .ladder { grid-template-columns: 1fr 1fr; } }
+
+  /* --- in-practice pharma band --- */
+  .practice { background: linear-gradient(180deg, var(--accent-soft), transparent); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin: 0 0 24px; }
+  .practice .ph-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; }
+  .practice h2 { font-size: 15px; margin: 0; }
+  .practice .hint { color: var(--muted); font-size: 12px; }
+  .practice .shuffle { margin-left: auto; font: inherit; font-size: 12px; padding: 3px 10px; border: 1px solid var(--border); background: #fff; border-radius: 6px; cursor: pointer; }
+  .practice .shuffle:hover { background: #f0f0f0; }
+  .ph-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 760px) { .ph-grid { grid-template-columns: 1fr; } }
+  .ph-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 13px; }
+  .ph-card .ph-text { margin-bottom: 6px; }
+  .ph-card .ph-meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+
+  /* --- chips --- */
+  .chip { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; background: var(--rung-bg); color: var(--fg); border: 1px solid var(--border); white-space: nowrap; }
+  .chip.dom { background: var(--accent-soft); border-color: #2c7fb855; color: var(--accent); font-weight: 600; }
+  .chip.tag { cursor: pointer; }
+  .chip.tag:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .chip .lv { font-weight: 700; }
+
+  /* --- accordion --- */
+  h2.section { font-size: 16px; margin: 28px 0 12px; }
+  .domain { background: var(--card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px; overflow: hidden; }
+  .domain > .head { display: flex; align-items: center; gap: 10px; padding: 14px 16px; cursor: pointer; user-select: none; }
+  .domain > .head:hover { background: #fafafa; }
+  .domain > .head .nm { font-weight: 700; font-size: 16px; }
+  .domain > .head .count { color: var(--muted); font-size: 12px; }
+  .chev { transition: transform .15s ease; color: var(--muted); display: inline-block; width: 14px; }
+  .open > .head .chev, .open > summary .chev { transform: rotate(90deg); }
+
+  .body { display: none; padding: 0 16px 12px; }
+  .open > .body { display: block; }
+
+  .subarea { border-top: 1px solid var(--border); }
+  .subarea > .head { display: flex; align-items: center; gap: 10px; padding: 12px 6px; cursor: pointer; user-select: none; }
+  .subarea > .head:hover .nm { color: var(--accent); }
+  .subarea > .head .nm { font-weight: 600; }
+  .subarea > .head .count { color: var(--muted); font-size: 12px; }
+  .sa-body { display: none; padding: 4px 6px 14px; }
+  .subarea.open > .sa-body { display: block; }
+
+  .stack { font-size: 13px; color: var(--fg); background: var(--rung-bg); border-radius: 8px; padding: 8px 10px; margin-bottom: 12px; }
+  .stack .k { color: var(--muted); font-weight: 600; margin-right: 6px; }
+  .stack code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+
+  .ex-list { margin: 0 0 14px; padding: 0; list-style: none; }
+  .ex-list li { font-size: 13px; padding: 6px 0; border-bottom: 1px dashed var(--border); }
+  .ex-list li:last-child { border-bottom: 0; }
+  .ex-list .ex-text { margin-right: 8px; }
+  .ex-meta { display: inline-flex; flex-wrap: wrap; gap: 5px; vertical-align: middle; }
+
+  .comp { border-top: 1px solid var(--border); }
+  .comp > .head { display: flex; align-items: center; gap: 8px; padding: 9px 6px; cursor: pointer; user-select: none; }
+  .comp > .head:hover .nm { color: var(--accent); }
+  .comp > .head .id { font-family: ui-monospace, monospace; font-size: 11px; color: var(--muted); }
+  .comp > .head .nm { font-weight: 600; font-size: 14px; }
+  .comp-body { display: none; padding: 4px 6px 12px; }
+  .comp.open > .comp-body { display: block; }
+
+  .vrung { display: grid; grid-template-columns: 64px 1fr; gap: 10px; padding: 7px 0; border-bottom: 1px solid #f1f1f1; align-items: start; }
+  .vrung:last-child { border-bottom: 0; }
+  .vrung .badge { font-size: 12px; font-weight: 700; color: var(--accent); }
+  .vrung .badge .nm { display: block; font-weight: 500; font-size: 11px; color: var(--muted); }
+  .vrung.target { background: var(--target-soft); border-radius: 6px; }
+  .vrung.target .badge { color: var(--target); }
+  .vrung.na .desc { color: var(--muted); font-style: italic; }
+  .vrung.flash { animation: flash 1.4s ease; }
+  @keyframes flash { 0%,40% { background: #fde68a; } 100% { background: transparent; } }
+
+  .err { color: #c0392b; background: #fdecea; border: 1px solid #f5c6cb; padding: 12px 14px; border-radius: 8px; }
+  footer { margin-top: 30px; color: var(--muted); font-size: 12px; }
+  footer a, .top a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>PDS Competency Model</h1>
+  <div class="sub" id="subtitle"></div>
+</header>
+
+<section class="concept" id="concept"></section>
+
+<section class="practice" id="practice"></section>
+
+<h2 class="section">Browse the model</h2>
+<div id="accordion"></div>
+
+<footer>
+  Source: <code>PDS_Competence_Model_Full_Rethought.md</code> ·
+  full level rubric in <code>Level_Rubric.md</code>.
+  Same 5-level scale applies to every competency; L3 is the target working level.
+</footer>
+
+</div>
+
+<script>
+const state = { model: null };
+
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+// Render inline markdown `code` spans found in stack/description text.
+function mdCode(s) {
+  return esc(s).replace(/`([^`]+)`/g, "<code>$1</code>");
+}
+
+async function init() {
+  state.model = await fetchJSON("model.json");
+  renderSubtitle();
+  renderConcept();
+  renderPractice();
+  renderAccordion();
+}
+
+async function fetchJSON(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(`${url}: HTTP ${r.status}`);
+  return r.json();
+}
+
+function counts() {
+  const m = state.model;
+  const nDom = m.domains.length;
+  const nSub = m.domains.reduce((a, d) => a + d.subareas.length, 0);
+  const nComp = m.domains.reduce((a, d) => a + d.subareas.reduce((b, s) => b + s.competencies.length, 0), 0);
+  return { nDom, nSub, nComp, nLvl: m.levels.length };
+}
+
+function renderSubtitle() {
+  const { nDom, nSub, nComp, nLvl } = counts();
+  document.getElementById("subtitle").textContent =
+    `${nDom} domains · ${nSub} sub-areas · ${nComp} competencies · ${nLvl} levels (Awareness → Expertise)`;
+}
+
+function renderConcept() {
+  const defs = state.model.levelDefs || [];
+  const rungs = defs.map(d => {
+    const isTarget = d.level === 3;
+    return `<div class="rung${isTarget ? " target" : ""}">
+      ${isTarget ? '<span class="tag-target">Target</span>' : ""}
+      <div class="lvl">L${d.level}</div>
+      <div class="nm">${esc(d.name)}</div>
+      <div class="sh">${esc(d.short)}</div>
+    </div>`;
+  }).join("");
+  document.getElementById("concept").innerHTML = `
+    <p class="lede">Every competency is rated on the <b>same five levels</b>, inspired by the
+      Dreyfus model — from recognising a concept to setting the standard for it.
+      <b>L3 (Proficiency)</b> is the target working level, but no one is expected to be at L3
+      in <i>every</i> competency; each role profile picks a subset.</p>
+    <div class="ladder">${rungs}</div>`;
+}
+
+// Pick one representative pharma example per domain: prefer the example whose
+// highest tag level is >= 3, else the first example.
+function pickFeatured() {
+  const out = [];
+  for (const d of state.model.domains) {
+    const examples = [];
+    d.subareas.forEach(sa => sa.examples.forEach(e => examples.push({ e, sa })));
+    if (!examples.length) continue;
+    const strong = examples.filter(x => x.e.tags.some(t => t.level >= 3));
+    const pool = strong.length ? strong : examples;
+    const pick = pool[Math.floor(Math.random() * pool.length)];
+    out.push({ domain: d.name, subarea: pick.sa.name, ex: pick.e });
+  }
+  return out;
+}
+
+function tagChips(tags, { clickable = false } = {}) {
+  return tags.map(t => {
+    const cls = "chip tag" + (clickable ? "" : " static");
+    const attr = clickable
+      ? ` data-comp="${esc(t.competency)}" data-lvl="${t.level}" role="button" tabindex="0"`
+      : "";
+    return `<span class="${cls}"${attr}>${esc(t.competency)} <span class="lv">L${t.level}</span></span>`;
+  }).join("");
+}
+
+function renderPractice() {
+  const el = document.getElementById("practice");
+  const featured = pickFeatured();
+  const cards = featured.map(f => `
+    <div class="ph-card">
+      <div class="ph-text">${esc(f.ex.text)}</div>
+      <div class="ph-meta">
+        <span class="chip dom">${esc(f.domain)}</span>
+        ${tagChips(f.ex.tags)}
+      </div>
+    </div>`).join("");
+  el.innerHTML = `
+    <div class="ph-head">
+      <h2>In practice</h2>
+      <span class="hint">real pharma applications, one per domain</span>
+      <button class="shuffle" id="shuffle">Shuffle</button>
+    </div>
+    <div class="ph-grid">${cards}</div>`;
+  document.getElementById("shuffle").addEventListener("click", renderPractice);
+}
+
+function toggle(node) { node.classList.toggle("open"); }
+
+function renderAccordion() {
+  const acc = document.getElementById("accordion");
+  acc.innerHTML = "";
+  state.model.domains.forEach((d, di) => {
+    const nComp = d.subareas.reduce((a, s) => a + s.competencies.length, 0);
+    const domEl = document.createElement("section");
+    domEl.className = "domain";
+    domEl.dataset.domainIdx = di;
+    domEl.innerHTML = `
+      <div class="head">
+        <span class="chev">▶</span>
+        <span class="nm">${esc(d.name)}</span>
+        <span class="count">${d.subareas.length} sub-areas · ${nComp} competencies</span>
+      </div>
+      <div class="body"></div>`;
+    domEl.querySelector(".head").addEventListener("click", () => toggle(domEl));
+
+    const body = domEl.querySelector(".body");
+    d.subareas.forEach(sa => body.appendChild(buildSubarea(sa)));
+    acc.appendChild(domEl);
+  });
+}
+
+function buildSubarea(sa) {
+  const saEl = document.createElement("div");
+  saEl.className = "subarea";
+  saEl.innerHTML = `
+    <div class="head">
+      <span class="chev">▶</span>
+      <span class="nm">${esc(sa.name)}</span>
+      <span class="count">${sa.competencies.length} competencies</span>
+    </div>
+    <div class="sa-body"></div>`;
+  saEl.querySelector(".head").addEventListener("click", () => toggle(saEl));
+
+  const body = saEl.querySelector(".sa-body");
+
+  if (sa.stack) {
+    const stack = document.createElement("div");
+    stack.className = "stack";
+    stack.innerHTML = `<span class="k">Typical stack</span>${mdCode(sa.stack)}`;
+    body.appendChild(stack);
+  }
+
+  if (sa.examples && sa.examples.length) {
+    const ul = document.createElement("ul");
+    ul.className = "ex-list";
+    sa.examples.forEach(e => {
+      const li = document.createElement("li");
+      li.innerHTML = `<span class="ex-text">${esc(e.text)}</span>` +
+        (e.tags.length ? `<span class="ex-meta">${tagChips(e.tags, { clickable: true })}</span>` : "");
+      ul.appendChild(li);
+    });
+    body.appendChild(ul);
+    ul.querySelectorAll(".chip.tag").forEach(chip => {
+      const go = () => focusCompLevel(saEl, chip.dataset.comp, +chip.dataset.lvl);
+      chip.addEventListener("click", go);
+      chip.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+    });
+  }
+
+  sa.competencies.forEach(c => body.appendChild(buildComp(c)));
+  return saEl;
+}
+
+function buildComp(c) {
+  const labels = state.model.levels || [];
+  const cEl = document.createElement("div");
+  cEl.className = "comp";
+  cEl.dataset.comp = c.name;
+  cEl.innerHTML = `
+    <div class="head">
+      <span class="chev">▶</span>
+      <span class="id">${esc(c.id)}</span>
+      <span class="nm">${esc(c.name)}</span>
+    </div>
+    <div class="comp-body"></div>`;
+  cEl.querySelector(".head").addEventListener("click", () => toggle(cEl));
+
+  const body = cEl.querySelector(".comp-body");
+  (c.descriptions || []).forEach((desc, i) => {
+    const lvl = i + 1;
+    const na = !desc || desc === "—";
+    const isTarget = lvl === 3;
+    const row = document.createElement("div");
+    row.className = "vrung" + (isTarget ? " target" : "") + (na ? " na" : "");
+    row.dataset.lvl = lvl;
+    row.innerHTML = `
+      <div class="badge">L${lvl}<span class="nm">${esc(labels[i] || "")}</span></div>
+      <div class="desc">${na ? "n/a at this level" : mdCode(desc)}</div>`;
+    body.appendChild(row);
+  });
+  return cEl;
+}
+
+// Open the competency referenced by a pharma-example chip and flash its level rung.
+function focusCompLevel(saEl, compName, lvl) {
+  saEl.classList.add("open");
+  const comp = [...saEl.querySelectorAll(".comp")].find(c => c.dataset.comp === compName);
+  if (!comp) return;
+  comp.classList.add("open");
+  const rung = comp.querySelector(`.vrung[data-lvl="${lvl}"]`);
+  if (rung) {
+    rung.scrollIntoView({ behavior: "smooth", block: "center" });
+    rung.classList.remove("flash");
+    void rung.offsetWidth; // restart animation
+    rung.classList.add("flash");
+  }
+}
+
+init().catch(err => {
+  document.getElementById("accordion").innerHTML =
+    `<div class="err">Failed to load <code>model.json</code>. Serve this folder over HTTP
+     (e.g. <code>python3 -m http.server</code>) — opening the file directly hits CORS.<br>${esc(err.message)}</div>`;
+});
+</script>
+</body>
+</html>

@@ -1,6 +1,0 @@
-[submodule "reference/competency-model"]
-	path = reference/competency-model
-	url = https://github.com/mortenlindow/cpdse-competency-model.git
-[submodule "reference/pharma-value-chain-model"]
-	path = reference/pharma-value-chain-model
-	url = https://github.com/mortenlindow/cpdse-pharma-value-chain-model.git

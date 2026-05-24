@@ -64,8 +64,8 @@ cpdse-service-workflows/
         workshop1-miro-frames.pdf          ← 4-frame PDF for Miro board import
         workshop1-facilitation-guide.docx  ← consultant session script
   reference/
-    competency-model/                      ← PDS Competence Model (git submodule)
-    pharma-value-chain-model/              ← Pharma Value Chain Model (git submodule)
+    competency-model/                      ← PDS Competence Model (plain folder)
+    pharma-value-chain-model/              ← Pharma Value Chain Model (plain folder)
     competency-model-migration-crosswalk.md ← old→new competency model mapping
   engagements/
     ENG001-MortenLindow/                   ← test engagement (simulated, 2028)
@@ -193,10 +193,10 @@ explicitly. The facilitation guide scripts this.
 ## The CPDSE PDS Competence Model
 
 All gap assessments, capability snapshots, and competency model maps use the
-**Pharmaceutical Data Science (PDS) Competence Model**, vendored in this repo as a
-git submodule at `reference/competency-model/` (canonical spec:
+**Pharmaceutical Data Science (PDS) Competence Model**, kept in this repo at
+`reference/competency-model/` (canonical spec:
 `PDS_Competence_Model_Full_Rethought.md`; the L1–L5 rubric:
-`Level_Rubric.md`). The pinned submodule commit is the model version.
+`Level_Rubric.md`). The `Version:`/changelog in the canonical doc is the model version.
 
 Structure: **7 domains → 30 sub-areas → ~123 competencies.** The seven domains:
 1. Computing & Programming
@@ -214,8 +214,9 @@ L5=Expertise.
 **Two-tier use:** clients self-rate at the **domain** level in intake Q8 (clean
 successor to the old 7 sub-areas); consultant-facing analysis (Step 2 landscape,
 Step 3 gaps) drills into the **30 sub-areas and named competencies**. Don't
-hard-code the 30 sub-areas in prompt docs — point to the submodule as the single
-source of truth and inline only the 7 domains where a self-contained list helps.
+hard-code the 30 sub-areas in prompt docs — point to `reference/competency-model/`
+as the single source of truth and inline only the 7 domains where a self-contained
+list helps.
 
 This replaced the old v0.1.0 placeholder (7 flat sub-areas, 0–4 scale) on
 2026-05-24. See `reference/competency-model-migration-crosswalk.md` for the
@@ -233,13 +234,13 @@ and customer triggers.
 1. **Pharma Value Chain Model** — a 2-tier linear model: 3 top-tier steps
    (Pre-clinical → Clinical development → On-market) → 13 substeps from target
    identification to pharmacoepidemiology. Used to anchor every engagement to the
-   customer's actual pipeline stage(s). Vendored as a git submodule at
+   customer's actual pipeline stage(s). Lives at
    `reference/pharma-value-chain-model/` (canonical doc:
-   `Pharma_Value_Chain_Model.md`); the pinned commit is the version. v0.2.0,
+   `Pharma_Value_Chain_Model.md`); the `Version:`/changelog is the version. v0.2.0,
    6 of 13 substeps written up, 7 stubs.
 
    **Sync points** (everywhere the value chain model is referenced — keep in step
-   when the submodule is bumped to a new model version):
+   when the model version changes):
    - `CLAUDE.md` — this entry + "Pharma value chain model" section below
    - `README.md` — repository structure block
    - `reference/cpdse-value-stream-v0.1.0.md` — three-models table
@@ -248,13 +249,12 @@ and customer triggers.
    - Any populated engagement (`engagements/ENG###-*/`) — new engagements use the current model version; finished engagements stay frozen (note version in their engagement-log entry).
 
 2. **PDS Competence Model** — 7 domains / 30 sub-areas / ~123 competencies,
-   rated L1–L5 (see "The CPDSE PDS Competence Model" section above). Vendored as
-   a git submodule at `reference/competency-model/`; the pinned commit is the
-   version. Used in capability snapshots, gap assessments, and the competency
-   model map output.
+   rated L1–L5 (see "The CPDSE PDS Competence Model" section above). Lives at
+   `reference/competency-model/`; the `Version:`/changelog is the version. Used in
+   capability snapshots, gap assessments, and the competency model map output.
 
    **Sync points** (everywhere the model is referenced — keep in step when the
-   submodule is bumped to a new model version):
+   model version changes):
    - `CLAUDE.md` — "The CPDSE PDS Competence Model" section above
    - `reference/cpdse-value-stream-v0.1.0.md` — three-models table
    - `reference/pharma-value-chain-model/` — per-substep competency mappings (separate submodule)
@@ -287,9 +287,8 @@ of the Room practices"* — is the verbal compression of these three models.
 
 ## Pharma value chain model
 
-The Pharma Value Chain Model is vendored as a git submodule at
-`reference/pharma-value-chain-model/` (repo: `cpdse-pharma-value-chain-model`;
-canonical doc: `Pharma_Value_Chain_Model.md`). It is **2-tier and linear**:
+The Pharma Value Chain Model lives at `reference/pharma-value-chain-model/`
+(canonical doc: `Pharma_Value_Chain_Model.md`). It is **2-tier and linear**:
 
 - **Tier 1 — three top-tier steps:** Pre-clinical → Clinical development → On-market
 - **Tier 2 — 13 substeps** within those steps.
@@ -301,10 +300,9 @@ v0.2.0 covers 6 of 13 substeps in full; 7 are stubs:
   [BEYOND REFERENCE]), Phase I/II/III ⬚, Regulatory ⬚
 - On-market: Manufacturing ⬚, Market Access (HEOR) ⬚, Pharmacoepidemiology ✓
 
-The model versions independently of the prompt docs; the pinned submodule commit
-is the version. This replaced the flat `pharma-value-chain-reference.md` (v0.1.1)
-on 2026-05-24 when the model was promoted to its own submodule and restructured
-into the 2-tier form.
+The model versions independently of the prompt docs (its `Version:`/changelog is
+the version). This replaced the flat `pharma-value-chain-reference.md` (v0.1.1) on
+2026-05-24, restructured into the 2-tier form.
 
 ---
 
@@ -586,7 +584,7 @@ Drive folder ID: 1yP89_U5sFe0okd_y4MYrQ0D6wJM4Z86S
    by replacing populated content with {placeholder} fields
 4. The Pharma Value Chain Model (`reference/pharma-value-chain-model/`) needs 3
    oligo-specific additions before the service is ready for a real engagement (see
-   Gotchas above); edit in the standalone clone, push, then bump the submodule pin
+   Gotchas above); edit the files in place and commit
 5. All prompt documents are v0.1.0 AI-drafted — Morten needs to review them before
    using on a real group; flag anything that needs domain expert adjustment
 
