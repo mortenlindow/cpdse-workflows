@@ -119,7 +119,7 @@ grounded in three reference models.
 |---|---|---|
 | **Pharma** | Pharma Value Chain Model | Every engagement maps customers to stage(s). 2-tier linear model (3 top-tier steps → 13 substeps). Lives at `reference/pharma-value-chain-model/`. |
 | **Data Science** | PDS Competence Model | Seven domains / 30 sub-areas / ~123 competencies, rated L1–L5 (Awareness→Expertise; L3 = target). Lives at `reference/competency-model/`. Clients self-rate at the domain level; analysis drills into sub-areas. |
-| **Education** | Training from the Back of the Room (Bowman) | Pedagogical reference for workshop design. The 4Cs (Connections, Concepts, Concrete Practice, Conclusions) + the Six Trumps. Lives at `reference/pedagogic-practices.md`. |
+| **Education** | Training from the Back of the Room (Bowman) | Pedagogical reference for workshop design. The 4Cs (Connections, Concepts, Concrete Practice, Conclusions) + the Six Trumps. Lives at `reference/pedagogic-practices/`. |
 
 The methodology line at the top of this document is the verbal compression
 of these three.

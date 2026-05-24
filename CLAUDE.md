@@ -268,7 +268,8 @@ and customer triggers.
 
 3. **Training from the Back of the Room** — Sharon L. Bowman's pedagogical
    framework. The reference behind our workshop design. Lives at
-   `reference/pedagogic-practices.md` (v0.1.0). Two constructs:
+   `reference/pedagogic-practices/` (canonical doc: `Pedagogic_Practices.md`,
+   v0.1.0). Two constructs:
    - the **4Cs** of instructional design: **Connections** (anchor learners to
      prior knowledge and to each other), **Concepts** (deliver new content in
      short bursts), **Concrete Practice** (learners apply, not the trainer), and
@@ -521,7 +522,7 @@ without a human verification layer.
 ## What is NOT done yet
 
 - [~] Flesh out the Training from the Back of the Room reference — DONE as
-  `reference/pedagogic-practices.md` (v0.1.0: 4Cs, Six Trumps, 4Cs → Workshop 1
+  `reference/pedagogic-practices/` (v0.1.0: 4Cs, Six Trumps, 4Cs → Workshop 1
   block mapping). Remaining: write the mapping into the facilitation guide .docx.
 - [ ] Promote `reference/value streams - DRAFT.pdf` to a versioned reference
   document — **DONE** as `reference/cpdse-value-stream-v0.1.0.md`. Remaining

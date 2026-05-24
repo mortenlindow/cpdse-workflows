@@ -9,8 +9,8 @@
 ## What this is
 
 The third of CPDSE's three reference models (alongside the
-[Pharma Value Chain Model](pharma-value-chain-model/) and the
-[PDS Competence Model](competency-model/)). It is the **pedagogical reference
+[Pharma Value Chain Model](../pharma-value-chain-model/) and the
+[PDS Competence Model](../competency-model/)). It is the **pedagogical reference
 behind all CPDSE workshop and course design**.
 
 The source is the work of **Sharon L. Bowman**:
