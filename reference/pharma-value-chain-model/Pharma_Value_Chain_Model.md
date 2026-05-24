@@ -1,5 +1,5 @@
 # Pharma Value Chain Model — DS Methods & Tools
-# Version: v0.2.0 (AI-drafted, pending MO review)
+# Version: v0.3.0 (AI-drafted, pending MO review)
 # Last updated: 2026-05-24
 # Notes: Restructured from the flat v0.1.1 stage list into a 2-tier linear model
 #        (3 top-tier steps → 13 substeps). Priority substeps written up; the rest
@@ -12,8 +12,7 @@
 
 The CPDSE **Pharma Value Chain Model**: the linear pipeline from target
 identification to market access, used to anchor every engagement to the
-customer's actual pipeline stage(s). It is one of CPDSE's three reference models
-(alongside the PDS Competence Model and Training from the Back of the Room).
+customer's actual pipeline stage(s). It is one of CPDSE's reference models.
 
 The model is **2-tier and linear**:
 
@@ -35,15 +34,7 @@ The model is **2-tier and linear**:
 This document is the baseline for Step 2 (DS Landscape Analysis) of the CPDSE
 service pipeline. It defines the CPDSE-recognised established methods and tools
 for each substep. When Step 2 encounters methods or tools not listed here, flag
-them as **[BEYOND REFERENCE]**. When work does not map to any sub-area of the PDS
-Competence Model, flag as **[OUTSIDE MODEL]**.
-
-Competency tags below use the PDS Competence Model's seven domains (kept alongside
-this model at `reference/competency-model/`). Note that "Bioinformatics /
-Cheminformatics" is a pharma *application* layer with no dedicated PDS domain —
-such methods are tagged to the closest PDS domain (usually Exploration, Mining &
-Analysis or ML & AI) and marked accordingly. See
-`reference/competency-model-migration-crosswalk.md`.
+them as **[BEYOND REFERENCE]**.
 
 This model versions independently of the prompt documents; the `Version:` header +
 changelog above is the model version. Update it after each real engagement where
@@ -67,12 +58,6 @@ interest and tractable for drug intervention?
 - Literature mining for target evidence: PubMed E-utilities, Europe PMC API
 - Knowledge graph integration: OpenTargets Platform, ChEMBL API
 - Druggability assessment: DruGAN, DoGSiteScorer
-
-### Competency mapping (PDS domain)
-- Mathematics & Statistics: GWAS, MR, differential expression
-- Exploration, Mining & Analysis: network analysis, druggability *(bioinformatics application layer)*
-- Data Acquisition & Management: knowledge graph integration, literature databases
-- ML & AI: causal inference models
 
 ---
 
@@ -98,12 +83,6 @@ against the validated target?
 - SMILES handling and molecular representation: RDKit, OpenBabel
 - ADMET prediction for early screening: SwissADME, pkCSM, DeepPurpose
 - RNA secondary structure prediction (for oligonucleotides): RNAfold, IntaRNA
-
-### Competency mapping (PDS domain)
-- Mathematics & Statistics: HTS statistics, dose-response
-- Exploration, Mining & Analysis: chemical space, SMILES, ADMET *(cheminformatics application layer)*
-- ML & AI: virtual screening, ADMET ML models
-- Computing & Programming: pipeline automation
 
 ---
 
@@ -133,13 +112,6 @@ selectivity, and ADMET properties?
 - Position-specific modification annotation and featurisation (custom)
 - Oligo-specific safety/toxicity prediction: domain-specific ML models
 - GalNAc conjugate chemistry handling: custom featurisers
-
-### Competency mapping (PDS domain)
-- ML & AI: QSAR, MPO, safety prediction
-- Exploration, Mining & Analysis: molecular descriptors, MMPA, oligo featurisers *(cheminformatics application layer)*
-- Mathematics & Statistics: uncertainty quantification, nested CV
-- Data Acquisition & Management: FAIR data, ChEMBL schema, SMILES standardisation
-- Computing & Programming › Workflow & Reproducibility: model cards, versioned model artefacts
 
 ---
 
@@ -174,12 +146,6 @@ or patient stratification?
 - Clinical biomarker validation: ROC/AUC analysis, NRI, IDI
 - Multi-omics integration: MOFA+, mixOmics
 
-### Competency mapping (PDS domain)
-- Mathematics & Statistics: biomarker validation, ROC, NRI
-- ML & AI: supervised biomarker discovery, patient stratification
-- Exploration, Mining & Analysis: multi-omics integration *(bioinformatics application layer)*
-- Data Acquisition & Management: clinical data standards (CDISC, HL7 FHIR)
-
 ---
 
 ## Substep: Clinical Pharmacology
@@ -212,12 +178,6 @@ modelling. The field lacks an established standard framework. Key approaches:
 - Convergence diagnostics: R-hat, effective sample size (ESS)
 - Posterior predictive checks
 - NCA analysis: PKNCA (R), Phoenix WinNonlin (commercial)
-
-### Competency mapping (PDS domain)
-- Computing & Programming: ODE implementation, parameter estimation
-- Mathematics & Statistics: Bayesian workflow, convergence diagnostics
-- Data Acquisition & Management: PK dataset standards (CDISC SDTM)
-- Visualization & Presentation: PK profiles, concentration-time curves
 
 ---
 
@@ -268,11 +228,6 @@ What are the real-world effects of drugs in defined patient populations?
 - Causal inference frameworks: dagitty, DoWhy
 - Pharmacovigilance signal detection: disproportionality analysis (ROR, PRR)
 
-### Competency mapping (PDS domain)
-- Mathematics & Statistics: causal inference, propensity scores
-- Data Acquisition & Management: RWE database standards, OMOP CDM
-- Computing & Programming: large dataset processing
-
 ---
 
 ## Coverage status
@@ -304,3 +259,4 @@ What are the real-world effects of drugs in defined patient populations?
 | v0.1.0 | 2026-04-25 | Initial AI draft. 6 stages covered: Target ID, Lead ID, Lead Opt, Biomarker Dev, Clinical Pharmacology, Pharmacoepidemiology. Oligo-specific notes added to Lead Opt and Clinical Pharmacology. |
 | v0.1.1 | 2026-05-24 | Re-tagged all competency mappings from the v0.1.0 7-sub-area model to the PDS Competence Model (7 domains). See competency-model-migration-crosswalk.md. |
 | v0.2.0 | 2026-05-24 | Restructured into a 2-tier linear model (3 top-tier steps → 13 substeps). All 7 previously-uncovered stages added as explicit substep stubs. Biomarker Development placed under Clinical development. Content of the 6 written substeps unchanged. |
+| v0.3.0 | 2026-05-24 | Made the model self-sufficient: removed the per-substep "Competency mapping (PDS domain)" blocks and all PDS Competence Model cross-references (incl. the [OUTSIDE MODEL] flag, a competency-model concern). Cross-model intersections will be defined separately later. Methods/tools content unchanged. |

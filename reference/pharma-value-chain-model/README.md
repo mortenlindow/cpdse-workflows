@@ -4,8 +4,8 @@ This folder holds the **authoritative CPDSE Pharma Value Chain Model**: the line
 drug-development pipeline used to anchor every CPDSE engagement to the customer's
 actual pipeline stage(s).
 
-It is one of CPDSE's three reference models, alongside the
-[PDS Competence Model](../competency-model/) and Training from the Back of the Room.
+It is one of CPDSE's reference models, and is **self-contained**: it does not
+cross-reference the other models (model intersections are defined separately).
 
 - **Canonical document:** [`Pharma_Value_Chain_Model.md`](Pharma_Value_Chain_Model.md)
 - **Structure:** 2-tier and linear — 3 top-tier steps (Pre-clinical → Clinical

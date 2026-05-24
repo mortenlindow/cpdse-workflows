@@ -257,7 +257,6 @@ and customer triggers.
    model version changes):
    - `CLAUDE.md` — "The CPDSE PDS Competence Model" section above
    - `reference/cpdse-value-stream-v0.1.0.md` — three-models table
-   - `reference/pharma-value-chain-model/` — per-substep competency mappings (separate model)
    - `reference/competency-model-migration-crosswalk.md` — old→new crosswalk + scale
    - `services/01-research-strategy/prompts/02-ds-landscape-analysis.md` — competency snapshot construction
    - `services/01-research-strategy/prompts/03-gap-assessment.md` — gap-to-competency mapping
