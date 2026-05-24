@@ -117,7 +117,7 @@ grounded in three reference models.
 
 | Domain | Model | Where it shows up |
 |---|---|---|
-| **Pharma** | Pharma Value Chain Model | Every engagement maps customers to stage(s). Lives at `reference/pharma-value-chain-reference.md`. |
+| **Pharma** | Pharma Value Chain Model | Every engagement maps customers to stage(s). 2-tier linear model (3 top-tier steps → 13 substeps). Vendored at `reference/pharma-value-chain-model/` (git submodule). |
 | **Data Science** | PDS Competence Model | Seven domains / 30 sub-areas / ~123 competencies, rated L1–L5 (Awareness→Expertise; L3 = target). Vendored at `reference/competency-model/` (git submodule). Clients self-rate at the domain level; analysis drills into sub-areas. |
 | **Education** | Training from the Back of the Room (Bowman) | Pedagogical reference for workshop design. The 4Cs framework: Connections, Concepts, Concrete Practice, Conclusions. |
 

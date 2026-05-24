@@ -27,10 +27,11 @@ attention to:
 - ## Current DS Tools & Methods
 - ## Data Types & Sources
 
-### Input 2 — Pharma Value Chain Reference Document
-The current version of pharma-value-chain-reference.md. This document defines
-the CPDSE-recognised methods and tools for each pipeline stage. Treat it as
-the baseline — anything not in it should be flagged [BEYOND REFERENCE].
+### Input 2 — Pharma Value Chain Model
+The current version of the Pharma Value Chain Model from
+reference/pharma-value-chain-model/ (Pharma_Value_Chain_Model.md). This 2-tier
+linear model defines the CPDSE-recognised methods and tools for each substep.
+Treat it as the baseline — anything not in it should be flagged [BEYOND REFERENCE].
 
 ### Input 3 — PDS Competence Model
 The PDS Competence Model from reference/competency-model/
@@ -83,7 +84,8 @@ domain level in intake Q8; this is where you add the sub-area resolution.
 Flag explicitly:
 - [OUTSIDE MODEL] — work that does not map to any of the 30 sub-areas. The bar
   is high (123 competencies); flag only genuine gaps in the model itself.
-- [BEYOND REFERENCE] — methods/tools not in the pharma-value-chain-reference.md
+- [BEYOND REFERENCE] — methods/tools not in the Pharma Value Chain Model
+  (reference/pharma-value-chain-model/)
 
 ---
 
@@ -149,8 +151,8 @@ not make gap judgements. Follow the output format exactly.
 ## Group Profile (Step 1 Output)
 {paste full Step 1 output here}
 
-## Pharma Value Chain Reference
-{paste current pharma-value-chain-reference.md here}
+## Pharma Value Chain Model
+{paste current reference/pharma-value-chain-model/Pharma_Value_Chain_Model.md here}
 
 ## PDS Competence Model
 {paste current reference/competency-model/PDS_Competence_Model_Full_Rethought.md here}

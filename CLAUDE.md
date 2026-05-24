@@ -64,7 +64,9 @@ cpdse-service-workflows/
         workshop1-miro-frames.pdf          ← 4-frame PDF for Miro board import
         workshop1-facilitation-guide.docx  ← consultant session script
   reference/
-    pharma-value-chain-reference.md        ← baseline DS methods by pipeline stage
+    competency-model/                      ← PDS Competence Model (git submodule)
+    pharma-value-chain-model/              ← Pharma Value Chain Model (git submodule)
+    competency-model-migration-crosswalk.md ← old→new competency model mapping
   engagements/
     ENG001-MortenLindow/                   ← test engagement (simulated, 2028)
       intake-questionnaire-ENG001-SIM.txt
@@ -131,8 +133,9 @@ corrective. Gap judgements live exclusively in Step 3.
 ### Why the [OUTSIDE MODEL] and [BEYOND REFERENCE] flags
 
 These flags are first-class outputs, not error conditions.
-- [BEYOND REFERENCE]: the pharma-value-chain-reference.md is incomplete — when
-  Step 2 encounters methods not in it, flagging them feeds reference doc improvement.
+- [BEYOND REFERENCE]: the Pharma Value Chain Model (`reference/pharma-value-chain-model/`)
+  is incomplete — when Step 2 encounters methods not in it, flagging them feeds
+  reference model improvement.
 - [OUTSIDE MODEL]: when work doesn't map to any sub-area of the PDS Competence
   Model, it signals a potential gap in the model itself. The discovery cascade
   stochastic process modelling work in ENG001-SIM was flagged [OUTSIDE MODEL] —
@@ -152,9 +155,9 @@ engagement, and we should design for them deliberately:
 - **Learning about practical challenges** — every engagement teaches us where
   our reference models break. The `[BEYOND REFERENCE]` and `[OUTSIDE MODEL]`
   flags above are the operational mechanism: every flagged item is a structured
-  improvement to either `pharma-value-chain-reference.md` or the competency
-  model itself. Without these flags, "value for us" stays implicit and the
-  reference docs stay stale.
+  improvement to either the Pharma Value Chain Model
+  (`reference/pharma-value-chain-model/`) or the competency model itself. Without
+  these flags, "value for us" stays implicit and the reference docs stay stale.
 
 ### Why "a recommendation that requires more capacity than the group has is not a
 recommendation — it is a wish"
@@ -227,10 +230,22 @@ Every engagement, regardless of customer type, is grounded in three reference
 models. Together they are how we stay consistent across consultants, services,
 and customer triggers.
 
-1. **Pharma Value Chain Model** — the 15 stages from target identification to
-   market access. Used to anchor every engagement to the customer's actual
-   pipeline stage(s). Lives at `reference/pharma-value-chain-reference.md`
-   (v0.1.1, 6 of 15 stages covered).
+1. **Pharma Value Chain Model** — a 2-tier linear model: 3 top-tier steps
+   (Pre-clinical → Clinical development → On-market) → 13 substeps from target
+   identification to pharmacoepidemiology. Used to anchor every engagement to the
+   customer's actual pipeline stage(s). Vendored as a git submodule at
+   `reference/pharma-value-chain-model/` (canonical doc:
+   `Pharma_Value_Chain_Model.md`); the pinned commit is the version. v0.2.0,
+   6 of 13 substeps written up, 7 stubs.
+
+   **Sync points** (everywhere the value chain model is referenced — keep in step
+   when the submodule is bumped to a new model version):
+   - `CLAUDE.md` — this entry + "Pharma value chain model" section below
+   - `README.md` — repository structure block
+   - `reference/cpdse-value-stream-v0.1.0.md` — three-models table
+   - `services/01-research-strategy/prompts/02-ds-landscape-analysis.md` — reference model input + [BEYOND REFERENCE] definition + paste block
+   - `site/index.html` — reference-model card / tab copy
+   - Any populated engagement (`engagements/ENG###-*/`) — new engagements use the current model version; finished engagements stay frozen (note version in their engagement-log entry).
 
 2. **PDS Competence Model** — 7 domains / 30 sub-areas / ~123 competencies,
    rated L1–L5 (see "The CPDSE PDS Competence Model" section above). Vendored as
@@ -242,7 +257,7 @@ and customer triggers.
    submodule is bumped to a new model version):
    - `CLAUDE.md` — "The CPDSE PDS Competence Model" section above
    - `reference/cpdse-value-stream-v0.1.0.md` — three-models table
-   - `reference/pharma-value-chain-reference.md` — per-stage competency mappings
+   - `reference/pharma-value-chain-model/` — per-substep competency mappings (separate submodule)
    - `reference/competency-model-migration-crosswalk.md` — old→new crosswalk + scale
    - `services/01-research-strategy/prompts/02-ds-landscape-analysis.md` — competency snapshot construction
    - `services/01-research-strategy/prompts/03-gap-assessment.md` — gap-to-competency mapping
@@ -270,20 +285,26 @@ of the Room practices"* — is the verbal compression of these three models.
 
 ---
 
-## Pharma value chain reference doc
+## Pharma value chain model
 
-`reference/pharma-value-chain-reference.md` is v0.1.1 (competency tags re-synced
-to the PDS Competence Model) and covers 6 of ~15 stages:
-- Target Identification
-- Lead Identification
-- Lead Optimisation (includes oligo-specific notes)
-- Biomarker Development
-- Clinical Pharmacology (includes NABM-specific notes, flagged [BEYOND REFERENCE])
-- Pharmacoepidemiology
+The Pharma Value Chain Model is vendored as a git submodule at
+`reference/pharma-value-chain-model/` (repo: `cpdse-pharma-value-chain-model`;
+canonical doc: `Pharma_Value_Chain_Model.md`). It is **2-tier and linear**:
 
-Remaining stages (Hit ID, Candidate Selection, Preclinical, Phase I/II/III,
-Regulatory, Manufacturing, Market Access) are stubs — to be added as real
-engagements encounter them. The reference doc versions independently of prompt docs.
+- **Tier 1 — three top-tier steps:** Pre-clinical → Clinical development → On-market
+- **Tier 2 — 13 substeps** within those steps.
+
+v0.2.0 covers 6 of 13 substeps in full; 7 are stubs:
+- Pre-clinical: Target Identification ✓, Hit Identification ⬚, Lead Identification ✓,
+  Lead Optimisation ✓ (oligo notes), Candidate Selection ⬚, Preclinical (DMPK/tox) ⬚
+- Clinical development: Biomarker Development ✓, Clinical Pharmacology ✓ (NABM notes,
+  [BEYOND REFERENCE]), Phase I/II/III ⬚, Regulatory ⬚
+- On-market: Manufacturing ⬚, Market Access (HEOR) ⬚, Pharmacoepidemiology ✓
+
+The model versions independently of the prompt docs; the pinned submodule commit
+is the version. This replaced the flat `pharma-value-chain-reference.md` (v0.1.1)
+on 2026-05-24 when the model was promoted to its own submodule and restructured
+into the 2-tier form.
 
 ---
 
@@ -514,7 +535,7 @@ without a human verification layer.
 - [ ] Workshop 1 summary doc template (the 48hr post-session artefact)
 - [ ] Phase 2 planning: API-backed agent pipeline (deferred until 2-3 real engagements)
 - [ ] Expert review of all v0.1.0 prompt documents (MO review pending)
-- [ ] Remaining 9 stages in pharma-value-chain-reference.md
+- [ ] Remaining 7 substep stubs in `reference/pharma-value-chain-model/`
 - [ ] First real engagement (not ENG001-SIM)
 - [ ] Updating reference doc with ENG001-SIM [BEYOND REFERENCE] items
 - [ ] CPDSElogic integration (separate project — the web app for the CPDSE
@@ -563,8 +584,9 @@ Drive folder ID: 1yP89_U5sFe0okd_y4MYrQ0D6wJM4Z86S
    — synthesise them from the conversation context in the transcript
 3. The blank strategy brief template needs to be created from the ENG001-SIM .docx
    by replacing populated content with {placeholder} fields
-4. The pharma-value-chain-reference.md needs 3 oligo-specific additions before
-   the service is ready for a real engagement (see Gotchas above)
+4. The Pharma Value Chain Model (`reference/pharma-value-chain-model/`) needs 3
+   oligo-specific additions before the service is ready for a real engagement (see
+   Gotchas above); edit in the standalone clone, push, then bump the submodule pin
 5. All prompt documents are v0.1.0 AI-drafted — Morten needs to review them before
    using on a real group; flag anything that needs domain expert adjustment
 
