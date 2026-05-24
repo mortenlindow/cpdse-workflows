@@ -1,6 +1,6 @@
 # Pharma Value Chain Reference — DS Methods & Tools
-# Version: v0.1.0 (AI-drafted, pending MO review)
-# Last updated: 2026-04-25
+# Version: v0.1.1 (AI-drafted, pending MO review)
+# Last updated: 2026-05-24
 # Notes: Priority stages covered. Remaining stages to be added as encountered
 #        in real engagements. [BEYOND REFERENCE] flags from engagements should
 #        be incorporated here after consultant review.
@@ -11,8 +11,14 @@
 This document is the baseline for Step 2 (DS Landscape Analysis). It defines
 the CPDSE-recognised established methods and tools for each pharma value chain
 stage. When Step 2 encounters methods or tools not listed here, flag them as
-[BEYOND REFERENCE]. When work does not map to any of the seven CPDSE competency
-sub-areas, flag as [OUTSIDE MODEL].
+[BEYOND REFERENCE]. When work does not map to any sub-area of the PDS Competence
+Model (reference/competency-model/), flag as [OUTSIDE MODEL].
+
+Competency tags below use the PDS Competence Model's seven domains. Note that
+"Bioinformatics / Cheminformatics" is a pharma *application* layer with no
+dedicated PDS domain — such methods are tagged to the closest PDS domain
+(usually Exploration, Mining & Analysis or ML & AI) and marked accordingly. See
+reference/competency-model-migration-crosswalk.md.
 
 This document versions independently of the prompt documents. Update it after
 each real engagement where [BEYOND REFERENCE] items are confirmed valid.
@@ -34,11 +40,11 @@ interest and tractable for drug intervention?
 - Knowledge graph integration: OpenTargets Platform, ChEMBL API
 - Druggability assessment: DruGAN, DoGSiteScorer
 
-### Competency sub-area mapping
-- Statistical Analysis: GWAS, MR, differential expression
-- Bioinformatics / Cheminformatics: network analysis, druggability
-- Data Management: knowledge graph integration, literature databases
-- ML / Predictive Modelling: causal inference models
+### Competency mapping (PDS domain)
+- Mathematics & Statistics: GWAS, MR, differential expression
+- Exploration, Mining & Analysis: network analysis, druggability *(bioinformatics application layer)*
+- Data Acquisition & Management: knowledge graph integration, literature databases
+- ML & AI: causal inference models
 
 ---
 
@@ -57,11 +63,11 @@ against the validated target?
 - ADMET prediction for early screening: SwissADME, pkCSM, DeepPurpose
 - RNA secondary structure prediction (for oligonucleotides): RNAfold, IntaRNA
 
-### Competency sub-area mapping
-- Statistical Analysis: HTS statistics, dose-response
-- Bioinformatics / Cheminformatics: chemical space, SMILES, ADMET
-- ML / Predictive Modelling: virtual screening, ADMET ML models
-- Scientific Programming: pipeline automation
+### Competency mapping (PDS domain)
+- Mathematics & Statistics: HTS statistics, dose-response
+- Exploration, Mining & Analysis: chemical space, SMILES, ADMET *(cheminformatics application layer)*
+- ML & AI: virtual screening, ADMET ML models
+- Computing & Programming: pipeline automation
 
 ---
 
@@ -92,12 +98,12 @@ selectivity, and ADMET properties?
 - Oligo-specific safety/toxicity prediction: domain-specific ML models
 - GalNAc conjugate chemistry handling: custom featurisers
 
-### Competency sub-area mapping
-- ML / Predictive Modelling: QSAR, MPO, safety prediction
-- Bioinformatics / Cheminformatics: molecular descriptors, MMPA, oligo featurisers
-- Statistical Analysis: uncertainty quantification, nested CV
-- Data Management: FAIR data, ChEMBL schema, SMILES standardisation
-- Reproducible Research: model cards, versioned model artefacts
+### Competency mapping (PDS domain)
+- ML & AI: QSAR, MPO, safety prediction
+- Exploration, Mining & Analysis: molecular descriptors, MMPA, oligo featurisers *(cheminformatics application layer)*
+- Mathematics & Statistics: uncertainty quantification, nested CV
+- Data Acquisition & Management: FAIR data, ChEMBL schema, SMILES standardisation
+- Computing & Programming › Workflow & Reproducibility: model cards, versioned model artefacts
 
 ---
 
@@ -114,11 +120,11 @@ or patient stratification?
 - Clinical biomarker validation: ROC/AUC analysis, NRI, IDI
 - Multi-omics integration: MOFA+, mixOmics
 
-### Competency sub-area mapping
-- Statistical Analysis: biomarker validation, ROC, NRI
-- ML / Predictive Modelling: supervised biomarker discovery, patient stratification
-- Bioinformatics / Cheminformatics: multi-omics integration
-- Data Management: clinical data standards (CDISC, HL7 FHIR)
+### Competency mapping (PDS domain)
+- Mathematics & Statistics: biomarker validation, ROC, NRI
+- ML & AI: supervised biomarker discovery, patient stratification
+- Exploration, Mining & Analysis: multi-omics integration *(bioinformatics application layer)*
+- Data Acquisition & Management: clinical data standards (CDISC, HL7 FHIR)
 
 ---
 
@@ -153,11 +159,11 @@ modelling. The field lacks an established standard framework. Key approaches:
 - Posterior predictive checks
 - NCA analysis: PKNCA (R), Phoenix WinNonlin (commercial)
 
-### Competency sub-area mapping
-- Scientific Programming: ODE implementation, parameter estimation
-- Statistical Analysis: Bayesian workflow, convergence diagnostics
-- Data Management: PK dataset standards (CDISC SDTM)
-- Data Visualisation: PK profiles, concentration-time curves
+### Competency mapping (PDS domain)
+- Computing & Programming: ODE implementation, parameter estimation
+- Mathematics & Statistics: Bayesian workflow, convergence diagnostics
+- Data Acquisition & Management: PK dataset standards (CDISC SDTM)
+- Visualization & Presentation: PK profiles, concentration-time curves
 
 ---
 
@@ -174,10 +180,10 @@ What are the real-world effects of drugs in defined patient populations?
 - Causal inference frameworks: dagitty, DoWhy
 - Pharmacovigilance signal detection: disproportionality analysis (ROR, PRR)
 
-### Competency sub-area mapping
-- Statistical Analysis: causal inference, propensity scores
-- Data Management: RWE database standards, OMOP CDM
-- Scientific Programming: large dataset processing
+### Competency mapping (PDS domain)
+- Mathematics & Statistics: causal inference, propensity scores
+- Data Acquisition & Management: RWE database standards, OMOP CDM
+- Computing & Programming: large dataset processing
 
 ---
 
@@ -200,3 +206,4 @@ they are encountered in real engagements:
 | Version | Date | Changes |
 |---------|------|---------|
 | v0.1.0 | 2026-04-25 | Initial AI draft. 6 stages covered: Target ID, Lead ID, Lead Opt, Biomarker Dev, Clinical Pharmacology, Pharmacoepidemiology. Oligo-specific notes added to Lead Opt and Clinical Pharmacology. |
+| v0.1.1 | 2026-05-24 | Re-tagged all competency mappings from the v0.1.0 7-sub-area model to the PDS Competence Model (7 domains). See reference/competency-model-migration-crosswalk.md. |

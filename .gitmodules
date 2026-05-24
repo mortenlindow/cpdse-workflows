@@ -1,0 +1,3 @@
+[submodule "reference/competency-model"]
+	path = reference/competency-model
+	url = https://github.com/mortenlindow/cpdse-competency-model.git

@@ -118,7 +118,7 @@ grounded in three reference models.
 | Domain | Model | Where it shows up |
 |---|---|---|
 | **Pharma** | Pharma Value Chain Model | Every engagement maps customers to stage(s). Lives at `reference/pharma-value-chain-reference.md`. |
-| **Data Science** | Data Science Competency Model **🚧 being revised** | Seven sub-areas, 0–4 self-rating *(v0.1.0; revised version landing from a parallel session — re-sync this row when it does)*. Used in capability snapshots and gap maps. |
+| **Data Science** | PDS Competence Model | Seven domains / 30 sub-areas / ~123 competencies, rated L1–L5 (Awareness→Expertise; L3 = target). Vendored at `reference/competency-model/` (git submodule). Clients self-rate at the domain level; analysis drills into sub-areas. |
 | **Education** | Training from the Back of the Room (Bowman) | Pedagogical reference for workshop design. The 4Cs framework: Connections, Concepts, Concrete Practice, Conclusions. |
 
 The methodology line at the top of this document is the verbal compression

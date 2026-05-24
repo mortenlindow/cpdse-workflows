@@ -1,0 +1,153 @@
+CPDSE Research & DS Strategy Service
+Intake Questionnaire — BLANK TEMPLATE v0.2.0
+Engagement ID: [ENG###-GroupName]
+============================================================
+
+Instructions for consultant:
+- Send this file to the client group 1 week before Meeting 1
+- Ask the PI to complete it with the group, not alone
+- You will review and amend it during Meeting 1
+- Add your notes in [square brackets like this]
+
+Instructions for client:
+- Complete with your whole group present if possible
+- Honest answers are more useful than impressive ones
+- If a question doesn't apply, write "not applicable" and say why
+- Expected time: 30-45 minutes
+
+============================================================
+SECTION 1 — RESEARCH IDENTITY
+============================================================
+
+Q1: What are your 2-3 most important research questions right now?
+(Be specific — "we study protein folding" is less useful than
+"we want to predict aggregation propensity from sequence features alone")
+
+A1:
+
+1.
+
+2.
+
+3.
+
+------------------------------------------------------------
+
+Q2: Where does your work sit in the drug discovery pipeline?
+(Target ID / Hit ID / Lead ID / Lead Opt / Preclinical / Clinical /
+Regulatory / Multiple / Other — explain briefly)
+
+A2:
+
+------------------------------------------------------------
+
+Q3: What disease areas or therapeutic modalities does your group focus on?
+(If disease-agnostic or platform-focused, say so)
+
+A3:
+
+============================================================
+SECTION 2 — DATA
+============================================================
+
+Q4: What types of data does your group work with?
+(e.g. sequence data, assay readouts, imaging, EHR, omics, PK/PD, literature)
+
+A4:
+
+------------------------------------------------------------
+
+Q5: Where does your data come from?
+(public databases, collaborators, internal wet lab, purchased, scraped —
+note what is available now vs. pending vs. planned)
+
+A5:
+
+============================================================
+SECTION 3 — CURRENT CAPABILITIES
+============================================================
+
+Q6: What does your current analysis workflow look like, honestly?
+Walk us through a typical project from raw data to result.
+(Include tools, formats, manual steps, and known weaknesses)
+
+A6:
+
+------------------------------------------------------------
+
+Q7: Who in your group does the data analysis?
+(Name, role, rough skill level in DS — be honest about gaps)
+
+A7:
+
+------------------------------------------------------------
+
+Q8: DS capability self-rating
+Rate your group as a whole across the seven domains of the CPDSE
+Pharmaceutical Data Science (PDS) Competence Model. Use the level that best
+describes what the group can do TODAY (not what one person could do, and not
+where you would like to be).
+
+  N/A = not relevant to our work
+  L1  = Awareness    — we recognise it; we cannot yet do it ourselves
+  L2  = Familiarity  — we can do it from a template, with someone to ask
+  L3  = Proficiency  — we independently deliver usable work on standard problems
+  L4  = Mastery      — we handle non-standard cases; we are who others escalate to
+  L5  = Expertise    — we set the standard; we teach, publish, or open-source it
+
+L3 (Proficiency) is the target working level. No group is expected to be at L3 in
+every domain — most are strong in a few and lower in the rest, and that is the
+normal, useful starting point.
+
+  Computing & Programming:          [    ]
+  Data Acquisition & Management:    [    ]
+  Ethics, Legislation & Privacy:    [    ]
+  Exploration, Mining & Analysis:   [    ]
+  ML & AI:                          [    ]
+  Mathematics & Statistics:         [    ]
+  Visualization & Presentation:     [    ]
+
+Comments (optional — explain any rating, flag mixed levels within the team, or
+note specific sub-areas/competencies that stand out above or below the domain):
+
+[Consultant note: the full 30 sub-areas and ~123 competencies under each domain
+live in reference/competency-model/. The group rates at the domain level here;
+the consultant drills into sub-areas during Step 2 / Step 3 analysis.]
+
+============================================================
+SECTION 4 — AMBITIONS AND PAIN POINTS
+============================================================
+
+Q9: What would "significantly better" look like in 2 years?
+(Be specific — what would you be doing that you cannot do now?)
+
+A9:
+
+------------------------------------------------------------
+
+Q10: Where do you feel the biggest friction or limitation right now?
+(Technical, data, team, time, infrastructure — be honest)
+
+A10:
+
+------------------------------------------------------------
+
+Q11: Have you tried to address these limitations before?
+(What did you try? What worked? What didn't? Why did you stop?)
+
+A11:
+
+============================================================
+SECTION 5 — CONTEXT AND CONSTRAINTS
+============================================================
+
+Q12: Any constraints we should know about?
+(Funding situation, key people leaving, data access blockers,
+IP restrictions, ethical approvals, compute limits, etc.)
+
+A12:
+
+============================================================
+END OF QUESTIONNAIRE
+Please return to [consultant email] by [date]
+============================================================

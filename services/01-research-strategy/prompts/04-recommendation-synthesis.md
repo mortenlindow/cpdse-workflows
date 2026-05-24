@@ -1,9 +1,10 @@
 # CPDSE Service Workflow — Prompt Document
 # Service: Research & DS Strategy (①)
 # Pipeline Step: 4 — Recommendation Synthesis
-# Version: v0.1.0 (AI-drafted, pending expert review)
+# Version: v0.2.0 (synced to PDS Competence Model; pending expert review)
 # Author: AI draft / MO review
 # Notes: Initial draft — not yet tested on a real engagement.
+#        v0.2.0 routes Competency Model Note feedback to the competency-model repo.
 ---
 
 ## PURPOSE
@@ -17,7 +18,7 @@ This output is the primary deliverable for Workshop 1 and the basis for
 the final strategy report.
 
 ---
-
+   
 ## INPUTS
 
 ### Input 1 — Step 1 Output (Group Profile)
@@ -121,9 +122,12 @@ monitor and when to revisit.]
 
 ## Competency Model Note
 [One paragraph. Address [OUTSIDE MODEL] items from Step 3 — what do they
-suggest about the group's research that falls outside the CPDSE model?
-Is there a case for extending the model? This is for the CPDSE team,
-not for the client group.]
+suggest about the group's research that falls outside the PDS Competence
+Model (the 7 domains / 30 sub-areas in reference/competency-model/)? Is there
+a case for a new sub-area or competency? Where there is, name the concrete
+change so it can be raised as an issue/PR against the competency-model repo.
+Likewise note [BEYOND REFERENCE] items that should update the pharma value
+chain reference. This is for the CPDSE team, not for the client group.]
 
 ---
 

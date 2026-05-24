@@ -1,9 +1,11 @@
 # CPDSE Service Workflow — Prompt Document
 # Service: Research & DS Strategy (①)
 # Pipeline Step: 2 — DS Landscape Analysis
-# Version: v0.1.0 (AI-drafted, pending expert review)
+# Version: v0.2.0 (synced to PDS Competence Model; pending expert review)
 # Author: AI draft / MO review
 # Notes: Initial draft — not yet tested on a real engagement.
+#        v0.2.0 swaps the 7 placeholder sub-areas for the PDS Competence Model
+#        (7 domains / 30 sub-areas, vendored at reference/competency-model/).
 ---
 
 ## PURPOSE
@@ -30,6 +32,11 @@ The current version of pharma-value-chain-reference.md. This document defines
 the CPDSE-recognised methods and tools for each pipeline stage. Treat it as
 the baseline — anything not in it should be flagged [BEYOND REFERENCE].
 
+### Input 3 — PDS Competence Model
+The PDS Competence Model from reference/competency-model/
+(PDS_Competence_Model_Full_Rethought.md). The authoritative list of the 7
+domains, 30 sub-areas, and ~123 competencies that methods/tools are mapped to.
+
 ---
 
 ## ANALYTICAL FRAME
@@ -53,18 +60,29 @@ an honest landscape that the model can then be mapped onto — rather than
 forcing the landscape into the model's categories.
 
 ### Competency model mapping
-After the open landscape, map specific methods and tools to the seven CPDSE
-competency sub-areas:
-- Data Management & Organisation
-- Statistical Analysis
-- ML / Predictive Modelling
-- Bioinformatics / Cheminformatics
-- Data Visualisation
-- Reproducible Research
-- Scientific Programming
+After the open landscape, map specific methods and tools to the CPDSE
+Pharmaceutical Data Science (PDS) Competence Model. The model has seven
+top-level domains, each containing several sub-areas (30 in total) and ~123
+named competencies. The authoritative list lives in
+reference/competency-model/ (PDS_Competence_Model_Full_Rethought.md) — consult
+it for the sub-areas under each domain rather than working from memory.
+
+The seven domains:
+- Computing & Programming
+- Data Acquisition & Management
+- Ethics, Legislation & Privacy
+- Exploration, Mining & Analysis
+- ML & AI
+- Mathematics & Statistics
+- Visualization & Presentation
+
+Map each method/tool to its domain AND the specific sub-area (and, where it
+sharpens the analysis, the named competency). The client self-rated at the
+domain level in intake Q8; this is where you add the sub-area resolution.
 
 Flag explicitly:
-- [OUTSIDE MODEL] — work that does not map to any sub-area
+- [OUTSIDE MODEL] — work that does not map to any of the 30 sub-areas. The bar
+  is high (123 competencies); flag only genuine gaps in the model itself.
 - [BEYOND REFERENCE] — methods/tools not in the pharma-value-chain-reference.md
 
 ---
@@ -88,8 +106,8 @@ items for Step 4.]
 [Same structure. One section per secondary stage.]
 
 ## Competency Model Map
-[Bullet list: specific method/tool → competency sub-area. Include [OUTSIDE MODEL]
-and [BEYOND REFERENCE] flags where applicable.]
+[Bullet list: specific method/tool → domain › sub-area (› competency, optional).
+Include [OUTSIDE MODEL] and [BEYOND REFERENCE] flags where applicable.]
 
 ## Landscape Gaps and Caveats
 [Bullet list: where the reference document is insufficient for this group's
@@ -105,8 +123,8 @@ The model MUST NOT:
 
 1. Skip the open landscape step — always characterise the landscape before
    mapping to the CPDSE model.
-2. Force everything into the seven CPDSE sub-areas — [OUTSIDE MODEL] flags
-   are important outputs, not failures.
+2. Force everything into the PDS model's domains/sub-areas — [OUTSIDE MODEL]
+   flags are important outputs, not failures.
 3. Treat [BEYOND REFERENCE] as a gap for the client group — it may simply
    mean the reference document needs updating.
 4. Make gap judgements about the client group — those belong in Step 3.
@@ -123,9 +141,9 @@ You are a pharmaceutical data science expert supporting the CPDSE
 Your task is to map a research group's work to the pharma value chain
 and characterise the DS landscape for their relevant stages. Use the
 pharma value chain reference document as the baseline. Flag [BEYOND REFERENCE]
-for anything not in it. Flag [OUTSIDE MODEL] for anything that does not map
-to the seven CPDSE competency sub-areas. Do not make gap judgements.
-Follow the output format exactly.
+for anything not in it. Flag [OUTSIDE MODEL] for anything that does not map to
+the CPDSE PDS Competence Model (7 domains / 30 sub-areas, supplied below). Do
+not make gap judgements. Follow the output format exactly.
 
 [USER]
 ## Group Profile (Step 1 Output)
@@ -133,6 +151,9 @@ Follow the output format exactly.
 
 ## Pharma Value Chain Reference
 {paste current pharma-value-chain-reference.md here}
+
+## PDS Competence Model
+{paste current reference/competency-model/PDS_Competence_Model_Full_Rethought.md here}
 
 ## Task
 Produce the DS Landscape Analysis following the analytical frame and output

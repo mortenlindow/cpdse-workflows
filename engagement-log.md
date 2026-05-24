@@ -1,6 +1,6 @@
 # CPDSE Service Engagement Log
 # Version: v0.1.0
-# Last updated: 2026-04-25
+# Last updated: 2026-05-24
 ---
 
 ## Active Engagements
@@ -13,9 +13,16 @@
 
 ## Prompt Version Registry
 
-| Engagement | Step 1 | Step 2 | Step 3 | Step 4 |
-|------------|--------|--------|--------|--------|
-| ENG001-SIM | v0.1.0 | v0.1.0 | v0.1.0 | v0.1.0 |
+| Engagement | Step 1 | Step 2 | Step 3 | Step 4 | Competency model |
+|------------|--------|--------|--------|--------|------------------|
+| ENG001-SIM | v0.1.0 | v0.1.0 | v0.1.0 | v0.1.0 | v0.1.0 placeholder (7 sub-areas, 0–4) |
+
+> ENG001-SIM was run under the **old v0.1.0 placeholder competency model** (7 flat
+> sub-areas, 0–4 self-rating). Its outputs stay **frozen** at that model — do not
+> re-tag them. To read its competency tags against the current PDS Competence
+> Model, use `reference/competency-model-migration-crosswalk.md`. Engagements
+> started after 2026-05-24 use the PDS Competence Model (pinned via the
+> `reference/competency-model/` submodule — record the commit SHA here).
 
 ---
 

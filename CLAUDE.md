@@ -133,10 +133,12 @@ corrective. Gap judgements live exclusively in Step 3.
 These flags are first-class outputs, not error conditions.
 - [BEYOND REFERENCE]: the pharma-value-chain-reference.md is incomplete — when
   Step 2 encounters methods not in it, flagging them feeds reference doc improvement.
-- [OUTSIDE MODEL]: when work doesn't map to the 7 CPDSE competency sub-areas, it
-  signals a potential gap in the CPDSE competency model itself. The discovery cascade
+- [OUTSIDE MODEL]: when work doesn't map to any sub-area of the PDS Competence
+  Model, it signals a potential gap in the model itself. The discovery cascade
   stochastic process modelling work in ENG001-SIM was flagged [OUTSIDE MODEL] —
-  it exposed a missing "Quantitative Process Modelling" sub-area.
+  it exposed a missing "Quantitative Process Modelling" sub-area (still uncovered
+  by the 30-sub-area PDS model, so the finding stands). Step 4 routes such items
+  to the `competency-model` repo as candidate additions.
 Both flags flow through to Step 4's Competency Model Note, which is a meta-output
 for the CPDSE team, not for the client.
 
@@ -185,19 +187,37 @@ explicitly. The facilitation guide scripts this.
 
 ---
 
-## The 7 CPDSE competency sub-areas
+## The CPDSE PDS Competence Model
 
-All gap assessments, capability snapshots, and competency model maps use exactly
-these seven sub-areas:
-1. Data Management & Organisation
-2. Statistical Analysis
-3. ML / Predictive Modelling
-4. Bioinformatics / Cheminformatics
-5. Data Visualisation
-6. Reproducible Research
-7. Scientific Programming
+All gap assessments, capability snapshots, and competency model maps use the
+**Pharmaceutical Data Science (PDS) Competence Model**, vendored in this repo as a
+git submodule at `reference/competency-model/` (canonical spec:
+`PDS_Competence_Model_Full_Rethought.md`; the L1–L5 rubric:
+`Level_Rubric.md`). The pinned submodule commit is the model version.
 
-Self-rating scale: 0=not relevant | 1=aware only | 2=ad hoc | 3=reliable | 4=could teach
+Structure: **7 domains → 30 sub-areas → ~123 competencies.** The seven domains:
+1. Computing & Programming
+2. Data Acquisition & Management
+3. Ethics, Legislation & Privacy
+4. Exploration, Mining & Analysis
+5. ML & AI
+6. Mathematics & Statistics
+7. Visualization & Presentation
+
+Rating scale (L1–L5 Dreyfus, plus N/A): N/A=not relevant | L1=Awareness |
+L2=Familiarity | L3=Proficiency *(target working level)* | L4=Mastery |
+L5=Expertise.
+
+**Two-tier use:** clients self-rate at the **domain** level in intake Q8 (clean
+successor to the old 7 sub-areas); consultant-facing analysis (Step 2 landscape,
+Step 3 gaps) drills into the **30 sub-areas and named competencies**. Don't
+hard-code the 30 sub-areas in prompt docs — point to the submodule as the single
+source of truth and inline only the 7 domains where a self-contained list helps.
+
+This replaced the old v0.1.0 placeholder (7 flat sub-areas, 0–4 scale) on
+2026-05-24. See `reference/competency-model-migration-crosswalk.md` for the
+old→new mapping; engagements run under the old model (ENG001-SIM) stay frozen and
+are read through that crosswalk.
 
 ---
 
@@ -207,33 +227,29 @@ Every engagement, regardless of customer type, is grounded in three reference
 models. Together they are how we stay consistent across consultants, services,
 and customer triggers.
 
-> **🚧 IN FLIGHT — Competency model is being revised in a parallel Claude Code
-> session.** Until that work lands, the **7 sub-areas + 0–4 scale** documented
-> above are the current canonical version, but treat them as soft. When the
-> revised model is published, every place that references the competency
-> model in this repo must be re-synced (see "Sync points" below). Do not
-> harden new prompt content against the v0.1.0 sub-areas in the meantime.
-
 1. **Pharma Value Chain Model** — the 15 stages from target identification to
    market access. Used to anchor every engagement to the customer's actual
    pipeline stage(s). Lives at `reference/pharma-value-chain-reference.md`
-   (v0.1.0, 6 of 15 stages covered).
+   (v0.1.1, 6 of 15 stages covered).
 
-2. **Data Science Competency Model** — the 7 sub-areas listed above with the
-   0–4 self-rating scale. Used in capability snapshots, gap assessments, and
-   the competency model map output. **Currently being revised in a separate
-   session — see flag above.**
+2. **PDS Competence Model** — 7 domains / 30 sub-areas / ~123 competencies,
+   rated L1–L5 (see "The CPDSE PDS Competence Model" section above). Vendored as
+   a git submodule at `reference/competency-model/`; the pinned commit is the
+   version. Used in capability snapshots, gap assessments, and the competency
+   model map output.
 
-   **Sync points** (everywhere the model is hard-coded — must be updated
-   together when the revised model lands):
-   - `CLAUDE.md` — "The 7 CPDSE competency sub-areas" section above
+   **Sync points** (everywhere the model is referenced — keep in step when the
+   submodule is bumped to a new model version):
+   - `CLAUDE.md` — "The CPDSE PDS Competence Model" section above
    - `reference/cpdse-value-stream-v0.1.0.md` — three-models table
+   - `reference/pharma-value-chain-reference.md` — per-stage competency mappings
+   - `reference/competency-model-migration-crosswalk.md` — old→new crosswalk + scale
    - `services/01-research-strategy/prompts/02-ds-landscape-analysis.md` — competency snapshot construction
    - `services/01-research-strategy/prompts/03-gap-assessment.md` — gap-to-competency mapping
    - `services/01-research-strategy/prompts/04-recommendation-synthesis.md` — Competency Model Note
-   - `services/01-research-strategy/intake-questionnaire-blank-v0.1.0.txt` — self-rating section
-   - `site/index.html` — "How we work" reference-model card + "For research groups" tab copy
-   - Any populated engagement (`engagements/ENG###-*/`) — new engagements use the new model; finished engagements stay frozen at the version they were run under (note version in their engagement-log entry).
+   - `services/01-research-strategy/intake-questionnaire-blank-v0.2.0.txt` — self-rating section (Q8, domain level)
+   - `site/index.html` — "How we work" reference-model card + "For research groups" / "For consultants" tab copy
+   - Any populated engagement (`engagements/ENG###-*/`) — new engagements use the current model; finished engagements stay frozen at the version they were run under (note version in their engagement-log entry).
 
 3. **Training from the Back of the Room** — Sharon L. Bowman's pedagogical
    framework. The reference behind our workshop design. The core construct is
@@ -256,7 +272,8 @@ of the Room practices"* — is the verbal compression of these three models.
 
 ## Pharma value chain reference doc
 
-`reference/pharma-value-chain-reference.md` is v0.1.0 and covers 6 of ~15 stages:
+`reference/pharma-value-chain-reference.md` is v0.1.1 (competency tags re-synced
+to the PDS Competence Model) and covers 6 of ~15 stages:
 - Target Identification
 - Lead Identification
 - Lead Optimisation (includes oligo-specific notes)
@@ -461,9 +478,13 @@ without a human verification layer.
 
 - [x] Service portfolio design (Services ①②③④)
 - [x] AI pipeline design (Steps 1–4)
-- [x] All 4 prompt documents (v0.1.0, AI-drafted, pending MO review)
-- [x] Intake questionnaire blank template (v0.1.0)
-- [x] Pharma value chain reference doc (v0.1.0, 6 stages)
+- [x] All 4 prompt documents (v0.1.0, AI-drafted, pending MO review;
+  prompts 02–04 bumped to v0.2.0 for the PDS model swap)
+- [x] Intake questionnaire blank template (v0.1.0; v0.2.0 for PDS model swap)
+- [x] Pharma value chain reference doc (v0.1.1, 6 stages)
+- [x] **Swap in the PDS Competence Model** (2026-05-24) — vendored as a git
+  submodule at `reference/competency-model/`; all sync points re-synced;
+  `reference/competency-model-migration-crosswalk.md` records the old→new map
 - [x] ENG001-SIM — simulated test engagement, full pipeline run
 - [x] Step 3 output for ENG001-SIM
 - [x] Step 4 output for ENG001-SIM
@@ -476,10 +497,6 @@ without a human verification layer.
 
 ## What is NOT done yet
 
-- [ ] **🚧 Swap in the revised Data Science Competency Model** when the
-  parallel session lands it. Hit every sync point listed in the "Three
-  reference models" section above. Do not start a real engagement against
-  the v0.1.0 model if the revised one is close to landing.
 - [ ] Flesh out the Training from the Back of the Room reference: explicit
   4Cs → Workshop 1 block mapping, written into the facilitation guide
 - [ ] Promote `reference/value streams - DRAFT.pdf` to a versioned reference

@@ -1,9 +1,10 @@
 # CPDSE Service Workflow — Prompt Document
 # Service: Research & DS Strategy (①)
 # Pipeline Step: 3 — Gap Assessment
-# Version: v0.1.0 (AI-drafted, pending expert review)
+# Version: v0.2.0 (synced to PDS Competence Model; pending expert review)
 # Author: AI draft / MO review
 # Notes: Initial draft — not yet tested on a real engagement.
+#        v0.2.0 tags gaps by PDS domain › sub-area (reference/competency-model/).
 ---
 
 ## PURPOSE
@@ -83,7 +84,7 @@ gap only improves one thing.
 - Capabilities the group explicitly does not need given their research
   questions and value chain position
 - [OUTSIDE MODEL] items from Step 2 that represent legitimate novel
-  research directions outside the CPDSE competency model
+  research directions outside the PDS Competence Model
 - Emerging practices from Step 2 that are not yet standard — these
   should be flagged as horizon items, not gaps
 
@@ -99,7 +100,7 @@ theme? Structural or technical profile? Most constraining gap?]
 [One sub-section per structural gap. Format:
 ### [Gap name]
 Type: Structural
-Competency sub-area: [primary sub-area]
+Competency: [PDS domain › primary sub-area (› competency, if it sharpens it)]
 Impact: [High/Medium/Low] — [one sentence reason]
 Effort to close: [High/Medium/Low] — [one sentence reason]
 Urgency: [Active/Near-term/Long-term]
@@ -117,8 +118,10 @@ not yet standard. Not gaps — watch items.
 ]
 
 ## Outside Model Items
-[Bullet list: [OUTSIDE MODEL] items from Step 2, with note on closest
-CPDSE sub-area and why they don't map cleanly.]
+[Bullet list: [OUTSIDE MODEL] items from Step 2, with note on the closest PDS
+domain/sub-area and why they don't map cleanly. The PDS model is broad (30
+sub-areas, ~123 competencies) — a genuine [OUTSIDE MODEL] item is a candidate
+addition to the model itself, routed to the competency-model repo in Step 4.]
 
 ## Gap Assessment Caveats
 [Bullet list: limitations in this gap assessment. Reference [DATA GAP]
