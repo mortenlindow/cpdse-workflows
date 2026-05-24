@@ -1,5 +1,5 @@
 # Pedagogic Practices Reference — Training from the Back of the Room
-# Version: v0.1.0 (AI-drafted, pending MO review)
+# Version: v0.1.1 (AI-drafted, pending MO review)
 # Last updated: 2026-05-24
 # Notes: Starter doc. Captures the two Bowman frameworks CPDSE designs workshops
 #        around (the 4Cs and the Six Trumps). Expand with concrete activity
@@ -8,10 +8,8 @@
 
 ## What this is
 
-The third of CPDSE's three reference models (alongside the
-[Pharma Value Chain Model](../pharma-value-chain-model/) and the
-[PDS Competence Model](../competency-model/)). It is the **pedagogical reference
-behind all CPDSE workshop and course design**.
+One of CPDSE's reference models: the **pedagogical reference behind all CPDSE
+workshop and course design**.
 
 The source is the work of **Sharon L. Bowman**:
 
@@ -25,7 +23,7 @@ The source is the work of **Sharon L. Bowman**:
 Core premise: **the person doing the work is the person doing the learning.** The
 trainer's job is to step aside and design experiences in which learners connect,
 discover, practise, and commit — rather than be lectured at. This is why CPDSE
-workshops are facilitated, not presented.
+workshops and trainings are facilitated, not presented.
 
 ---
 
@@ -96,15 +94,10 @@ is long, silent, text-heavy, and static, it is fighting the brain.
 
 ## How CPDSE uses this
 
-The unifying CPDSE methodology line —
-> *"To improve capabilities in PharmaValueChain we train and catalyse Data
-> Science Competencies using Training From the Back of the Room practices"*
+These practices are the design basis for every CPDSE workshop and training.
 
-— is the verbal compression of the three reference models, and this document is
-the "Training From the Back of the Room" leg of it.
-
-**4Cs → Workshop 1 block mapping** (the six blocks should map cleanly onto the
-4Cs):
+**4Cs → Workshop 1 block mapping** (Service ① — Research & DS Strategy; the six
+blocks should map cleanly onto the 4Cs):
 
 | Workshop 1 block | 4C |
 |---|---|
@@ -125,3 +118,4 @@ cards), writing (learners annotate), and talking (challenge-zone discussion).
 | Version | Date | Changes |
 |---------|------|---------|
 | v0.1.0 | 2026-05-24 | Initial starter doc. Bowman sources, the 4Cs, the Six Trumps, and the 4Cs → Workshop 1 block mapping. |
+| v0.1.1 | 2026-05-24 | Made self-sufficient: removed sibling-model naming and the cross-model methodology line (now in `reference/README.md`). Pedagogy content unchanged. |

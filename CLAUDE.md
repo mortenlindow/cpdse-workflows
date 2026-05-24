@@ -64,8 +64,10 @@ cpdse-service-workflows/
         workshop1-miro-frames.pdf          ← 4-frame PDF for Miro board import
         workshop1-facilitation-guide.docx  ← consultant session script
   reference/
+    README.md                              ← how the 3 models relate + build services
     competency-model/                      ← PDS Competence Model (plain folder)
     pharma-value-chain-model/              ← Pharma Value Chain Model (plain folder)
+    pedagogic-practices/                   ← Pedagogic Practices / TBR (plain folder)
     competency-model-migration-crosswalk.md ← old→new competency model mapping
   engagements/
     ENG001-MortenLindow/                   ← test engagement (simulated, 2028)
@@ -230,6 +232,12 @@ are read through that crosswalk.
 Every engagement, regardless of customer type, is grounded in three reference
 models. Together they are how we stay consistent across consultants, services,
 and customer triggers.
+
+Each model is **self-sufficient** — its doc describes only itself and does not
+cross-reference the others. How the models *relate*, and how they compose into
+service workflows, lives in `reference/README.md` (Where × What × How). Don't
+re-introduce cross-model coupling into the individual model docs; put intersections
+in `reference/README.md` or the service workflow.
 
 1. **Pharma Value Chain Model** — a 2-tier linear model: 3 top-tier steps
    (Pre-clinical → Clinical development → On-market) → 13 substeps from target

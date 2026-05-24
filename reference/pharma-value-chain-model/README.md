@@ -5,7 +5,8 @@ drug-development pipeline used to anchor every CPDSE engagement to the customer'
 actual pipeline stage(s).
 
 It is one of CPDSE's reference models, and is **self-contained**: it does not
-cross-reference the other models (model intersections are defined separately).
+cross-reference the other models (model intersections are defined separately —
+see [`../README.md`](../README.md)).
 
 - **Canonical document:** [`Pharma_Value_Chain_Model.md`](Pharma_Value_Chain_Model.md)
 - **Structure:** 2-tier and linear — 3 top-tier steps (Pre-clinical → Clinical
