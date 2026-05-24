@@ -55,7 +55,7 @@ consistency advantage.
 
 | Model | Answers | Summary |
 |---|---|---|
-| **Pharma Value Chain Model** | **Where** in the drug pipeline? | 2-tier linear: Pre-clinical → Clinical development → On-market → 13 substeps |
+| **Pharma Value Chain Model** | **Where** in the drug pipeline? | 2-tier linear: Pre-clinical → Clinical development → On-market → 14 substeps |
 | **PDS Competence Model** | **What** data-science capabilities? | 7 domains → 30 sub-areas → ~123 competencies, rated L1–L5 |
 | **Pedagogic Practices** | **How** do we build them? | Sharon L. Bowman's 4Cs + Six Trumps |
 

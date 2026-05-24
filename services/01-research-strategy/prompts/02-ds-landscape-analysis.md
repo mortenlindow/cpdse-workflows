@@ -48,10 +48,10 @@ PRIMARY stage and, if applicable, SECONDARY stages. Justify the mapping
 in 2-3 sentences. If the work spans stages or does not fit cleanly, note
 this explicitly — do not force a mapping.
 
-Standard stages: Target Identification | Target Validation | Hit Identification |
-Lead Identification | Lead Optimisation | Candidate Selection | Preclinical |
-Clinical Pharmacology | Phase I | Phase II | Phase III | Regulatory |
-Manufacturing | Market Access | Pharmacoepidemiology | Biomarker Development
+Standard stages: Disease Understanding | Target Identification | Modality Selection |
+Lead Identification | Lead Optimisation & Candidate Selection | Nonclinical Safety & DMPK |
+Formulation & Drug Product Development (CMC) | Biomarker Development | Clinical Pharmacology |
+Phase I | Phase II | Phase III | Regulatory | Manufacturing | Market Access | Pharmacoepidemiology
 
 ### Open landscape first
 Before mapping to the CPDSE competency model, characterise what comparable

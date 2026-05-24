@@ -253,12 +253,15 @@ re-introduce cross-model coupling into the individual model docs; put intersecti
 in `reference/README.md` or the service workflow.
 
 1. **Pharma Value Chain Model** — a 2-tier linear model: 3 top-tier steps
-   (Pre-clinical → Clinical development → On-market) → 13 substeps from target
-   identification to pharmacoepidemiology. Used to anchor every engagement to the
+   (Pre-clinical → Clinical development → On-market) → 14 substeps from disease
+   understanding to pharmacoepidemiology. Used to anchor every engagement to the
    customer's actual pipeline stage(s). Lives at
    `reference/pharma-value-chain-model/` (canonical doc:
-   `Pharma_Value_Chain_Model.md`); the `Version:`/changelog is the version. v0.2.0,
-   6 of 13 substeps written up, 7 stubs.
+   `Pharma_Value_Chain_Model.md`); the `Version:`/changelog is the version. v0.7.0,
+   all 14 substeps written up, 0 stubs. Every substep follows the same 3-part form
+   (Primary DS question → Key questions → Established DS methods and tools); the
+   five early Pre-clinical substeps' Key questions are sourced from the
+   early-pipeline question board.
 
    **Sync points** (everywhere the value chain model is referenced — keep in step
    when the model version changes):
@@ -315,14 +318,23 @@ The Pharma Value Chain Model lives at `reference/pharma-value-chain-model/`
 (canonical doc: `Pharma_Value_Chain_Model.md`). It is **2-tier and linear**:
 
 - **Tier 1 — three top-tier steps:** Pre-clinical → Clinical development → On-market
-- **Tier 2 — 13 substeps** within those steps.
+- **Tier 2 — 14 substeps** within those steps.
 
-v0.2.0 covers 6 of 13 substeps in full; 7 are stubs:
-- Pre-clinical: Target Identification ✓, Hit Identification ⬚, Lead Identification ✓,
-  Lead Optimisation ✓ (oligo notes), Candidate Selection ⬚, Preclinical (DMPK/tox) ⬚
-- Clinical development: Biomarker Development ✓, Clinical Pharmacology ✓ (NABM notes,
-  [BEYOND REFERENCE]), Phase I/II/III ⬚, Regulatory ⬚
-- On-market: Manufacturing ⬚, Market Access (HEOR) ⬚, Pharmacoepidemiology ✓
+v0.7.0 covers all 14 of 14 substeps in full; 0 stubs:
+- Pre-clinical: Disease Understanding ✓, Target Identification ✓, Modality Selection ✓,
+  Lead Identification ✓, Lead Optimisation & Candidate Selection ✓ (oligo notes;
+  nomination gate folded in here), Nonclinical Safety & DMPK ✓,
+  Formulation & Drug Product Development (CMC) ✓ (formulation-specific DS methods;
+  LNP/GalNAc delivery [BEYOND REFERENCE])
+- Clinical development: Biomarker Development ✓ (clinical validation/qualification),
+  Clinical Pharmacology ✓ (NABM notes, [BEYOND REFERENCE]), Phase I/II/III ✓, Regulatory ✓
+- On-market: Manufacturing ✓, Market Access (HEOR) ✓, Pharmacoepidemiology ✓
+
+Every substep follows the same 3-part form: **Primary DS question** (one-line
+high-level question) → **Key questions** (the fuller, more specific set) →
+**Established DS methods and tools**. The five early Pre-clinical substeps'
+Key questions are sourced from the early-pipeline question board; they are
+discussion anchors for Meeting 1 and Workshop 1, sitting above the DS methods.
 
 The model versions independently of the prompt docs (its `Version:`/changelog is
 the version). This replaced the flat `pharma-value-chain-reference.md` (v0.1.1) on
@@ -559,7 +571,13 @@ without a human verification layer.
 - [ ] Workshop 1 summary doc template (the 48hr post-session artefact)
 - [ ] Phase 2 planning: API-backed agent pipeline (deferred until 2-3 real engagements)
 - [ ] Expert review of all v0.1.0 prompt documents (MO review pending)
-- [ ] Remaining 7 substep stubs in `reference/pharma-value-chain-model/`
+- [~] Substep stubs in `reference/pharma-value-chain-model/` — DONE (v0.5.0 filled
+  all stubs; v0.6.0 redundancy pass merged Candidate Selection into Lead
+  Optimisation and renamed Preclinical → Nonclinical Safety & DMPK; v0.7.0 added
+  Formulation & Drug Product Development (CMC), leaving 14 substeps). Remaining:
+  MO/domain review of the newly-written substeps (Lead Opt & Candidate Selection
+  nomination gate, Nonclinical Safety & DMPK, Formulation/CMC, Phase I/II/III,
+  Regulatory, Manufacturing, Market Access).
 - [ ] First real engagement (not ENG001-SIM)
 - [ ] Updating reference doc with ENG001-SIM [BEYOND REFERENCE] items
 - [ ] CPDSElogic integration (separate project — the web app for the CPDSE
@@ -595,7 +613,7 @@ Drive folder ID: 1yP89_U5sFe0okd_y4MYrQ0D6wJM4Z86S
 - Background: Santaris Pharma → Roche Innovation Center Copenhagen (2008-2024)
 - Expertise: oligonucleotide/RNA therapeutics, bioinformatics, pharma strategy
 - Codes in Ruby, R — currently learning React/FastAPI for CPDSElogic
-- Votes Alternativet, interested in Holacracy/Teal/sociocracy
+- Interested in Holacracy/Teal/sociocracy
 - Active in Grundejerforeningen Vildrose (homeowners' association, chairs meetings)
 - Preference: concise output over comprehensive elaboration
 

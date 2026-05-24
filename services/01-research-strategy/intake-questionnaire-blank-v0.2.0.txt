@@ -33,9 +33,18 @@ A1:
 
 ------------------------------------------------------------
 
-Q2: Where does your work sit in the drug discovery pipeline?
-(Target ID / Hit ID / Lead ID / Lead Opt / Preclinical / Clinical /
-Regulatory / Multiple / Other — explain briefly)
+Q2: Where does your work sit in the drug development pipeline?
+(Pick the stage(s) that best fit — Multiple / Other are fine, explain briefly)
+
+  Pre-clinical:  Disease Understanding / Target Identification /
+                 Modality Selection / Lead Identification /
+                 Lead Optimisation & Candidate Selection /
+                 Nonclinical Safety & DMPK /
+                 Formulation & Drug Product Development (CMC)
+  Clinical dev:  Biomarker Development / Clinical Pharmacology /
+                 Phase I-II-III / Regulatory
+  On-market:     Manufacturing / Market Access (HEOR) /
+                 Pharmacoepidemiology
 
 A2:
 
