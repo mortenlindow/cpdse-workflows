@@ -1,0 +1,15 @@
+id,display_name,tier,order,aliases
+disease-understanding,Disease Understanding,Pre-clinical,1,
+target-identification,Target Identification,Pre-clinical,2,Target ID
+modality-selection,Modality Selection,Pre-clinical,3,
+lead-identification,Lead Identification,Pre-clinical,4,Lead ID|Hit Identification|Hit ID
+lead-opt-candidate-selection,Lead Optimisation & Candidate Selection,Pre-clinical,5,Lead Optimisation|Lead Opt|Candidate Selection
+nonclinical-safety-dmpk,Nonclinical Safety & DMPK,Pre-clinical,6,Preclinical|Preclinical (DMPK, tox)|DMPK
+formulation-drug-product,Formulation & Drug Product Development (CMC),Pre-clinical,7,Formulation|CMC|Drug Product Development
+biomarker-development,Biomarker Development,Clinical development,8,
+clinical-pharmacology,Clinical Pharmacology,Clinical development,9,Clin Pharm|popPK|popPK/PD
+phase-i-ii-iii,Phase I / II / III,Clinical development,10,Phase I|Phase II|Phase III|Phase I/II/III|Clinical Trials
+regulatory,Regulatory,Clinical development,11,
+manufacturing,Manufacturing,On-market,12,
+market-access,Market Access (HEOR),On-market,13,Market Access|HEOR
+pharmacovigilance-pharmacoepi,Pharmacovigilance & Pharmacoepidemiology,On-market,14,Pharmacovigilance|Pharmacoepidemiology|PV|PE

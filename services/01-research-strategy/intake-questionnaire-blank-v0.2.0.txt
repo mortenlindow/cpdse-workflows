@@ -44,7 +44,7 @@ Q2: Where does your work sit in the drug development pipeline?
   Clinical dev:  Biomarker Development / Clinical Pharmacology /
                  Phase I-II-III / Regulatory
   On-market:     Manufacturing / Market Access (HEOR) /
-                 Pharmacoepidemiology
+                 Pharmacovigilance & Pharmacoepidemiology
 
 A2:
 

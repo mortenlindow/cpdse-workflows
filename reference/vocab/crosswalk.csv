@@ -1,0 +1,152 @@
+canonical_tool,type,aliases,stage_id,pds_domain,pds_subarea,weight,confidence,source,flag,notes
+Europe PMC API,tool,,disease-understanding,data-acquisition-management,data-collection,1.0,high,pharma_value_chain_model:v0.8.0,,
+GTEx,database,,disease-understanding,data-acquisition-management,data-collection,1.0,high,pharma_value_chain_model:v0.8.0,,expression atlas
+Human Protein Atlas,database,HPA,disease-understanding,data-acquisition-management,data-collection,1.0,high,pharma_value_chain_model:v0.8.0,,
+KEGG,database,,disease-understanding,exploration-mining-analysis,mining,1.0,high,pharma_value_chain_model:v0.8.0,,pathway DB
+Open Targets Platform,database,Open Targets,disease-understanding,exploration-mining-analysis,mining,1.0,high,pharma_value_chain_model:v0.8.0,,knowledge graph
+PubMed E-utilities,tool,E-utilities|PubMed API,disease-understanding,data-acquisition-management,data-collection,1.0,high,pharma_value_chain_model:v0.8.0,,
+Reactome,database,,disease-understanding,exploration-mining-analysis,mining,1.0,high,pharma_value_chain_model:v0.8.0,,pathway DB
+Tabula Sapiens,database,,disease-understanding,data-acquisition-management,data-collection,1.0,high,pharma_value_chain_model:v0.8.0,,single-cell atlas
+WikiPathways,database,,disease-understanding,exploration-mining-analysis,mining,1.0,high,pharma_value_chain_model:v0.8.0,,pathway DB
+BioGRID,database,,target-identification,data-acquisition-management,data-collection,1.0,high,pharma_value_chain_model:v0.8.0,,PPI
+ChEMBL API,tool,ChEMBL,target-identification,data-acquisition-management,data-collection,1.0,high,pharma_value_chain_model:v0.8.0,,
+Cytoscape,tool,,target-identification,viz-presentation,creating-dataviz,1.0,high,pharma_value_chain_model:v0.8.0,,network viz
+DESeq2,tool,,target-identification,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,RNA-seq differential
+DoGSiteScorer,tool,,target-identification,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,druggability
+DruGAN,tool,,target-identification,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,druggability
+edgeR,tool,,target-identification,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+limma,tool,,target-identification,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+Mendelian randomisation,method,Mendelian randomization|MR,target-identification,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+MR-Base,tool,,target-identification,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+PLINK,tool,,target-identification,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,GWAS
+REGENIE,tool,,target-identification,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,GWAS
+SAIGE,tool,,target-identification,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,GWAS
+STRING,database,,target-identification,data-acquisition-management,data-collection,1.0,high,pharma_value_chain_model:v0.8.0,,PPI
+TwoSampleMR,tool,,target-identification,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,R Mendelian rand
+AutoDock,tool,,lead-identification,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,docking
+ChemBERTa,tool,,lead-identification,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,chem transformer
+DeepPurpose,tool,,lead-identification,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,ADMET
+drc,tool,,lead-identification,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,R dose-response
+Glide,tool,,lead-identification,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,docking
+GraphPad,tool,GraphPad Prism,lead-identification,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+IntaRNA,tool,,lead-identification,computing-programming,programming,1.0,high,pharma_value_chain_model:v0.8.0,,RNA structure
+OpenBabel,tool,Open Babel,lead-identification,computing-programming,programming,1.0,high,pharma_value_chain_model:v0.8.0,,
+pkCSM,tool,,lead-identification,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,ADMET
+platetools,tool,,lead-identification,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,R HTS
+RDKit,tool,,lead-identification,computing-programming,programming,1.0,high,pharma_value_chain_model:v0.8.0,,cheminformatics
+rDock,tool,,lead-identification,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,docking
+RNAfold,tool,,lead-identification,computing-programming,programming,1.0,high,pharma_value_chain_model:v0.8.0,,RNA structure
+scipy,tool,SciPy,lead-identification,computing-programming,programming,1.0,high,pharma_value_chain_model:v0.8.0,,
+SwissADME,tool,,lead-identification,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,ADMET
+t-SNE,method,tSNE,lead-identification,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,
+UMAP,method,,lead-identification,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,
+virtual screening,method,,lead-identification,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,
+ChEMBL standardiser,tool,,lead-opt-candidate-selection,data-acquisition-management,data-curation,1.0,high,pharma_value_chain_model:v0.8.0,,
+conformal prediction,method,,lead-opt-candidate-selection,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,uncertainty
+FAIR,method,FAIR principles,lead-opt-candidate-selection,data-acquisition-management,rdm,1.0,high,pharma_value_chain_model:v0.8.0,,
+Gaussian process,method,GP,lead-opt-candidate-selection,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,
+GPyTorch,tool,,lead-opt-candidate-selection,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,
+MAPIE,tool,,lead-opt-candidate-selection,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,conformal prediction
+mmpdb,tool,,lead-opt-candidate-selection,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,MMPA
+MPO scoring,method,multi-parameter optimisation,lead-opt-candidate-selection,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+Pareto-front analysis,method,Pareto front,lead-opt-candidate-selection,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+PTS,method,probability of technical success,lead-opt-candidate-selection,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+QSAR,method,QSPR,lead-opt-candidate-selection,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,
+random forest,method,RF,lead-opt-candidate-selection,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,
+RDKit,tool,,lead-opt-candidate-selection,computing-programming,programming,1.0,high,pharma_value_chain_model:v0.8.0,,descriptors
+scikit-learn,tool,sklearn,lead-opt-candidate-selection,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,
+TPP,method,target product profile,lead-opt-candidate-selection,viz-presentation,data-informed-decisions,1.0,high,pharma_value_chain_model:v0.8.0,,
+XGBoost,tool,,lead-opt-candidate-selection,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,
+allometric scaling,method,,nonclinical-safety-dmpk,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+BMD software,tool,benchmark dose,nonclinical-safety-dmpk,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+drc,tool,,nonclinical-safety-dmpk,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,R dose-response
+IVIVE,method,in vitro-in vivo extrapolation,nonclinical-safety-dmpk,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+NCA,method,non-compartmental analysis,nonclinical-safety-dmpk,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+Phoenix WinNonlin,tool,WinNonlin,nonclinical-safety-dmpk,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+PK-Sim,tool,,nonclinical-safety-dmpk,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,PBPK
+PKNCA,tool,,nonclinical-safety-dmpk,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+Simcyp,tool,,nonclinical-safety-dmpk,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,PBPK
+ASAPprime,tool,,formulation-drug-product,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,shelf-life
+Design-Expert,tool,,formulation-drug-product,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,DoE
+DoE,method,Design of Experiments,formulation-drug-product,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+GalNAc delivery,method,GalNAc,formulation-drug-product,ml-ai,model-building,1.0,medium,pharma_value_chain_model:v0.8.0,BEYOND_REFERENCE,oligo
+GastroPlus,tool,,formulation-drug-product,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,PBBM
+IVIVC,method,in vitro-in vivo correlation,formulation-drug-product,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+JMP,tool,,formulation-drug-product,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,DoE
+LNP formulation,method,lipid nanoparticle,formulation-drug-product,ml-ai,model-building,1.0,medium,pharma_value_chain_model:v0.8.0,BEYOND_REFERENCE,oligo delivery
+Simcyp,tool,,formulation-drug-product,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,PBBM
+elastic net,method,,biomarker-development,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,
+IDI,method,integrated discrimination improvement,biomarker-development,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+LASSO,method,Lasso,biomarker-development,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,
+NRI,method,net reclassification improvement,biomarker-development,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+random forest,method,RF,biomarker-development,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,
+ROC/AUC,method,AUC|ROC,biomarker-development,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+SHAP,tool,,biomarker-development,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,
+stability selection,method,,biomarker-development,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+brms,tool,,clinical-pharmacology,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+deSolve,tool,,clinical-pharmacology,computing-programming,programming,1.0,high,pharma_value_chain_model:v0.8.0,,R ODE
+Monolix,tool,,clinical-pharmacology,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,popPK
+NABM multi-scale modelling,method,nucleic acid-based medicines,clinical-pharmacology,math-stats,statistics,1.0,medium,pharma_value_chain_model:v0.8.0,BEYOND_REFERENCE,oligo
+nlmixr2,tool,nlmixr,clinical-pharmacology,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+NONMEM,tool,,clinical-pharmacology,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,popPK
+PKNCA,tool,,clinical-pharmacology,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+Pmetrics,tool,,clinical-pharmacology,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,Bayesian npop
+PyMC,tool,,clinical-pharmacology,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,Bayesian
+scipy.integrate,tool,,clinical-pharmacology,computing-programming,programming,1.0,high,pharma_value_chain_model:v0.8.0,,ODE
+Simcyp,tool,,clinical-pharmacology,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,PBPK
+Stan,tool,,clinical-pharmacology,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,Bayesian
+3+3,method,three-plus-three,phase-i-ii-iii,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,dose-finding
+BOIN,method,,phase-i-ii-iii,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,dose-finding
+Cox PH,method,Cox proportional hazards,phase-i-ii-iii,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+CRM,method,continual reassessment,phase-i-ii-iii,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,dose-finding
+East,tool,,phase-i-ii-iii,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,trial design
+estimands,method,ICH E9 R1,phase-i-ii-iii,math-stats,stat-thinking,1.0,high,pharma_value_chain_model:v0.8.0,,
+Kaplan-Meier,method,KM,phase-i-ii-iii,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+MMRM,method,mixed-model repeated measures,phase-i-ii-iii,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+nlme,tool,,phase-i-ii-iii,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,R longitudinal
+rpact,tool,,phase-i-ii-iii,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,group-sequential
+SAS,tool,,phase-i-ii-iii,computing-programming,programming,1.0,high,pharma_value_chain_model:v0.8.0,,
+survival,tool,survival (R),phase-i-ii-iii,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,R package
+ADaM,standard,,regulatory,data-acquisition-management,data-organization,1.0,high,pharma_value_chain_model:v0.8.0,,CDISC analysis-ready
+CDISC SDTM,standard,SDTM,regulatory,data-acquisition-management,data-organization,1.0,high,pharma_value_chain_model:v0.8.0,,
+define.xml,standard,,regulatory,data-acquisition-management,data-organization,1.0,high,pharma_value_chain_model:v0.8.0,,
+pharmaverse,tool,,regulatory,computing-programming,workflow-repro,1.0,high,pharma_value_chain_model:v0.8.0,,validated R packages
+Pinnacle 21,tool,,regulatory,data-acquisition-management,data-quality,1.0,high,pharma_value_chain_model:v0.8.0,,CDISC compliance
+SAS,tool,,regulatory,computing-programming,programming,1.0,high,pharma_value_chain_model:v0.8.0,,
+chemometrics,method,NIR|Raman,manufacturing,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,PAT
+Cpk,method,process capability index,manufacturing,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+DoE,method,Design of Experiments,manufacturing,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+JMP,tool,,manufacturing,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+Minitab,tool,,manufacturing,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+PCA,method,principal components,manufacturing,ml-ai,model-building,1.0,high,pharma_value_chain_model:v0.8.0,,multivariate SPC
+PLS,method,partial least squares,manufacturing,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,multivariate SPC
+Ppk,method,,manufacturing,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+QbD,method,Quality by Design,manufacturing,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+SIMCA,tool,,manufacturing,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+SPC,method,statistical process control,manufacturing,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+decision trees,method,,market-access,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+heemod,tool,,market-access,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,health-economic R
+hesim,tool,,market-access,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+ICER,method,incremental cost-effectiveness ratio,market-access,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+Markov models,method,,market-access,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+network meta-analysis,method,NMA,market-access,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+QALY,method,quality-adjusted life year,market-access,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+TreeAge,tool,,market-access,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+BCPNN,method,Bayesian Confidence Propagation NN,pharmacovigilance-pharmacoepi,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,signal detection
+CPRD,database,,pharmacovigilance-pharmacoepi,data-acquisition-management,data-collection,1.0,high,pharma_value_chain_model:v0.8.0,,EHR
+dagitty,tool,,pharmacovigilance-pharmacoepi,math-stats,stat-thinking,1.0,high,pharma_value_chain_model:v0.8.0,,causal DAG
+distributed lag,method,,pharmacovigilance-pharmacoepi,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+DoWhy,tool,,pharmacovigilance-pharmacoepi,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,causal inference
+EudraVigilance,database,,pharmacovigilance-pharmacoepi,data-acquisition-management,data-collection,1.0,high,pharma_value_chain_model:v0.8.0,,spontaneous reports
+FAERS,database,,pharmacovigilance-pharmacoepi,data-acquisition-management,data-collection,1.0,high,pharma_value_chain_model:v0.8.0,,spontaneous reports
+ICSR de-duplication,method,ICSR,pharmacovigilance-pharmacoepi,data-acquisition-management,data-quality,1.0,high,pharma_value_chain_model:v0.8.0,,
+interrupted time series,method,ITS,pharmacovigilance-pharmacoepi,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+MarketScan,database,,pharmacovigilance-pharmacoepi,data-acquisition-management,data-collection,1.0,high,pharma_value_chain_model:v0.8.0,,claims
+MatchIt,tool,,pharmacovigilance-pharmacoepi,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,propensity score R
+MGPS,method,EBGM,pharmacovigilance-pharmacoepi,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,signal detection
+OPTUM,database,,pharmacovigilance-pharmacoepi,data-acquisition-management,data-collection,1.0,high,pharma_value_chain_model:v0.8.0,,claims
+propensity score,method,,pharmacovigilance-pharmacoepi,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,
+PRR,method,proportional reporting ratio,pharmacovigilance-pharmacoepi,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,disproportionality
+ROR,method,reporting odds ratio,pharmacovigilance-pharmacoepi,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,disproportionality
+VigiBase,database,,pharmacovigilance-pharmacoepi,data-acquisition-management,data-collection,1.0,high,pharma_value_chain_model:v0.8.0,,spontaneous reports
+WeightIt,tool,,pharmacovigilance-pharmacoepi,math-stats,statistics,1.0,high,pharma_value_chain_model:v0.8.0,,IPTW

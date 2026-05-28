@@ -1,0 +1,31 @@
+id,display_name,domain_id,order
+comp-thinking,Computational Thinking,computing-programming,1
+comp-systems,Computing & Computing Systems,computing-programming,2
+programming,Programming,computing-programming,3
+workflow-repro,Workflow & Reproducibility,computing-programming,4
+crit-thinking,Critical Thinking,data-acquisition-management,5
+data-collection,Data Collection,data-acquisition-management,6
+data-curation,Data Curation,data-acquisition-management,7
+data-organization,Data Organization,data-acquisition-management,8
+data-quality,Data Quality,data-acquisition-management,9
+data-security-reuse,Data Security & Re-use,data-acquisition-management,10
+rdm,Research Data Management,data-acquisition-management,11
+ds-ethics,Data Science Ethics,ethics-legislation-privacy,12
+legislation,Legislation,ethics-legislation-privacy,13
+privacy,Privacy,ethics-legislation-privacy,14
+crit-evaluation,(Critical) Evaluation,exploration-mining-analysis,15
+analysis,Analysis,exploration-mining-analysis,16
+exploration,Exploration,exploration-mining-analysis,17
+integration,Integration,exploration-mining-analysis,18
+mining,Mining,exploration-mining-analysis,19
+ml-ai-foundations,ML & AI Foundations,ml-ai,20
+model-building,Model Building & Assessment,ml-ai,21
+ai-in-education,Use of AI in Education & Research,ml-ai,22
+mathematics,Mathematics,math-stats,23
+stat-thinking,Statistical thinking,math-stats,24
+statistics,Statistics,math-stats,25
+creating-dataviz,Creating Data Visualization,viz-presentation,26
+data-informed-decisions,Data-Informed Decision Making,viz-presentation,27
+interpreting-dataviz,Interpreting Data Visualizations,viz-presentation,28
+presenting-dataviz,Presenting Data Visualization,viz-presentation,29
+viz-literacy,Visualization Literacy,viz-presentation,30

@@ -51,7 +51,8 @@ this explicitly — do not force a mapping.
 Standard stages: Disease Understanding | Target Identification | Modality Selection |
 Lead Identification | Lead Optimisation & Candidate Selection | Nonclinical Safety & DMPK |
 Formulation & Drug Product Development (CMC) | Biomarker Development | Clinical Pharmacology |
-Phase I | Phase II | Phase III | Regulatory | Manufacturing | Market Access | Pharmacoepidemiology
+Phase I | Phase II | Phase III | Regulatory | Manufacturing | Market Access |
+Pharmacovigilance & Pharmacoepidemiology
 
 ### Open landscape first
 Before mapping to the CPDSE competency model, characterise what comparable

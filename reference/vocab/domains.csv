@@ -1,0 +1,8 @@
+id,display_name,order
+computing-programming,Computing & Programming,1
+data-acquisition-management,Data Acquisition & Management,2
+"ethics-legislation-privacy","Ethics, Legislation & Privacy",3
+"exploration-mining-analysis","Exploration, Mining & Analysis",4
+ml-ai,ML & AI,5
+math-stats,Mathematics & Statistics,6
+viz-presentation,Visualization & Presentation,7

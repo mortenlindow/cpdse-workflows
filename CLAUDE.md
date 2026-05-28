@@ -82,6 +82,11 @@ cpdse-service-workflows/
     pharma-value-chain-model/              ← Pharma Value Chain Model (plain folder)
     pedagogic-practices/                   ← Pedagogic Practices / TBR (plain folder)
     competency-model-migration-crosswalk.md ← old→new competency model mapping
+    vocab/                                 ← controlled vocab + crosswalk (CSVs)
+      stages.csv  domains.csv  subareas.csv  crosswalk.csv  README.md
+  scripts/
+    validate-vocab.py                      ← enforces vocab ↔ model doc consistency
+  .pre-commit-config.yaml                  ← runs the validator on commit
   engagements/
     ENG001-MortenLindow/                   ← test engagement (simulated, 2028)
       intake-questionnaire-ENG001-SIM.txt
@@ -254,17 +259,24 @@ in `reference/README.md` or the service workflow.
 
 1. **Pharma Value Chain Model** — a 2-tier linear model: 3 top-tier steps
    (Pre-clinical → Clinical development → On-market) → 14 substeps from disease
-   understanding to pharmacoepidemiology. Used to anchor every engagement to the
+   understanding to pharmacovigilance. Used to anchor every engagement to the
    customer's actual pipeline stage(s). Lives at
    `reference/pharma-value-chain-model/` (canonical doc:
-   `Pharma_Value_Chain_Model.md`); the `Version:`/changelog is the version. v0.7.0,
+   `Pharma_Value_Chain_Model.md`); the `Version:`/changelog is the version. v0.8.0,
    all 14 substeps written up, 0 stubs. Every substep follows the same 3-part form
    (Primary DS question → Key questions → Established DS methods and tools); the
    five early Pre-clinical substeps' Key questions are sourced from the
    early-pipeline question board.
 
+   **Canonical IDs and names live in `reference/vocab/stages.csv`** — the model
+   doc owns the prose, the vocab CSV owns the IDs/display names/aliases. Every
+   `## Substep:` heading must resolve to a `stages.csv` row (display name or
+   alias). The validator `scripts/validate-vocab.py` enforces this; run it
+   manually or via the pre-commit hook (see `.pre-commit-config.yaml`).
+
    **Sync points** (everywhere the value chain model is referenced — keep in step
    when the model version changes):
+   - `reference/vocab/stages.csv` — canonical IDs/names (the only file the validator FKs into)
    - `CLAUDE.md` — this entry + "Pharma value chain model" section below
    - `README.md` — repository structure block + "Reference models" table
    - `services/01-research-strategy/prompts/02-ds-landscape-analysis.md` — reference model input + [BEYOND REFERENCE] definition + paste block
@@ -320,7 +332,7 @@ The Pharma Value Chain Model lives at `reference/pharma-value-chain-model/`
 - **Tier 1 — three top-tier steps:** Pre-clinical → Clinical development → On-market
 - **Tier 2 — 14 substeps** within those steps.
 
-v0.7.0 covers all 14 of 14 substeps in full; 0 stubs:
+v0.8.0 covers all 14 of 14 substeps in full; 0 stubs:
 - Pre-clinical: Disease Understanding ✓, Target Identification ✓, Modality Selection ✓,
   Lead Identification ✓, Lead Optimisation & Candidate Selection ✓ (oligo notes;
   nomination gate folded in here), Nonclinical Safety & DMPK ✓,
@@ -328,7 +340,8 @@ v0.7.0 covers all 14 of 14 substeps in full; 0 stubs:
   LNP/GalNAc delivery [BEYOND REFERENCE])
 - Clinical development: Biomarker Development ✓ (clinical validation/qualification),
   Clinical Pharmacology ✓ (NABM notes, [BEYOND REFERENCE]), Phase I/II/III ✓, Regulatory ✓
-- On-market: Manufacturing ✓, Market Access (HEOR) ✓, Pharmacoepidemiology ✓
+- On-market: Manufacturing ✓, Market Access (HEOR) ✓, Pharmacovigilance &
+  Pharmacoepidemiology ✓ (PV signal detection + PE evaluation, co-equal)
 
 Every substep follows the same 3-part form: **Primary DS question** (one-line
 high-level question) → **Key questions** (the fuller, more specific set) →

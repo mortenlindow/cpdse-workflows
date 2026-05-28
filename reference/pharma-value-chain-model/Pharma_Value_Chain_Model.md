@@ -1,16 +1,16 @@
 # Pharma Value Chain Model — DS Methods & Tools
-# Version: v0.7.0 (AI-drafted, pending MO review)
-# Last updated: 2026-05-24
-# Notes: Added "Formulation & Drug Product Development (CMC)" as the last
-#        Pre-clinical substep — the formulation-specific DS methods (DoE, IVIVC,
-#        PBBM, shelf-life kinetics, LNP/GalNAc delivery optimisation) had no home;
-#        molecule-level developability stays upstream (Lead Opt & Candidate
-#        Selection) and process control stays downstream (Manufacturing). Now 14
-#        substeps, all in the 3-part form (Primary DS question → Key questions →
-#        Established DS methods and tools). [Earlier: v0.6.0 redundancy pass merged
-#        Candidate Selection into Lead Optimisation and renamed Preclinical →
-#        Nonclinical Safety & DMPK.] [BEYOND REFERENCE] flags from engagements
-#        should be incorporated here after consultant review.
+# Version: v0.8.0 (AI-drafted, pending MO review)
+# Last updated: 2026-05-25
+# Notes: Renamed "Pharmacoepidemiology" → "Pharmacovigilance & Pharmacoepidemiology"
+#        and expanded the pharmacovigilance DS methods (spontaneous-reporting
+#        disproportionality, BCPNN/MGPS, NLP on case narratives, ICSR de-dup), which
+#        were previously compressed to one line. PV detects signals, PE evaluates
+#        them; trial safety stays in Phase I/II/III and RMP/REMS in Regulatory. Still
+#        14 substeps, all in the 3-part form (Primary DS question → Key questions →
+#        Established DS methods and tools). [Earlier: v0.7.0 added Formulation & Drug
+#        Product Development (CMC); v0.6.0 merged Candidate Selection into Lead
+#        Optimisation and renamed Preclinical → Nonclinical Safety & DMPK.] [BEYOND
+#        REFERENCE] flags from engagements should be incorporated here after review.
 ---
 
 ## What this is
@@ -32,7 +32,7 @@ The model is **2-tier and linear**:
 2. CLINICAL DEVELOPMENT
    Biomarker Development → Clinical Pharmacology → Phase I/II/III → Regulatory
 3. ON-MARKET
-   Manufacturing → Market Access (HEOR) → Pharmacoepidemiology
+   Manufacturing → Market Access (HEOR) → Pharmacovigilance & Pharmacoepidemiology
 ```
 
 ## How to use this document
@@ -504,7 +504,7 @@ routine use in defined patient populations?
 | Clinical development | Regulatory | ✓ written |
 | On-market | Manufacturing | ✓ written |
 | On-market | Market Access (HEOR) | ✓ written |
-| On-market | Pharmacoepidemiology | ✓ written |
+| On-market | Pharmacovigilance & Pharmacoepidemiology | ✓ written |
 
 14 of 14 substeps written; 0 stubs. All substeps follow the 3-part form
 (Primary DS question → Key questions → Established DS methods and tools).
@@ -523,5 +523,6 @@ routine use in defined patient populations?
 | v0.5.0 | 2026-05-24 | Filled in all 6 remaining stubs (Candidate Selection, Preclinical DMPK/tox, Phase I/II/III, Regulatory, Manufacturing, Market Access). Normalised every substep to the same 3-part form by adding a "Key questions" block to the three written substeps that lacked one (Biomarker Development, Clinical Pharmacology, Pharmacoepidemiology). All 14 substeps now written; 0 stubs. |
 | v0.6.0 | 2026-05-24 | Redundancy pass (14→13 substeps). Merged Candidate Selection into **Lead Optimisation & Candidate Selection** (nomination is the gate ending lead opt; removed the duplicated MPO / developability / TPP methods). Renamed "Preclinical (DMPK, tox)" → **Nonclinical Safety & DMPK** (removes the clash with the Pre-clinical tier name). De-duplicated method lists: exploratory stratification / multi-omics now sit only in Disease Understanding (Biomarker Development consumes them); estimands / multiplicity / missing-data now sit only in Phase I/II/III (Regulatory packages them to standard). |
 | v0.7.0 | 2026-05-24 | Added **Formulation & Drug Product Development (CMC)** as the last Pre-clinical substep (13→14). Owns the formulation-specific DS methods (DoE/mixture designs, dissolution/IVIVC, PBBM, shelf-life kinetics, excipient compatibility, LNP/GalNAc delivery optimisation) that were previously unrepresented; cross-references developability (upstream, Lead Opt & Candidate Selection) and QbD/process control (downstream, Manufacturing) rather than duplicating them. |
+| v0.8.0 | 2026-05-25 | Renamed "Pharmacoepidemiology" → **Pharmacovigilance & Pharmacoepidemiology** (still 14 substeps) and made the two post-market disciplines co-equal. Expanded the pharmacovigilance DS methods — spontaneous-reporting disproportionality (FAERS/VigiBase/EudraVigilance, PRR/ROR), Bayesian signal detection (BCPNN, MGPS/EBGM), NLP on case narratives/literature, ICSR de-duplication — which were previously a single line. Noted PV's tendrils: trial safety in Phase I/II/III, RMP/REMS in Regulatory. |
 </content>
 </invoke>
