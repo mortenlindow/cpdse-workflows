@@ -1,4 +1,10 @@
 # CPDSE Service Workflows
+
+> **⚠️ Outdated and on pause (as of 2026-11-10).** This repository is no longer maintained
+> and its content is out of date. Do not build on it. Current CPDSE operating-model material
+> lives in [CPDSE/cpdse-handbook](https://github.com/CPDSE/cpdse-handbook) and
+> [CPDSE/cpdse-reference-models](https://github.com/CPDSE/cpdse-reference-models).
+
 Version: v0.3.0 | Last updated: 2026-05-24
 
 ## Positioning
